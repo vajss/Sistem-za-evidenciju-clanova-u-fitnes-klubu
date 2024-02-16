@@ -26,7 +26,6 @@ namespace Server.Controllers
             frmServer.BtnToggle.Click += BtnToggle_Click;
         }
 
-
         private void BtnToggle_Click(object sender, EventArgs e)
         {
             ChangeToggleState(frmServer.BtnToggle.ToggleState == ToggleStateEnum.ON ? ToggleStateEnum.OFF : ToggleStateEnum.ON);

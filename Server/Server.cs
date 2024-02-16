@@ -4,15 +4,13 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Server
 {
     public class Server
     {
-        private Socket socket;
+        private readonly Socket socket;
         private readonly List<ClientHandler> clients = new List<ClientHandler>();
 
         public Server()

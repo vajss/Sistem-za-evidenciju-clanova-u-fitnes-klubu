@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using Server.Custom_UI_components;
+using System.Windows.Forms;
 
 namespace Server
 {
@@ -30,9 +31,31 @@ namespace Server
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnToggle = new ToggleButton();
             this.lblServerState = new System.Windows.Forms.Label();
+            this.lblStatusServera = new System.Windows.Forms.Label();
+            this.btnToggle = new ToggleButton();
             this.SuspendLayout();
+            // 
+            // lblServerState
+            // 
+            this.lblServerState.AutoSize = true;
+            this.lblServerState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServerState.ForeColor = System.Drawing.Color.Salmon;
+            this.lblServerState.Location = new System.Drawing.Point(342, 288);
+            this.lblServerState.Name = "lblServerState";
+            this.lblServerState.Size = new System.Drawing.Size(135, 16);
+            this.lblServerState.TabIndex = 1;
+            this.lblServerState.Text = "Server je iskljucen";
+            // 
+            // lblStatusServera
+            // 
+            this.lblStatusServera.AutoSize = true;
+            this.lblStatusServera.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblStatusServera.Location = new System.Drawing.Point(355, 260);
+            this.lblStatusServera.Name = "lblStatusServera";
+            this.lblStatusServera.Size = new System.Drawing.Size(111, 16);
+            this.lblStatusServera.TabIndex = 2;
+            this.lblStatusServera.Text = "Status servera:";
             // 
             // btnToggle
             // 
@@ -43,30 +66,21 @@ namespace Server
             this.btnToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnToggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnToggle.ForeColor = System.Drawing.Color.White;
-            this.btnToggle.Location = new System.Drawing.Point(365, 307);
+            this.btnToggle.Location = new System.Drawing.Point(372, 326);
             this.btnToggle.Name = "btnToggle";
             this.btnToggle.Size = new System.Drawing.Size(80, 40);
             this.btnToggle.TabIndex = 0;
             this.btnToggle.Text = "⬤";
             this.btnToggle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnToggle.ToggleState = Custom_UI_components.ToggleStateEnum.OFF;
             this.btnToggle.UseVisualStyleBackColor = false;
-            // 
-            // lblServerState
-            // 
-            this.lblServerState.AutoSize = true;
-            this.lblServerState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblServerState.ForeColor = System.Drawing.Color.Salmon;
-            this.lblServerState.Location = new System.Drawing.Point(338, 364);
-            this.lblServerState.Name = "lblServerState";
-            this.lblServerState.Size = new System.Drawing.Size(135, 16);
-            this.lblServerState.TabIndex = 1;
-            this.lblServerState.Text = "Server je iskljucen";
             // 
             // FrmServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(810, 497);
+            this.Controls.Add(this.lblStatusServera);
             this.Controls.Add(this.lblServerState);
             this.Controls.Add(this.btnToggle);
             this.Name = "FrmServer";
@@ -77,8 +91,9 @@ namespace Server
         }
 
         #endregion
-        private ToggleButton btnToggle;
         private System.Windows.Forms.Label lblServerState;
+        private Label lblStatusServera;
+        private ToggleButton btnToggle;
 
         public ToggleButton BtnToggle { get => btnToggle; set => btnToggle = value; }
         public Label LblServerState { get => lblServerState; set => lblServerState = value; }

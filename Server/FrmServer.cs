@@ -13,10 +13,11 @@ namespace Server
 {
     public partial class FrmServer : Form
     {
+
         public FrmServer()
         {
-            InitializeComponent();
             UIServerController uIServerController = new UIServerController(this);
+            InitializeComponent();
             uIServerController.Init();
         }
 
