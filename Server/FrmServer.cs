@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Server.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,9 @@ namespace Server
         public FrmServer()
         {
             InitializeComponent();
+            UIServerController uIServerController = new UIServerController(this);
+            uIServerController.Init();
         }
+
     }
 }
