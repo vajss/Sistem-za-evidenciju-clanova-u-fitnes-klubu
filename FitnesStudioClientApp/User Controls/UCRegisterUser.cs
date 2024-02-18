@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FitnesStudioClientApp.UIControllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,8 @@ namespace FitnesStudioClientApp.User_Controls
         public UCRegisterUser()
         {
             InitializeComponent();
+            RegisterController controller = new RegisterController();
+            controller.Init(this);
         }
     }
 }

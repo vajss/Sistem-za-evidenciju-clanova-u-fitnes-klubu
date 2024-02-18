@@ -30,40 +30,11 @@ namespace FitnesStudioClientApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnRegister = new System.Windows.Forms.Button();
-            this.btnLogIn = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.btnLogIn = new System.Windows.Forms.Button();
+            this.btnRegister = new System.Windows.Forms.Button();
+            this.btnNazad = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // btnRegister
-            // 
-            this.btnRegister.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRegister.BackColor = System.Drawing.Color.PowderBlue;
-            this.btnRegister.FlatAppearance.BorderSize = 0;
-            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegister.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.ForeColor = System.Drawing.Color.Transparent;
-            this.btnRegister.Location = new System.Drawing.Point(30, 65);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(93, 42);
-            this.btnRegister.TabIndex = 1;
-            this.btnRegister.Text = "Registracija";
-            this.btnRegister.UseVisualStyleBackColor = false;
-            // 
-            // btnLogIn
-            // 
-            this.btnLogIn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnLogIn.BackColor = System.Drawing.Color.PowderBlue;
-            this.btnLogIn.FlatAppearance.BorderSize = 0;
-            this.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogIn.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogIn.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLogIn.Location = new System.Drawing.Point(30, 15);
-            this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.Size = new System.Drawing.Size(93, 42);
-            this.btnLogIn.TabIndex = 2;
-            this.btnLogIn.Text = "Login";
-            this.btnLogIn.UseVisualStyleBackColor = false;
             // 
             // pnlMain
             // 
@@ -73,28 +44,78 @@ namespace FitnesStudioClientApp
             this.pnlMain.Size = new System.Drawing.Size(428, 438);
             this.pnlMain.TabIndex = 3;
             // 
+            // btnLogIn
+            // 
+            this.btnLogIn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLogIn.BackColor = System.Drawing.Color.PowderBlue;
+            this.btnLogIn.FlatAppearance.BorderSize = 0;
+            this.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogIn.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogIn.ForeColor = System.Drawing.Color.Transparent;
+            this.btnLogIn.Location = new System.Drawing.Point(324, 185);
+            this.btnLogIn.Name = "btnLogIn";
+            this.btnLogIn.Size = new System.Drawing.Size(93, 42);
+            this.btnLogIn.TabIndex = 2;
+            this.btnLogIn.Text = "Login";
+            this.btnLogIn.UseVisualStyleBackColor = false;
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRegister.BackColor = System.Drawing.Color.PowderBlue;
+            this.btnRegister.FlatAppearance.BorderSize = 0;
+            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegister.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.ForeColor = System.Drawing.Color.Transparent;
+            this.btnRegister.Location = new System.Drawing.Point(324, 235);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(93, 42);
+            this.btnRegister.TabIndex = 1;
+            this.btnRegister.Text = "Registracija";
+            this.btnRegister.UseVisualStyleBackColor = false;
+            // 
+            // btnNazad
+            // 
+            this.btnNazad.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnNazad.BackColor = System.Drawing.Color.PowderBlue;
+            this.btnNazad.FlatAppearance.BorderSize = 0;
+            this.btnNazad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNazad.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNazad.ForeColor = System.Drawing.Color.Transparent;
+            this.btnNazad.Location = new System.Drawing.Point(33, 24);
+            this.btnNazad.Name = "btnNazad";
+            this.btnNazad.Size = new System.Drawing.Size(83, 28);
+            this.btnNazad.TabIndex = 4;
+            this.btnNazad.Text = "< Nazad";
+            this.btnNazad.UseVisualStyleBackColor = false;
+            this.btnNazad.Visible = false;
+            // 
             // FrmInitialWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(741, 462);
+            this.Controls.Add(this.btnNazad);
             this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.pnlMain);
             this.Name = "FrmInitialWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log in";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.Button btnLogIn;
         private Panel pnlMain;
+        private Button btnLogIn;
+        private Button btnRegister;
+        private Button btnNazad;
 
         public Button BtnRegister { get => btnRegister; set => btnRegister = value; }
         public Button BtnLogIn { get => btnLogIn; set => btnLogIn = value; }
         public Panel PnlMain { get => pnlMain; set => pnlMain = value; }
+        public Button BtnNazad { get => btnNazad; set => btnNazad = value; }
     }
 }
 

@@ -16,8 +16,7 @@ namespace FitnesStudioClientApp
         public FrmInitialWindow()
         {
             InitializeComponent();
-            InitialWindowControler controller = new InitialWindowControler();
-            controller.Init(this);
+            InitialWindowControler.Instance.Init(this);
         }
     }
 }

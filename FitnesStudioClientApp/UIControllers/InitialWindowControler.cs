@@ -8,16 +8,44 @@ using System.Windows.Forms;
 
 namespace FitnesStudioClientApp.UIControllers
 {
-    internal class InitialWindowControler
+    public class InitialWindowControler
     {
         FrmInitialWindow frmInitialWindow;
+
+        private static InitialWindowControler instance;
+        private InitialWindowControler(){}
+
+        private static readonly object syncRoot = new object();
+
+        public static InitialWindowControler Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    lock (syncRoot)
+                    {
+                        if (instance == null)
+                        {
+                            instance = new InitialWindowControler();
+                        }
+                    }
+                }
+                return instance;
+            }
+        }
 
         internal void Init(FrmInitialWindow frmInitialWindow)
         {
             this.frmInitialWindow = frmInitialWindow;
             frmInitialWindow.BtnLogIn.Click += BtnLogIn_Click;
             frmInitialWindow.BtnRegister.Click += BtnRegister_Click;
+            frmInitialWindow.BtnNazad.Click += BtnNazad_Click;
+        }
 
+        private void BtnNazad_Click(object sender, EventArgs e)
+        {
+            ChangePanel();
         }
 
         private void BtnRegister_Click(object sender, EventArgs e)
@@ -30,11 +58,22 @@ namespace FitnesStudioClientApp.UIControllers
             ChangePanel(new UCLogIn());
         }
 
-        private void ChangePanel(UserControl userControl)
+        private void ChangeButtonsVisibility()
         {
+            frmInitialWindow.BtnRegister.Visible = !frmInitialWindow.BtnRegister.Visible;
+            frmInitialWindow.BtnLogIn.Visible = !frmInitialWindow.BtnLogIn.Visible;
+            frmInitialWindow.BtnNazad.Visible = !frmInitialWindow.BtnNazad.Visible;
+        }
+
+        public void ChangePanel(UserControl userControl = null)
+        {
+            ChangeButtonsVisibility();
             frmInitialWindow.PnlMain.Controls.Clear();
-            userControl.Dock = DockStyle.Fill;
-            frmInitialWindow.PnlMain.Controls.Add(userControl);
+            if(userControl != null)
+            {
+                userControl.Dock = DockStyle.Fill;
+                frmInitialWindow.PnlMain.Controls.Add(userControl);
+            }
         }
     }
 }
