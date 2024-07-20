@@ -56,7 +56,7 @@ namespace FitnesStudioClientApp
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(93, 42);
             this.btnLogIn.TabIndex = 2;
-            this.btnLogIn.Text = "Login";
+            this.btnLogIn.Text = "Prijava";
             this.btnLogIn.UseVisualStyleBackColor = false;
             // 
             // btnRegister

@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Class1
+    public class Grupa
     {
+        public int Id { get; set; }
+
+        public int BrojClanova { get; set; }
+
+        public string Naziv { get; set; }
     }
 }

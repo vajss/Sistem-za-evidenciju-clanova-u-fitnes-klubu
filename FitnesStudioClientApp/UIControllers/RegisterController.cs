@@ -17,8 +17,9 @@ namespace FitnesStudioClientApp.UIControllers
 
         private void BtnRegister_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Uspešna registracija!");
+            MessageBox.Show("Uspešna registracija!", "Registracija", MessageBoxButtons.OK, MessageBoxIcon.Information);
             InitialWindowControler.Instance.ChangePanel();
+            // TODO kontam da ovde treba da uspostavim vezu sa serverom. Valjda
         }
     }
 }
