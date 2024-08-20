@@ -91,6 +91,10 @@
       <Project>{0D607514-30B0-4891-9028-241A6128F17F}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{BD749275-0699-42AA-B678-4B8998D3D06B}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

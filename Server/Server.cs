@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Domain;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
@@ -10,12 +12,13 @@ namespace Server
 {
     public class Server
     {
-        private readonly Socket socket;
+        private readonly Socket serverSocket;
         private readonly List<ClientHandler> clients = new List<ClientHandler>();
+        private BindingList<Trener> treneri = new BindingList<Trener>();
 
         public Server()
         {
-            socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         }
 
         public bool Start()
@@ -23,8 +26,7 @@ namespace Server
             try
             {
                 IPEndPoint endpoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 9999);
-                socket.Bind(endpoint);
-                socket.Listen(100);
+                serverSocket.Bind(endpoint);
                 Debug.WriteLine(">>>> Serrver is running...");
                 return true;
             }
@@ -37,16 +39,17 @@ namespace Server
 
         public void Listen()
         {
+            serverSocket.Listen(100);
             try
             {
                 while (true)
                 {
                     Debug.WriteLine(">>> Server is listening... ");
-                    Socket klijentskiSocket = socket.Accept();
-                    ClientHandler client = new ClientHandler(klijentskiSocket);
+                    Socket clientSocket = serverSocket.Accept();
+                    ClientHandler client = new ClientHandler(clientSocket, treneri);
                     clients.Add(client);
-                    client.OdjavljenKlijent += Handler_OdjavljenKlijent;
-                    Thread clientHandlerThread = new Thread(client.HandleRequests);
+                    //client.OdjavljenKlijent += Handler_OdjavljenKlijent; // TODO hmmmmm sta li ovo treba da radi
+                    Thread clientHandlerThread = new Thread(client.StartHandler);
                     clientHandlerThread.IsBackground = false;
                     clientHandlerThread.Start();
                 }
@@ -54,21 +57,24 @@ namespace Server
             catch (SocketException ex)
             {
                 Debug.WriteLine(">>> Server listening interupted: " + ex.Message);
+                // System.Windows.Forms.MessageBox.Show("Kraj rada!");
             }
         }
 
-        public void Handler_OdjavljenKlijent(object sender, EventArgs args)
-        {
-            clients.Remove((ClientHandler)sender);
-        }
+        /*  public void Handler_OdjavljenKlijent(object sender, EventArgs args)
+          {
+              clients.Remove((ClientHandler)sender);
+          }
+  */ // TODO will I need this?
 
         public void Stop()
         {
-            socket.Close();
-            foreach (ClientHandler handler in clients.ToList())
+            serverSocket.Close();
+            foreach (ClientHandler c in clients)
             {
-                handler.CloseSocket();
+                c.Stop();
             }
+            clients.Clear();
         }
     }
 }
