@@ -91,6 +91,10 @@
       <Project>{0D607514-30B0-4891-9028-241A6128F17F}</Project>
       <Name>Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Controller\Controller.csproj">
+      <Project>{114D37A3-5EC4-49C8-85B6-1711C7F5F55C}</Project>
+      <Name>Controller</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{BD749275-0699-42AA-B678-4B8998D3D06B}</Project>
       <Name>Domain</Name>

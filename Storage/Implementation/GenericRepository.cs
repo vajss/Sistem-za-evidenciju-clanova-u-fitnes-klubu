@@ -1,4 +1,5 @@
-﻿using Domen;
+﻿using DataBaseBroker;
+using Domen;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Storage.Implementation
 {
-    internal class GenericRepository : IGenericRepository
+    public class GenericRepository : IGenericRepository
     {
         private DBBroker broker = new DBBroker();
         public void BeginTransaction()

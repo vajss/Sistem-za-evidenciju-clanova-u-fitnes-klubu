@@ -1,4 +1,5 @@
 ﻿using Common;
+using Controller;
 using Domain;
 using System;
 using System.Collections.Generic;
@@ -65,7 +66,7 @@ namespace Server
             {
                 Console.WriteLine("Doslo je do prekida veze");
                 //obratiti paznju na EventHandler FrmMain FormClosed (ako zatvorimo glavnu formu, i prakticno se izlogujemo, prekidamo vezu sa serverom
-                //drugi nacin bi bio da posaljemo zahtev sa operacijom logout, tako da klijent ostane povezan
+                //drugi nacin bi bio da posaljemo zahtev sa operacijom logout, tako da klijent ostane povezan // TODO
                 treneri.Remove(logedInTrener);
 
             }
@@ -73,7 +74,7 @@ namespace Server
             {
                 Console.WriteLine("Doslo je do prekida veze");
                 //obratiti paznju na EventHandler FrmMain FormClosed (ako zatvorimo glavnu formu, i prakticno se izlogujemo, prekidamo vezu sa serverom
-                //drugi nacin bi bio da posaljemo zahtev sa operacijom logout, tako da klijent ostane povezan
+                //drugi nacin bi bio da posaljemo zahtev sa operacijom logout, tako da klijent ostane povezan // TODO
                 treneri.Remove(logedInTrener);
  
             }
