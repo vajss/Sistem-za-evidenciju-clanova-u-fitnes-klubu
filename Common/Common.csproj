@@ -41,8 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommunicationHelper.cs" />
     <Compile Include="Operations.cs" />
+    <Compile Include="Sender.cs" />
+    <Compile Include="Receiver.cs" />
     <Compile Include="Response.cs" />
     <Compile Include="Request.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

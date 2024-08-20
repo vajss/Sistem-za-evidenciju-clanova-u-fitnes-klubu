@@ -5,7 +5,7 @@ namespace Common
     [Serializable]
     public enum Operation
     {
-        Operacija1, // TODO dodaj ovo
-        Operacija2
+        Login,
+        Register // TODO add as you go
     }
 }

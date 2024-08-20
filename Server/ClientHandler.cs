@@ -9,14 +9,17 @@ namespace Server
     public class ClientHandler
     {
         private Socket socket;
-        private CommunicationHelper helper;
+        private Receiver receiver;
+        private Sender sender;
 
         public EventHandler OdjavljenKlijent;
 
         public ClientHandler(Socket socket)
         {
             this.socket = socket;
-            helper = new CommunicationHelper(socket);
+            sender = new Sender(socket);
+            receiver = new Receiver(socket);
+
         }
 
         private bool kraj = false;
@@ -26,9 +29,9 @@ namespace Server
             {
                 while (!kraj)
                 {
-                    Request request = helper.Receive<Request>();
+                    Request request = (Request)receiver.Receive();
                     Response response = CreateResponse(request);
-                    helper.Send(response);
+                    sender.Send(response);
                 }
             }
             catch (IOException ex)
