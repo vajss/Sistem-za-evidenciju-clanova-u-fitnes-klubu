@@ -39,11 +39,11 @@ namespace Server
             // 
             this.lblServerState.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblServerState.AutoSize = true;
-            this.lblServerState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServerState.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.lblServerState.ForeColor = System.Drawing.Color.Salmon;
-            this.lblServerState.Location = new System.Drawing.Point(342, 288);
+            this.lblServerState.Location = new System.Drawing.Point(355, 287);
             this.lblServerState.Name = "lblServerState";
-            this.lblServerState.Size = new System.Drawing.Size(135, 16);
+            this.lblServerState.Size = new System.Drawing.Size(112, 15);
             this.lblServerState.TabIndex = 1;
             this.lblServerState.Text = "Server je iskljucen";
             // 
@@ -51,10 +51,10 @@ namespace Server
             // 
             this.lblStatusServera.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblStatusServera.AutoSize = true;
-            this.lblStatusServera.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblStatusServera.Location = new System.Drawing.Point(355, 260);
+            this.lblStatusServera.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.lblStatusServera.Location = new System.Drawing.Point(361, 260);
             this.lblStatusServera.Name = "lblStatusServera";
-            this.lblStatusServera.Size = new System.Drawing.Size(111, 16);
+            this.lblStatusServera.Size = new System.Drawing.Size(94, 15);
             this.lblStatusServera.TabIndex = 2;
             this.lblStatusServera.Text = "Status servera:";
             // 

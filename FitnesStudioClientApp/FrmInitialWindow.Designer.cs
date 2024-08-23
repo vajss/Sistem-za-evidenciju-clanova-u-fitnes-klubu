@@ -39,9 +39,10 @@ namespace FitnesStudioClientApp
             // pnlMain
             // 
             this.pnlMain.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlMain.Location = new System.Drawing.Point(156, 12);
+            this.pnlMain.Location = new System.Drawing.Point(182, 14);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(428, 438);
+            this.pnlMain.Size = new System.Drawing.Size(499, 505);
             this.pnlMain.TabIndex = 3;
             // 
             // btnLogIn
@@ -50,11 +51,12 @@ namespace FitnesStudioClientApp
             this.btnLogIn.BackColor = System.Drawing.Color.PowderBlue;
             this.btnLogIn.FlatAppearance.BorderSize = 0;
             this.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogIn.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogIn.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnLogIn.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLogIn.Location = new System.Drawing.Point(324, 185);
+            this.btnLogIn.Location = new System.Drawing.Point(378, 213);
+            this.btnLogIn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.Size = new System.Drawing.Size(93, 42);
+            this.btnLogIn.Size = new System.Drawing.Size(108, 48);
             this.btnLogIn.TabIndex = 2;
             this.btnLogIn.Text = "Prijava";
             this.btnLogIn.UseVisualStyleBackColor = false;
@@ -65,11 +67,12 @@ namespace FitnesStudioClientApp
             this.btnRegister.BackColor = System.Drawing.Color.PowderBlue;
             this.btnRegister.FlatAppearance.BorderSize = 0;
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegister.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnRegister.ForeColor = System.Drawing.Color.Transparent;
-            this.btnRegister.Location = new System.Drawing.Point(324, 235);
+            this.btnRegister.Location = new System.Drawing.Point(378, 271);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(93, 42);
+            this.btnRegister.Size = new System.Drawing.Size(108, 48);
             this.btnRegister.TabIndex = 1;
             this.btnRegister.Text = "Registracija";
             this.btnRegister.UseVisualStyleBackColor = false;
@@ -79,11 +82,12 @@ namespace FitnesStudioClientApp
             this.btnNazad.BackColor = System.Drawing.Color.PowderBlue;
             this.btnNazad.FlatAppearance.BorderSize = 0;
             this.btnNazad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNazad.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNazad.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnNazad.ForeColor = System.Drawing.Color.Transparent;
-            this.btnNazad.Location = new System.Drawing.Point(33, 24);
+            this.btnNazad.Location = new System.Drawing.Point(38, 28);
+            this.btnNazad.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnNazad.Name = "btnNazad";
-            this.btnNazad.Size = new System.Drawing.Size(83, 28);
+            this.btnNazad.Size = new System.Drawing.Size(97, 32);
             this.btnNazad.TabIndex = 4;
             this.btnNazad.Text = "< Nazad";
             this.btnNazad.UseVisualStyleBackColor = false;
@@ -91,13 +95,15 @@ namespace FitnesStudioClientApp
             // 
             // FrmInitialWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(741, 462);
+            this.ClientSize = new System.Drawing.Size(864, 533);
             this.Controls.Add(this.btnNazad);
             this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.pnlMain);
+            this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FrmInitialWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log in";

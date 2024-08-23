@@ -48,10 +48,10 @@ namespace FitnesStudioClientApp.User_Controls
             // 
             this.lblName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Open Sans Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.lblName.Location = new System.Drawing.Point(104, 108);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(33, 17);
+            this.lblName.Size = new System.Drawing.Size(31, 15);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Ime:";
             // 
@@ -75,10 +75,10 @@ namespace FitnesStudioClientApp.User_Controls
             // 
             this.lblLastName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Font = new System.Drawing.Font("Open Sans Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastName.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.lblLastName.Location = new System.Drawing.Point(104, 146);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(57, 17);
+            this.lblLastName.Size = new System.Drawing.Size(57, 15);
             this.lblLastName.TabIndex = 2;
             this.lblLastName.Text = "Prezime:";
             // 
@@ -94,10 +94,10 @@ namespace FitnesStudioClientApp.User_Controls
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Open Sans Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(104, 184);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 17);
+            this.label2.Size = new System.Drawing.Size(95, 15);
             this.label2.TabIndex = 4;
             this.label2.Text = "Korisničko ime:";
             // 
@@ -114,10 +114,10 @@ namespace FitnesStudioClientApp.User_Controls
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Open Sans Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(104, 221);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 17);
+            this.label3.Size = new System.Drawing.Size(37, 15);
             this.label3.TabIndex = 6;
             this.label3.Text = "Šifra:";
             // 
@@ -134,10 +134,10 @@ namespace FitnesStudioClientApp.User_Controls
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Open Sans Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(104, 258);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 17);
+            this.label4.Size = new System.Drawing.Size(83, 15);
             this.label4.TabIndex = 8;
             this.label4.Text = "Potvrda šifre:";
             // 
@@ -147,7 +147,7 @@ namespace FitnesStudioClientApp.User_Controls
             this.btnRegister.BackColor = System.Drawing.Color.PowderBlue;
             this.btnRegister.FlatAppearance.BorderSize = 0;
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegister.Font = new System.Drawing.Font("Open Sans Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegister.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnRegister.ForeColor = System.Drawing.Color.Transparent;
             this.btnRegister.Location = new System.Drawing.Point(174, 317);
             this.btnRegister.Name = "btnRegister";
