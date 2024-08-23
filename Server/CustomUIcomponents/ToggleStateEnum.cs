@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Server.Custom_UI_components
+namespace ServerApp.Custom_UI_components
 {
     public enum ToggleStateEnum
     {

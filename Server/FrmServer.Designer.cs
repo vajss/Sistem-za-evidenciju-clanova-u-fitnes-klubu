@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Server
+namespace ServerApp
 {
     partial class FrmServer
     {
@@ -32,7 +32,7 @@ namespace Server
         {
             this.lblServerState = new System.Windows.Forms.Label();
             this.lblStatusServera = new System.Windows.Forms.Label();
-            this.btnToggle = new ToggleButton();
+            this.btnToggle = new ServerApp.ToggleButton();
             this.SuspendLayout();
             // 
             // lblServerState
@@ -52,7 +52,7 @@ namespace Server
             this.lblStatusServera.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblStatusServera.AutoSize = true;
             this.lblStatusServera.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.lblStatusServera.Location = new System.Drawing.Point(361, 260);
+            this.lblStatusServera.Location = new System.Drawing.Point(361, 261);
             this.lblStatusServera.Name = "lblStatusServera";
             this.lblStatusServera.Size = new System.Drawing.Size(94, 15);
             this.lblStatusServera.TabIndex = 2;
@@ -67,13 +67,13 @@ namespace Server
             this.btnToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnToggle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnToggle.ForeColor = System.Drawing.Color.White;
-            this.btnToggle.Location = new System.Drawing.Point(372, 326);
+            this.btnToggle.Location = new System.Drawing.Point(364, 354);
             this.btnToggle.Name = "btnToggle";
             this.btnToggle.Size = new System.Drawing.Size(80, 40);
             this.btnToggle.TabIndex = 0;
             this.btnToggle.Text = "⬤";
             this.btnToggle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnToggle.ToggleState = Custom_UI_components.ToggleStateEnum.OFF;
+            this.btnToggle.ToggleState = ServerApp.Custom_UI_components.ToggleStateEnum.OFF;
             this.btnToggle.UseVisualStyleBackColor = false;
             // 
             // FrmServer

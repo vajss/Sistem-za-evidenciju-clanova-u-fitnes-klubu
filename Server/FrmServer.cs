@@ -1,7 +1,7 @@
-﻿using Server.Controllers;
+﻿using ServerApp.Controllers;
 using System.Windows.Forms;
 
-namespace Server
+namespace ServerApp
 {
     public partial class FrmServer : Form
     {

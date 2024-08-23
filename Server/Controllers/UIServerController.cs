@@ -1,4 +1,4 @@
-﻿using Server.Custom_UI_components;
+﻿using ServerApp.Custom_UI_components;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,7 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Server.Controllers
+namespace ServerApp.Controllers
 {
     internal class UIServerController
     {

@@ -1,9 +1,9 @@
-﻿using Server.Custom_UI_components;
+﻿using ServerApp.Custom_UI_components;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-namespace Server
+namespace ServerApp
 {
     public class ToggleButton : Button
     {
