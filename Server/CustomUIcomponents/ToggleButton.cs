@@ -8,7 +8,7 @@ namespace Server
     public class ToggleButton : Button
     {
         public int buttonRadius = 10;
-       
+
         public int ButtonRadius
         {
             get
