@@ -4,7 +4,7 @@ using Domen;
 
 namespace SystemOperations.TrenerSO
 {
-    public class PrijaviTreneraSO : SystemOperationBase
+    public class LogInTreneraSO : SystemOperationBase
     {
         public Trener Result { get; private set; }
         protected override void ExecuteOperation(IEntity entity)

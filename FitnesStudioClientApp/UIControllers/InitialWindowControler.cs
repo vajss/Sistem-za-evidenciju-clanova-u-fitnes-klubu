@@ -1,9 +1,6 @@
-﻿using FitnesStudioClientApp.User_Controls;
+﻿using Domain;
+using FitnesStudioClientApp.User_Controls;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FitnesStudioClientApp.UIControllers
@@ -11,11 +8,15 @@ namespace FitnesStudioClientApp.UIControllers
     public class InitialWindowControler
     {
         FrmInitialWindow frmInitialWindow;
+        LoginController loginController;
+        RegisterController registerController;
 
         private static InitialWindowControler instance;
         private InitialWindowControler(){}
 
         private static readonly object syncRoot = new object();
+
+        public Trener Trener { get; internal set; }
 
         public static InitialWindowControler Instance
         {
@@ -35,12 +36,17 @@ namespace FitnesStudioClientApp.UIControllers
             }
         }
 
-        internal void Init(FrmInitialWindow frmInitialWindow)
+        internal void Init(LoginController loginController, RegisterController registerController, FrmInitialWindow frmInitialWindow)
         {
+            this.loginController = loginController;
             this.frmInitialWindow = frmInitialWindow;
+            this.registerController = registerController;
             frmInitialWindow.BtnLogIn.Click += BtnLogIn_Click;
             frmInitialWindow.BtnRegister.Click += BtnRegister_Click;
             frmInitialWindow.BtnNazad.Click += BtnNazad_Click;
+            frmInitialWindow.BtnNazad.Cursor = Cursors.Hand;
+            frmInitialWindow.BtnRegister.Cursor = Cursors.Hand;
+            frmInitialWindow.BtnLogIn.Cursor = Cursors.Hand;
         }
 
         private void BtnNazad_Click(object sender, EventArgs e)
@@ -50,12 +56,12 @@ namespace FitnesStudioClientApp.UIControllers
 
         private void BtnRegister_Click(object sender, EventArgs e)
         {
-            ChangePanel(new UCRegisterUser());
+            ChangePanel(new UCRegisterUser(registerController, frmInitialWindow, loginController));
         }
 
         private void BtnLogIn_Click(object sender, EventArgs e)
         {
-            ChangePanel(new UCLogIn());
+            ChangePanel(new UCLogIn(loginController, frmInitialWindow));
         }
 
         private void ChangeButtonsVisibility()

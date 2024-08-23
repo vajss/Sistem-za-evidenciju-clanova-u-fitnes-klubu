@@ -3,12 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Domain
 {
+    [Serializable]
     public class Trener : IEntity
     {
         public int Id { get; set; }
@@ -27,7 +25,7 @@ namespace Domain
         [Browsable(false)]
         public string TableName => "Trener";
         [Browsable(false)]
-        public string InsertValues => "";
+        public string InsertValues => $"'{KorisnickoIme}', '{Ime}', '{Prezime}', '{Sifra}'";
         [Browsable(false)]
         public string IdName => "TrenerID";
         [Browsable(false)]
@@ -53,9 +51,9 @@ namespace Domain
                 result.Add(new Trener
                 {
                     Id = (int)reader[0],
-                    Ime = (string)reader[1],
-                    Prezime = (string)reader[2],
-                    KorisnickoIme = (string)reader[3],
+                    KorisnickoIme = (string)reader[1],
+                    Ime = (string)reader[2],
+                    Prezime = (string)reader[3],
                     Sifra = (string)reader[4]
                 });
             }

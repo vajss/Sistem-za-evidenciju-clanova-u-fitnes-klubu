@@ -44,7 +44,6 @@ namespace Server
                 Region = new Region(GraphPath);
                 using (Pen pen = new Pen(SystemColors.Control, 0))
                 {
-                    pen.Alignment = PenAlignment.Inset;
                     e.Graphics.DrawPath(pen, GraphPath);
                 }
             }
@@ -53,10 +52,8 @@ namespace Server
         GraphicsPath GetRoundPath(RectangleF Rect, int radius)
         {
             GraphicsPath GraphPath = new GraphicsPath();
-            GraphPath.AddArc(Rect.X, Rect.Y, radius, radius, 180, 90);
-            GraphPath.AddArc(Rect.X + Rect.Width - radius, Rect.Y, radius, radius, 270, 90);
-            GraphPath.AddArc(Rect.X + Rect.Width - radius, Rect.Y + Rect.Height - radius, radius, radius, 0, 90);
-            GraphPath.AddArc(Rect.X, Rect.Y + Rect.Height - radius, radius, radius, 90, 90);
+            GraphPath.AddArc(Rect.X, Rect.Y, radius, radius, 90, 180);
+            GraphPath.AddArc(Rect.X + Rect.Width - radius, Rect.Y + Rect.Height - radius, radius, radius, 270, 180);
             GraphPath.CloseFigure();
             return GraphPath;
         }

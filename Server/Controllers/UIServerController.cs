@@ -49,6 +49,8 @@ namespace Server.Controllers
             if (server.Start())
             {
                 Thread serverListeningThread = new Thread(server.Listen);
+                Debug.WriteLine(">>> Server started.");
+
                 serverListeningThread.IsBackground = true;
                 serverListeningThread.Start();
             }

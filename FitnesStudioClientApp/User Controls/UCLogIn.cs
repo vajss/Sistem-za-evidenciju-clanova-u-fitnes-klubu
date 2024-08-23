@@ -1,20 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FitnesStudioClientApp.UIControllers;
+using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace FitnesStudioClientApp.User_Controls
 {
     public partial class UCLogIn : UserControl
     {
+        private readonly LoginController loginController;
+        FrmInitialWindow parentForm;
+
         public UCLogIn()
         {
             InitializeComponent();
+        }
+
+        public UCLogIn(LoginController loginController, FrmInitialWindow frmInitialWindow)
+        {
+            parentForm = frmInitialWindow;
+            this.loginController = loginController;
+            InitializeComponent();
+            btnShow.Cursor = Cursors.Hand;
+            btnLogIn.Cursor = Cursors.Hand;
+            // TODO For ease of testing. Remove later
+            tbUsername.Text = "Vajss";
+            tbPassword.Text = "asdf";
+        }
+
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            if (loginController.Connect())
+            {
+                loginController.Login(tbUsername, tbPassword, parentForm, lblError);
+            }
+            Debug.WriteLine(">>> Log in ");
+        }
+
+        private void btnShow_MouseDown(object sender, MouseEventArgs e)
+        {
+            tbPassword.PasswordChar = '\0';
+        }
+
+        private void btnShow_MouseUp(object sender, MouseEventArgs e)
+        {
+            tbPassword.PasswordChar = '*';
         }
     }
 }

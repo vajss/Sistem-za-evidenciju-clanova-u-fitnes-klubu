@@ -25,7 +25,7 @@ namespace Server
         {
             try
             {
-                IPEndPoint endpoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 9999);
+                IPEndPoint endpoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 9000);
                 serverSocket.Bind(endpoint);
                 Debug.WriteLine(">>>> Serrver is running...");
                 return true;

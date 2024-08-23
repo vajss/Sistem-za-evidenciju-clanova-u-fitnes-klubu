@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using static System.Net.Mime.MediaTypeNames;
 using System.Runtime.Remoting.Contexts;
+using System.Diagnostics;
 
 namespace DataBaseBroker
 {
@@ -14,7 +15,7 @@ namespace DataBaseBroker
 
         public DBBroker()
         {
-            connection = new SqlConnection("@Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=FitnesKlub;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+            connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FitnesKlub;Integrated Security=True;Connect Timeout=5");
         }
 
         public void OpenConnection()

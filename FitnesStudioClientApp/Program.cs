@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using FitnesStudioClientApp.UIControllers;
+using System;
+using System.Runtime.Remoting;
 using System.Windows.Forms;
 
 namespace FitnesStudioClientApp
@@ -16,7 +15,18 @@ namespace FitnesStudioClientApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmInitialWindow());
+            while (true)
+            {
+                try
+                {
+                    MainCoordinator.Instance.OpenLoginForm();
+                    Application.Run();
+                }
+                catch (ServerException se)
+                {
+                    MessageBox.Show(se.Message);
+                }
+            }
         }
     }
 }

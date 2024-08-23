@@ -41,6 +41,7 @@ namespace FitnesStudioClientApp.User_Controls
             this.tbRepeatPassword = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
+            this.lblError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblName
@@ -105,6 +106,7 @@ namespace FitnesStudioClientApp.User_Controls
             this.tbPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbPassword.Location = new System.Drawing.Point(202, 219);
             this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(134, 20);
             this.tbPassword.TabIndex = 7;
             // 
@@ -124,6 +126,7 @@ namespace FitnesStudioClientApp.User_Controls
             this.tbRepeatPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbRepeatPassword.Location = new System.Drawing.Point(202, 256);
             this.tbRepeatPassword.Name = "tbRepeatPassword";
+            this.tbRepeatPassword.PasswordChar = '*';
             this.tbRepeatPassword.Size = new System.Drawing.Size(134, 20);
             this.tbRepeatPassword.TabIndex = 9;
             // 
@@ -152,11 +155,26 @@ namespace FitnesStudioClientApp.User_Controls
             this.btnRegister.TabIndex = 10;
             this.btnRegister.Text = "Registruj se";
             this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
+            // lblError
+            // 
+            this.lblError.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblError.AutoSize = true;
+            this.lblError.BackColor = System.Drawing.SystemColors.Control;
+            this.lblError.Font = new System.Drawing.Font("Open Sans Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.lblError.ForeColor = System.Drawing.Color.Salmon;
+            this.lblError.Location = new System.Drawing.Point(104, 292);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 17);
+            this.lblError.TabIndex = 11;
+            this.lblError.Visible = false;
             // 
             // UCRegisterUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.tbRepeatPassword);
             this.Controls.Add(this.label4);
@@ -188,6 +206,7 @@ namespace FitnesStudioClientApp.User_Controls
         private System.Windows.Forms.TextBox tbRepeatPassword;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnRegister;
+        private Label lblError;
 
         public Label LblName { get => lblName; set => lblName = value; }
         public TextBox TbName { get => tbName; set => tbName = value; }

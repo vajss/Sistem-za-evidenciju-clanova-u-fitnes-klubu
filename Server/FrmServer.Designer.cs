@@ -1,5 +1,4 @@
-﻿using Server.Custom_UI_components;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace Server
 {
@@ -38,6 +37,7 @@ namespace Server
             // 
             // lblServerState
             // 
+            this.lblServerState.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblServerState.AutoSize = true;
             this.lblServerState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblServerState.ForeColor = System.Drawing.Color.Salmon;
@@ -49,6 +49,7 @@ namespace Server
             // 
             // lblStatusServera
             // 
+            this.lblStatusServera.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblStatusServera.AutoSize = true;
             this.lblStatusServera.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.lblStatusServera.Location = new System.Drawing.Point(355, 260);

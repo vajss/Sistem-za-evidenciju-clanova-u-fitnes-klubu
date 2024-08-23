@@ -1,23 +1,37 @@
 ﻿using FitnesStudioClientApp.UIControllers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FitnesStudioClientApp.User_Controls
 {
     public partial class UCRegisterUser : UserControl
     {
+
+        private readonly RegisterController registerController;
+        private readonly FrmInitialWindow frmInitialWindow;
+        private readonly LoginController loginController;
+
         public UCRegisterUser()
         {
             InitializeComponent();
-            RegisterController controller = new RegisterController();
-            controller.Init(this);
+        }
+
+        public UCRegisterUser(RegisterController registerController, FrmInitialWindow frmInitialWindow, LoginController loginController)
+        {
+            this.registerController = registerController;
+            this.frmInitialWindow = frmInitialWindow;
+            this.loginController = loginController;
+            InitializeComponent();
+            btnRegister.Cursor = Cursors.Hand;
+            this.loginController = loginController;
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            if (loginController.Connect())
+            {
+                registerController.Register(tbName, tbLastName, tbUsername, tbPassword, tbRepeatPassword, lblError, frmInitialWindow, loginController);
+            }            
         }
     }
 }

@@ -1,12 +1,6 @@
 ﻿using FitnesStudioClientApp.UIControllers;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace FitnesStudioClientApp
@@ -15,8 +9,22 @@ namespace FitnesStudioClientApp
     {
         public FrmInitialWindow()
         {
+            Debug.WriteLine(">>> Is this ever called? ");
+
             InitializeComponent();
-            InitialWindowControler.Instance.Init(this);
+        }
+
+        public FrmInitialWindow(LoginController loginController, RegisterController registerController)
+        {
+            InitializeComponent();
+            InitialWindowControler.Instance.Init(loginController, registerController, this);
+        }
+
+        public LoginController LoginController { get; }
+
+        private void FrmInitialWindow_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

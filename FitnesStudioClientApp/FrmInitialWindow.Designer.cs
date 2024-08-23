@@ -76,7 +76,6 @@ namespace FitnesStudioClientApp
             // 
             // btnNazad
             // 
-            this.btnNazad.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnNazad.BackColor = System.Drawing.Color.PowderBlue;
             this.btnNazad.FlatAppearance.BorderSize = 0;
             this.btnNazad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -102,6 +101,7 @@ namespace FitnesStudioClientApp
             this.Name = "FrmInitialWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log in";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmInitialWindow_FormClosed);
             this.ResumeLayout(false);
 
         }
