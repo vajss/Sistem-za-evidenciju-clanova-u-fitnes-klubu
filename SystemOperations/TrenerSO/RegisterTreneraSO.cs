@@ -2,6 +2,7 @@
 using Domen;
 using System.Data;
 
+
 namespace SystemOperations.TrenerSO
 {
     public class RegisterTreneraSO : SystemOperationBase

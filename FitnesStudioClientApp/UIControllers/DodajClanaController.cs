@@ -16,7 +16,6 @@ namespace FitnesStudioClientApp.UIControllers
                 !UserControlHelpers.EmptyFieldValidation(tbZanimanje, lblError) |
                 !UserControlHelpers.EmptyFieldValidation(tbTelefon, lblError) |
                 !UserControlHelpers.SixDigitValidation(tbClanId, lblError, "ClanId mora biti šesticifreni broj.")
-                //!UserControlHelpers.DateValidation(dtpDatumRodjenja)
                 )
             {
                 lblError.Visible = true;
@@ -25,9 +24,6 @@ namespace FitnesStudioClientApp.UIControllers
             try
             {
                 lblError.Visible = false;
-
-                 DateTime sad = Convert.ToDateTime("24.8.2024. 19:16:13");
-
                 
                 Clan c = new Clan
                 {
@@ -51,7 +47,7 @@ namespace FitnesStudioClientApp.UIControllers
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Greška pri dodavanju člana." , MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

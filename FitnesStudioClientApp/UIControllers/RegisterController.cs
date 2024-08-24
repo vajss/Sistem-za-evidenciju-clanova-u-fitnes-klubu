@@ -58,7 +58,7 @@ namespace FitnesStudioClientApp.UIControllers
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Greška pri registraciji.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

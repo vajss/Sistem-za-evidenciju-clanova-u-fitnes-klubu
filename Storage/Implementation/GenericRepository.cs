@@ -2,6 +2,7 @@
 using Domen;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,7 @@ namespace Storage.Implementation
 
         public List<IEntity> GetAll(IEntity entity)
         {
+            Debug.WriteLine("get all <<<<<<<<<<");
             return broker.GetAll(entity);
         }
 

@@ -1,8 +1,7 @@
 ﻿using Domain;
 using Storage;
 using Storage.Implementation;
-using System;
-using System.Diagnostics;
+using SystemOperations.ClanSO;
 using SystemOperations.TrenerSO;
 
 
@@ -61,6 +60,7 @@ namespace Controller
         {
             SacuvajClanaSO so = new SacuvajClanaSO();
             so.ExecuteTemplate(clan);
+
         }
 
         /*

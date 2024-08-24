@@ -17,7 +17,7 @@ namespace FitnesStudioClientApp.Helpers
                 errorLabel.Text = "Popunite naznačena polja.";
                 return false;
             }
-            tb.BackColor = SystemColors.Control; ;
+            tb.BackColor = Color.White;
             return true;
         }
 
@@ -58,7 +58,8 @@ namespace FitnesStudioClientApp.Helpers
             errorLabel.Text = message;
             return false;
         }
-        tb.BackColor = SystemColors.Control;
+        
+        tb.BackColor = Color.White;
         return true;
     }
 

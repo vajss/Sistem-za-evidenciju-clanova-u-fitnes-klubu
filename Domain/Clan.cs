@@ -1,7 +1,8 @@
 ﻿using Domen;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using System.ComponentModel;
+using System.Data.SqlClient; 
 
 namespace Domain
 {
@@ -27,14 +28,14 @@ namespace Domain
         public string InsertValues => $"{ClanId}, '{Ime}', '{Prezime}', '{DatumRodjenja}', '{Zanimanje}', '{Telefon}'";
 
         public string IdName => "Id";
-
-        public string JoinCondition => throw new NotImplementedException();
-
-        public string JoinTable => throw new NotImplementedException();
-
-        public string TableAlias => throw new NotImplementedException();
-
-        public object SelectValues => throw new NotImplementedException();
+        [Browsable(false)]
+        public string JoinCondition => "";
+        [Browsable(false)]
+        public string JoinTable => "";
+        [Browsable(false)]
+        public string TableAlias => "";
+        [Browsable(false)]
+        public object SelectValues => "*";
 
         public string WhereCondition => throw new NotImplementedException();
 
@@ -42,9 +43,30 @@ namespace Domain
 
         public string GeneralCondition => throw new NotImplementedException();
 
+
+
         public List<IEntity> GetEntities(SqlDataReader reader)
         {
-            throw new NotImplementedException();
+            List<IEntity> result = new List<IEntity>();
+            while (reader.Read())
+            {
+                result.Add(new Clan
+                {
+                    Id = (int)reader[0],
+                    ClanId= (int)reader[1],
+                    Ime = (string)reader[2],
+                    Prezime = (string)reader[3],
+                    DatumRodjenja = Convert.ToDateTime(reader[4]),
+                    Zanimanje = (string)reader[5],
+                    Telefon = (string)reader[6]
+                });
+            }
+            return result;
+        }
+
+        public override string ToString()
+        {
+            return Ime + " " + Prezime;
         }
     }
 }
