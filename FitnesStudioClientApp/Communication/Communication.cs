@@ -73,5 +73,16 @@ namespace FitnesStudioClientApp.Communication
             client.SendRequest(request);
             return (Trener)client.GetResponseResult();
         }
+
+        internal Clan DodajClana(Clan clan)
+        {
+            Request request = new Request
+            {
+                Operation = Operation.SacuvajClana,
+                RequestObject = clan
+            };
+            client.SendRequest(request);
+            return (Clan)client.GetResponseResult();
+        }
     }
 }

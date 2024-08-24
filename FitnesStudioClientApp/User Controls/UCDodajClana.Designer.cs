@@ -42,6 +42,7 @@
             this.tbTelefon = new System.Windows.Forms.TextBox();
             this.dtpDatumRodjenja = new System.Windows.Forms.DateTimePicker();
             this.btnSacuvajClana = new System.Windows.Forms.Button();
+            this.lblError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblNaslov
@@ -174,6 +175,7 @@
             // dtpDatumRodjenja
             // 
             this.dtpDatumRodjenja.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtpDatumRodjenja.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDatumRodjenja.CustomFormat = "dd.MM.yyyy.";
             this.dtpDatumRodjenja.Font = new System.Drawing.Font("Arial", 11F);
             this.dtpDatumRodjenja.Location = new System.Drawing.Point(243, 300);
@@ -197,10 +199,23 @@
             this.btnSacuvajClana.UseVisualStyleBackColor = false;
             this.btnSacuvajClana.Click += new System.EventHandler(this.btnSacuvajClana_Click);
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.BackColor = System.Drawing.SystemColors.Control;
+            this.lblError.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblError.ForeColor = System.Drawing.Color.Salmon;
+            this.lblError.Location = new System.Drawing.Point(243, 440);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 13);
+            this.lblError.TabIndex = 15;
+            this.lblError.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
             // UCDodajClana
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnSacuvajClana);
             this.Controls.Add(this.dtpDatumRodjenja);
             this.Controls.Add(this.tbTelefon);
@@ -238,5 +253,6 @@
         private System.Windows.Forms.TextBox tbTelefon;
         private System.Windows.Forms.DateTimePicker dtpDatumRodjenja;
         private System.Windows.Forms.Button btnSacuvajClana;
+        private System.Windows.Forms.Label lblError;
     }
 }

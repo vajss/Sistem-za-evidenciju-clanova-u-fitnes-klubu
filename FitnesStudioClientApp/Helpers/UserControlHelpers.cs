@@ -1,30 +1,23 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace FitnesStudioClientApp.Helpers
 {
     public static class UserControlHelpers
     {
-        public static bool EmptyFieldValidation(TextBox txt, Label errorLabel = null)
+        public static bool EmptyFieldValidation(TextBox tb, Label errorLabel = null)
         {
-
-            Debug.WriteLine(">>>> errorLabel: " + errorLabel);
-            if (string.IsNullOrWhiteSpace(txt.Text))
+            if (string.IsNullOrWhiteSpace(tb.Text))
             {
-                txt.BackColor = Color.LightCoral;
-                if (errorLabel != null)
-                {
-                    errorLabel.Text = "Popunite naznačena polja.";
-                    errorLabel.Visible = true;
-                }
-                
+                tb.BackColor = Color.Salmon;
+                errorLabel.Text = "Popunite naznačena polja.";
                 return false;
             }
-
-            errorLabel.Visible = false;
-            txt.BackColor = Color.White;
+            tb.BackColor = SystemColors.Control; ;
             return true;
         }
 
@@ -33,16 +26,55 @@ namespace FitnesStudioClientApp.Helpers
             if (password.Text != repeatPassword.Text)
             {
                 errorLabel.Text = "Lozinke se ne poklapaju.";
-                errorLabel.Visible = true;
                 return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(errorLabel.Text) )
-            {
-                errorLabel.Visible = false;
             }
             
             return true;
         }
+
+        public static bool StartWithValidation(TextBox textBox, Label errorLabel)
+        {
+ /*           if (password.Text != repeatPassword.Text)
+            {
+                errorLabel.Text = "Lozinke se ne poklapaju.";
+                errorLabel.Visible = true;
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(errorLabel.Text))
+            {
+                errorLabel.Visible = false;
+            }
+*/
+            return true;
+        }
+
+    public static bool SixDigitValidation(TextBox tb, Label errorLabel, string message)
+    {
+        string pattern = @"^\d{6}$";
+        if (!Regex.IsMatch(tb.Text, pattern))
+        {
+            tb.BackColor = Color.Salmon;
+            errorLabel.Text = message;
+            return false;
+        }
+        tb.BackColor = SystemColors.Control;
+        return true;
+    }
+
+    public static bool DateValidation(TextBox tb)
+    {
+        if (string.IsNullOrWhiteSpace(tb.Text) ||
+            !DateTime.TryParseExact(tb.Text, "dd.MM.yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out _))
+        {
+            tb.BackColor = Color.Salmon;
+            return false;
+        }
+
+        tb.BackColor = SystemColors.Control;
+        return true;
+    }
+
+
     }
 }

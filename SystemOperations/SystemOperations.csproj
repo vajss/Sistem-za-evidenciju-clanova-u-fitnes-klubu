@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClanSO\SacuvajClanaSO.cs" />
     <Compile Include="SytemOperationBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrenerSO\LogInTreneraSO.cs" />

@@ -49,6 +49,7 @@
     <Compile Include="Communication\Communication.cs" />
     <Compile Include="Communication\CommunicationClient.cs" />
     <Compile Include="Exceptions\SystemNotFoundException.cs" />
+    <Compile Include="Exceptions\SystemOperationException.cs" />
     <Compile Include="FrmInitialWindow.cs">
       <SubType>Form</SubType>
     </Compile>

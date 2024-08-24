@@ -6,6 +6,7 @@ namespace Common
     public enum Operation
     {
         Login,
-        Register // TODO add as you go
+        Register,
+        SacuvajClana
     }
 }

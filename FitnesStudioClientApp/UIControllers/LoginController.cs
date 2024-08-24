@@ -28,10 +28,12 @@ namespace FitnesStudioClientApp.UIControllers
             if (!UserControlHelpers.EmptyFieldValidation(tbKorisnickoIme, lblError) |
                 !UserControlHelpers.EmptyFieldValidation(tbLozinka, lblError))
             {
+                lblError.Visible = true;
                 return;
             }
             try
             {
+                lblError.Visible = false;
                 Trener t = new Trener
                 {
                     KorisnickoIme = tbKorisnickoIme.Text,

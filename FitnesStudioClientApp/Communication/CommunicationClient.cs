@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using System.Net.Sockets;
+using View.Exceptions;
 
 namespace FitnesStudioClientApp.Communication
 {
@@ -40,9 +41,7 @@ namespace FitnesStudioClientApp.Communication
             }
             else
             {
-                // throw new SystemOperationException(response.Error); // TODO create your own exceptions
-
-                throw new Exception(response.Error);
+                throw new SystemOperationException(response.Error);
             }
         }
     }

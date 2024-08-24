@@ -113,8 +113,12 @@ namespace ServerApp
                     response.Result = trener;
                     break;
                 case Operation.Register:
-                    //response.Result = (Trening)Controller.Controller.Instance.UcitajTrening((Trening)request.RequestObject);
                     response.Result = Controller.Controller.Instance.Register((Trener)request.RequestObject);
+                    break;
+                case Operation.SacuvajClana:
+
+                    Debug.WriteLine(">>> OPERACIJA?????");
+                    Controller.Controller.Instance.SacuvajClana((Clan)request.RequestObject);
                     break;
 
                 /*      case Operation.VratiSale:

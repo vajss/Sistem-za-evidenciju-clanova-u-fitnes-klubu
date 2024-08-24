@@ -1,14 +1,16 @@
-﻿using System;
+﻿using Domen;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace Domain
 {
-    internal class Clan
+    [Serializable]
+    public class Clan : IEntity
     {
         public int Id { get; set; }
+
+        public int ClanId { get; set; }
 
         public string Ime { get; set; }
 
@@ -20,6 +22,29 @@ namespace Domain
 
         public string Telefon { get; set; }
 
+        public string TableName => "Clan";
 
+        public string InsertValues => $"{ClanId}, '{Ime}', '{Prezime}', '{DatumRodjenja}', '{Zanimanje}', '{Telefon}'";
+
+        public string IdName => "Id";
+
+        public string JoinCondition => throw new NotImplementedException();
+
+        public string JoinTable => throw new NotImplementedException();
+
+        public string TableAlias => throw new NotImplementedException();
+
+        public object SelectValues => throw new NotImplementedException();
+
+        public string WhereCondition => throw new NotImplementedException();
+
+        public string GetUpdateValues => throw new NotImplementedException();
+
+        public string GeneralCondition => throw new NotImplementedException();
+
+        public List<IEntity> GetEntities(SqlDataReader reader)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

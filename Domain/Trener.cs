@@ -27,7 +27,7 @@ namespace Domain
         [Browsable(false)]
         public string InsertValues => $"'{KorisnickoIme}', '{Ime}', '{Prezime}', '{Sifra}'";
         [Browsable(false)]
-        public string IdName => "TrenerID";
+        public string IdName => "Id";
         [Browsable(false)]
         public string JoinCondition => "";
         [Browsable(false)]

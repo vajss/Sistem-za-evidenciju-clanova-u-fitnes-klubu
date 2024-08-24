@@ -54,6 +54,7 @@ namespace DataBaseBroker
 
         public void Save(IEntity entity)
         {
+            Debug.WriteLine($">>>>>> SAVE COMMAND: INSERT INTO {entity.TableName} VALUES ({entity.InsertValues})");
             SqlCommand command = new SqlCommand("", connection, transaction);
             command.CommandText = $"INSERT INTO {entity.TableName} VALUES ({entity.InsertValues})";
             if (command.ExecuteNonQuery() != 1)

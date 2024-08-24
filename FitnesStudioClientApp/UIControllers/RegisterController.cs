@@ -28,10 +28,13 @@ namespace FitnesStudioClientApp.UIControllers
                 !UserControlHelpers.RepeatPasswordValidation(tbPassword, tbRepeatPassword, lblError)
                 )
             {
+                lblError.Visible = true;
                 return;
             }
             try
             {
+                lblError.Visible = false;
+
                 Trener t = new Trener
                 {
                     Ime = tbName.Text,
