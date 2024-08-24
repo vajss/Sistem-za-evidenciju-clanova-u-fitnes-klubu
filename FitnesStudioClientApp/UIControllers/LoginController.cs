@@ -18,7 +18,7 @@ namespace FitnesStudioClientApp.UIControllers
             }
             catch (SocketException ex)
             {
-                MessageBox.Show("Greska prilikom povezivanja na server: " + ex.Message);
+                MessageBox.Show("Greska prilikom povezivanja na server: " + ex.Message, "Greška pri prijavljivanju.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }

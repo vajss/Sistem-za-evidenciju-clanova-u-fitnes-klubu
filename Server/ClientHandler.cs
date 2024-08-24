@@ -116,9 +116,10 @@ namespace ServerApp
                     response.Result = Controller.Controller.Instance.Register((Trener)request.RequestObject);
                     break;
                 case Operation.SacuvajClana:
-
-                    Debug.WriteLine(">>> OPERACIJA?????");
                     Controller.Controller.Instance.SacuvajClana((Clan)request.RequestObject);
+                    break;
+                case Operation.VratiClanove:
+                    response.Result = Controller.Controller.Instance.VratiClanove((Clan)request.RequestObject);
                     break;
 
                 /*      case Operation.VratiSale:

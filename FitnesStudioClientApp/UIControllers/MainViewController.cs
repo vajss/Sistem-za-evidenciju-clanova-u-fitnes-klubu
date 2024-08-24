@@ -24,8 +24,12 @@ namespace FitnesStudioClientApp.UIControllers
 
         internal void OpenUCDodajClana(FrmMain frmMain)
         {
-            Debug.WriteLine(">>>>>>> open UC");
             ChangePanel(new UCDodajClana(new DodajClanaController()), frmMain);
+        }
+
+        internal void OpenUCDodajGrupu(FrmMain frmMain)
+        {
+            ChangePanel(new UCDodajGrupu(new DodajGrupuController()), frmMain);
         }
     }
 }

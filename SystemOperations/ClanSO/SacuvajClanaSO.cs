@@ -10,7 +10,6 @@ namespace SystemOperations.ClanSO
         protected override void ExecuteOperation(IEntity entity)
         {
             Clan clan = (Clan)entity;
-            Debug.WriteLine("####################### POVO????");
             foreach (Clan c in Repository.GetAll(new Clan()))
             {
                 if (c.ClanId == clan.ClanId)

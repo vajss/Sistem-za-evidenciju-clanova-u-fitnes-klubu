@@ -1,6 +1,7 @@
 ﻿using Domain;
 using Storage;
 using Storage.Implementation;
+using System.Collections.Generic;
 using SystemOperations.ClanSO;
 using SystemOperations.TrenerSO;
 
@@ -62,6 +63,14 @@ namespace Controller
             so.ExecuteTemplate(clan);
 
         }
+
+        public List<Clan> VratiClanove(Clan clan)
+        {
+            VratiClanoveSO so = new VratiClanoveSO();
+            so.ExecuteTemplate(clan);
+            return so.Result;
+        }
+
 
         /*
        //Grupa za treniranje

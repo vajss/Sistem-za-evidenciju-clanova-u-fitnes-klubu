@@ -84,5 +84,16 @@ namespace FitnesStudioClientApp.Communication
             client.SendRequest(request);
             return (Clan)client.GetResponseResult();
         }
+
+        internal List<Clan> VratiClanove()
+        {
+            Request request = new Request
+            {
+                Operation = Operation.VratiClanove,
+            };
+            client.SendRequest(request);
+            return (List<Clan>)client.GetResponseResult();
+
+        }
     }
 }

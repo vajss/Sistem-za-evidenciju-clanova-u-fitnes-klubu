@@ -175,9 +175,9 @@
             // dtpDatumRodjenja
             // 
             this.dtpDatumRodjenja.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dtpDatumRodjenja.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDatumRodjenja.CustomFormat = "dd.MM.yyyy.";
             this.dtpDatumRodjenja.Font = new System.Drawing.Font("Arial", 11F);
+            this.dtpDatumRodjenja.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDatumRodjenja.Location = new System.Drawing.Point(243, 300);
             this.dtpDatumRodjenja.Name = "dtpDatumRodjenja";
             this.dtpDatumRodjenja.Size = new System.Drawing.Size(131, 24);

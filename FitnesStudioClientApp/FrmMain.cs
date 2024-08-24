@@ -25,17 +25,15 @@ namespace FitnesStudioClientApp
             MainCoordinator.Instance.OpenLoginForm();
         }
 
-        private void dodajČlanaToolStripMenuItem_Click(object sender, System.EventArgs e)
+        private void DodajClanaToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-            //mainController.ChangePanel(new UCDodajClana(new DodajClanaController()), this);
-            //mainController.OpenUCDodajClana(this);
+            mainController.OpenUCDodajClana(this);
 
-            PnlMain.Controls.Clear();
-      /*      if (userControl != null)
-            {*/
-            Dock = DockStyle.Fill;
-            PnlMain.Controls.Add(new UCDodajClana(new DodajClanaController()));
-            //}
+        }
+
+        private void dodajGrupuToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            mainController.OpenUCDodajGrupu(this);
         }
     }
 }

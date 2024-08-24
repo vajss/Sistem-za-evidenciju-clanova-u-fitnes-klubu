@@ -32,10 +32,11 @@ namespace FitnesStudioClientApp
         {
             this.msMeni = new System.Windows.Forms.MenuStrip();
             this.članoviToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dodajČlanaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dodajClanaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grupeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.terminiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.dodajGrupuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMeni.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,21 +56,23 @@ namespace FitnesStudioClientApp
             // članoviToolStripMenuItem
             // 
             this.članoviToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dodajČlanaToolStripMenuItem});
+            this.dodajClanaToolStripMenuItem});
             this.članoviToolStripMenuItem.Font = new System.Drawing.Font("Arial", 11F);
             this.članoviToolStripMenuItem.Name = "članoviToolStripMenuItem";
             this.članoviToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.članoviToolStripMenuItem.Text = "Članovi";
             // 
-            // dodajČlanaToolStripMenuItem
+            // dodajClanaToolStripMenuItem
             // 
-            this.dodajČlanaToolStripMenuItem.Name = "dodajČlanaToolStripMenuItem";
-            this.dodajČlanaToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.dodajČlanaToolStripMenuItem.Text = "Dodaj člana";
-            this.dodajČlanaToolStripMenuItem.Click += new System.EventHandler(this.dodajČlanaToolStripMenuItem_Click);
+            this.dodajClanaToolStripMenuItem.Name = "dodajClanaToolStripMenuItem";
+            this.dodajClanaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dodajClanaToolStripMenuItem.Text = "Dodaj člana";
+            this.dodajClanaToolStripMenuItem.Click += new System.EventHandler(this.DodajClanaToolStripMenuItem_Click);
             // 
             // grupeToolStripMenuItem
             // 
+            this.grupeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dodajGrupuToolStripMenuItem});
             this.grupeToolStripMenuItem.Font = new System.Drawing.Font("Arial", 11F);
             this.grupeToolStripMenuItem.Name = "grupeToolStripMenuItem";
             this.grupeToolStripMenuItem.Size = new System.Drawing.Size(60, 21);
@@ -91,6 +94,13 @@ namespace FitnesStudioClientApp
             this.pnlMain.Size = new System.Drawing.Size(1146, 683);
             this.pnlMain.TabIndex = 1;
             // 
+            // dodajGrupuToolStripMenuItem
+            // 
+            this.dodajGrupuToolStripMenuItem.Name = "dodajGrupuToolStripMenuItem";
+            this.dodajGrupuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dodajGrupuToolStripMenuItem.Text = "Dodaj grupu";
+            this.dodajGrupuToolStripMenuItem.Click += new System.EventHandler(this.dodajGrupuToolStripMenuItem_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -102,6 +112,7 @@ namespace FitnesStudioClientApp
             this.MainMenuStrip = this.msMeni;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fitnes klub";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.msMeni.ResumeLayout(false);
@@ -117,8 +128,9 @@ namespace FitnesStudioClientApp
         private ToolStripMenuItem članoviToolStripMenuItem;
         private ToolStripMenuItem grupeToolStripMenuItem;
         private ToolStripMenuItem terminiToolStripMenuItem;
-        private ToolStripMenuItem dodajČlanaToolStripMenuItem;
+        private ToolStripMenuItem dodajClanaToolStripMenuItem;
         private Panel pnlMain;
+        private ToolStripMenuItem dodajGrupuToolStripMenuItem;
 
         public Panel PnlMain { get => pnlMain; set => pnlMain = value; }
     }
