@@ -101,6 +101,7 @@ namespace ServerApp
                             {
                                 trener.VecUlogovan = true;
                                 break;
+                                
                             }
                         }
                         if (!trener.VecUlogovan)

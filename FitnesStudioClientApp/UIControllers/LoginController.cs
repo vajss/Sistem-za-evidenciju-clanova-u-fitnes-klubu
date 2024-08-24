@@ -42,11 +42,11 @@ namespace FitnesStudioClientApp.UIControllers
                 t = Communication.Communication.Instance.Login(t);
                 if (t != null)
                 {
-                    //if (t.VecUlogovan)
-                    //{
-                    //    MessageBox.Show("Vec ste ulogovani na sistem!");
-                    //    return;
-                    //}
+                    if (t.VecUlogovan)
+                    {
+                        MessageBox.Show("Ovaj korisnik je već ulogovan.");
+                        return;
+                    }
                     MainCoordinator.Instance.Trener = t;
                     MainCoordinator.Instance.OpenMainForm();
                     parentForm.Dispose();
