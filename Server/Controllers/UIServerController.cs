@@ -14,7 +14,7 @@ namespace ServerApp.Controllers
     internal class UIServerController
     {
         private Server server;
-        private FrmServer frmServer;
+        private readonly FrmServer frmServer;
 
         public UIServerController(FrmServer frmServer)
         {

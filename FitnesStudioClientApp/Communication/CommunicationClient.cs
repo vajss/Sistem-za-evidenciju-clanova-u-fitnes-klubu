@@ -1,12 +1,7 @@
 ﻿using Common;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FitnesStudioClientApp.Communication
 {
@@ -39,7 +34,6 @@ namespace FitnesStudioClientApp.Communication
         public object GetResponseResult()
         {
             Response response = (Response)receiver.Receive();
-            Debug.WriteLine(">>>> GetResponseResult error");
             if (response.IsSuccessful)
             {
                 return response.Result;

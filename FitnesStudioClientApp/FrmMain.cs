@@ -1,4 +1,5 @@
 ﻿using FitnesStudioClientApp.UIControllers;
+using FitnesStudioClientApp.User_Controls;
 using System.Windows.Forms;
 
 namespace FitnesStudioClientApp
@@ -22,6 +23,19 @@ namespace FitnesStudioClientApp
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             MainCoordinator.Instance.OpenLoginForm();
+        }
+
+        private void dodajČlanaToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            //mainController.ChangePanel(new UCDodajClana(new DodajClanaController()), this);
+            //mainController.OpenUCDodajClana(this);
+
+            PnlMain.Controls.Clear();
+      /*      if (userControl != null)
+            {*/
+            Dock = DockStyle.Fill;
+            PnlMain.Controls.Add(new UCDodajClana(new DodajClanaController()));
+            //}
         }
     }
 }
