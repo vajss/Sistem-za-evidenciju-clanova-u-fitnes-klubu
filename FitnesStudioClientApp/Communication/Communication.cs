@@ -105,5 +105,16 @@ namespace FitnesStudioClientApp.Communication
             client.SendRequest(request);
             return (List<TreningProgram>)client.GetResponseResult();
         }
+
+        internal Grupa SacuvajGrupu(Grupa grupa)
+        {
+            Request request = new Request
+            {
+                Operation = Operation.SacuvajGrupu,
+                RequestObject = grupa
+            };
+            client.SendRequest(request);
+            return (Grupa)client.GetResponseResult();
+        }
     }
 }

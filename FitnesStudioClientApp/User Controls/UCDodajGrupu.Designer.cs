@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblNaziv = new System.Windows.Forms.Label();
             this.tbNazivGrupe = new System.Windows.Forms.TextBox();
             this.tbBrojClanova = new System.Windows.Forms.TextBox();
@@ -48,8 +49,11 @@
             this.cbClanovi = new System.Windows.Forms.ComboBox();
             this.lblClan = new System.Windows.Forms.Label();
             this.btnSacuvajGrupu = new System.Windows.Forms.Button();
+            this.lblGroupError = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClanstva)).BeginInit();
             this.gbDodajClanove.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNaziv
@@ -139,7 +143,7 @@
             this.btnObrisiClanove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnObrisiClanove.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnObrisiClanove.ForeColor = System.Drawing.Color.Transparent;
-            this.btnObrisiClanove.Location = new System.Drawing.Point(621, 574);
+            this.btnObrisiClanove.Location = new System.Drawing.Point(134, 585);
             this.btnObrisiClanove.Name = "btnObrisiClanove";
             this.btnObrisiClanove.Size = new System.Drawing.Size(98, 48);
             this.btnObrisiClanove.TabIndex = 15;
@@ -189,11 +193,11 @@
             this.btnDodajClana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDodajClana.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDodajClana.ForeColor = System.Drawing.Color.Transparent;
-            this.btnDodajClana.Location = new System.Drawing.Point(240, 285);
+            this.btnDodajClana.Location = new System.Drawing.Point(256, 285);
             this.btnDodajClana.Name = "btnDodajClana";
-            this.btnDodajClana.Size = new System.Drawing.Size(98, 48);
+            this.btnDodajClana.Size = new System.Drawing.Size(82, 48);
             this.btnDodajClana.TabIndex = 25;
-            this.btnDodajClana.Text = "Dodaj člana";
+            this.btnDodajClana.Text = "Dodaj članstvo";
             this.btnDodajClana.UseVisualStyleBackColor = false;
             this.btnDodajClana.Click += new System.EventHandler(this.BtnDodajClana_Click);
             // 
@@ -297,7 +301,7 @@
             this.btnSacuvajGrupu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSacuvajGrupu.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSacuvajGrupu.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSacuvajGrupu.Location = new System.Drawing.Point(1064, 574);
+            this.btnSacuvajGrupu.Location = new System.Drawing.Point(26, 585);
             this.btnSacuvajGrupu.Name = "btnSacuvajGrupu";
             this.btnSacuvajGrupu.Size = new System.Drawing.Size(86, 48);
             this.btnSacuvajGrupu.TabIndex = 14;
@@ -305,11 +309,27 @@
             this.btnSacuvajGrupu.UseVisualStyleBackColor = false;
             this.btnSacuvajGrupu.Click += new System.EventHandler(this.BtnSacuvajGrupu_Click);
             // 
+            // lblGroupError
+            // 
+            this.lblGroupError.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblGroupError.AutoSize = true;
+            this.lblGroupError.ForeColor = System.Drawing.Color.Salmon;
+            this.lblGroupError.Location = new System.Drawing.Point(23, 561);
+            this.lblGroupError.Name = "lblGroupError";
+            this.lblGroupError.Size = new System.Drawing.Size(0, 17);
+            this.lblGroupError.TabIndex = 17;
+            this.lblGroupError.Visible = false;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // UCDodajGrupu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.lblGroupError);
             this.Controls.Add(this.gbDodajClanove);
             this.Controls.Add(this.btnObrisiClanove);
             this.Controls.Add(this.btnSacuvajGrupu);
@@ -328,6 +348,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvClanstva)).EndInit();
             this.gbDodajClanove.ResumeLayout(false);
             this.gbDodajClanove.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -355,5 +376,7 @@
         private System.Windows.Forms.Button btnDodajClana;
         private System.Windows.Forms.Button btnSacuvajGrupu;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Label lblGroupError;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

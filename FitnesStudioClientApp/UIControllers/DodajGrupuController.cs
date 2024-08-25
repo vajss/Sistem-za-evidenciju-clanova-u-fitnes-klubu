@@ -2,6 +2,7 @@
 using FitnesStudioClientApp.Helpers;
 using System;
 using System.ComponentModel;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
@@ -130,6 +131,45 @@ namespace FitnesStudioClientApp.UIControllers
                     clanstva.Remove(member);
                 }
             }
+
+        }
+
+        internal void SacuvajGrupu(ComboBox cbTreningProgram, TextBox tbNazivGrupe, TextBox tbBrojClanova, DataGridView dgvClanstva, GroupBox gbDodajClanove, Label lblError)
+        {
+            if (!UserControlHelpers.ComboBoxValidation(cbTreningProgram, lblError) |
+                !UserControlHelpers.EmptyFieldValidation(tbNazivGrupe, lblError)
+            )
+            {
+                lblError.Visible = true;
+                return;
+            }
+            try
+            {
+                lblError.Visible = false;
+                Grupa g = new Grupa
+                {
+                    Naziv = tbNazivGrupe.Text,
+                    BrojClanova = Int32.Parse(tbBrojClanova.Text),
+                    TreningProgram = cbTreningProgram.SelectedItem as TreningProgram,
+                    Clanstva = clanstva.ToList()
+                };
+                g = Communication.Communication.Instance.SacuvajGrupu(g);
+
+                MessageBox.Show("Grupa uspešno sačuvana.");
+
+                tbNazivGrupe.Text = "";
+                cbTreningProgram.SelectedIndex = -1;
+                cbTreningProgram.Enabled = true;
+                tbBrojClanova.Text = "";
+                dgvClanstva.Rows.Clear();
+                dgvClanstva.Refresh();
+                gbDodajClanove.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Greška čuvanju grupe.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
 
         }
     }

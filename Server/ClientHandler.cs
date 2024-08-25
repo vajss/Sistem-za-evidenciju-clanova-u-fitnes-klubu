@@ -36,8 +36,6 @@ namespace ServerApp
             this.treneri = treneri;
         }
 
-        private bool kraj = false;
-
         public void StartHandler()
         {
             try
@@ -54,14 +52,11 @@ namespace ServerApp
                     }
                     catch (Exception ex)
                     {
-                        Debug.WriteLine(">>>>>>StartHandler: ", ex.Message);
-                        // System.Windows.Forms.MessageBox.Show(ex.Message);
-                        response = new Response();
-                        response.IsSuccessful = false;
-                        response.Error = ex.Message;
-                        Debug.WriteLine("response" + response.ToString());
-                        Debug.WriteLine(">>>>>> PRE IZLASKA IZ CATCHA)");
-
+                        response = new Response
+                        {
+                            IsSuccessful = false,
+                            Error = ex.Message
+                        };
                     }
                     formatter.Serialize(stream, response);
                 }
@@ -69,18 +64,13 @@ namespace ServerApp
             catch (IOException)
             {
                 Console.WriteLine("Doslo je do prekida veze");
-                //obratiti paznju na EventHandler FrmMain FormClosed (ako zatvorimo glavnu formu, i prakticno se izlogujemo, prekidamo vezu sa serverom
-                //drugi nacin bi bio da posaljemo zahtev sa operacijom logout, tako da klijent ostane povezan // TODO
                 treneri.Remove(logedInTrener);
 
             }
             catch (SerializationException)
             {
                 Console.WriteLine("Doslo je do prekida veze");
-                //obratiti paznju na EventHandler FrmMain FormClosed (ako zatvorimo glavnu formu, i prakticno se izlogujemo, prekidamo vezu sa serverom
-                //drugi nacin bi bio da posaljemo zahtev sa operacijom logout, tako da klijent ostane povezan // TODO
                 treneri.Remove(logedInTrener);
- 
             }
         }
 
@@ -124,6 +114,9 @@ namespace ServerApp
                     break;
                 case Operation.VratiTreningPrograme:
                     response.Result = Controller.Controller.Instance.VratiTreningPrograme((TreningProgram)request.RequestObject);
+                    break;
+                case Operation.SacuvajGrupu:
+                    Controller.Controller.Instance.SacuvajGrupu((Grupa)request.RequestObject);
                     break;
 
                 /*      case Operation.VratiSale:

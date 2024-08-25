@@ -9,6 +9,7 @@ namespace Common
         Register,
         SacuvajClana,
         VratiClanove,
-        VratiTreningPrograme
+        VratiTreningPrograme,
+        SacuvajGrupu
     }
 }

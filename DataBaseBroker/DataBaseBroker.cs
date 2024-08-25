@@ -52,15 +52,24 @@ namespace DataBaseBroker
             return result;
         }
 
-        public void Save(IEntity entity)
+        public int Save(IEntity entity)
         {
-            Debug.WriteLine($">>>>>> SAVE COMMAND: INSERT INTO {entity.TableName} VALUES ({entity.InsertValues})");
+            /*            Debug.WriteLine($">>>>>> SAVE COMMAND: INSERT INTO {entity.TableName} OUTPUT Inserted.ID VALUES ({entity.InsertValues})");
+                        SqlCommand command = new SqlCommand("", connection, transaction);
+                        command.CommandText = $"INSERT INTO {entity.TableName} VALUES ({entity.InsertValues})";
+                        if (command.ExecuteNonQuery() != 1)
+                        {
+                            throw new Exception("Database error!");
+                        }*/
+            Debug.WriteLine($">>>>>> SAVE COMMAND: INSERT INTO {entity.TableName} OUTPUT Inserted.{entity.IdName} VALUES ({entity.InsertValues})");
             SqlCommand command = new SqlCommand("", connection, transaction);
-            command.CommandText = $"INSERT INTO {entity.TableName} VALUES ({entity.InsertValues})";
+            command.CommandText = $"INSERT INTO {entity.TableName} OUTPUT Inserted.ID VALUES ({entity.InsertValues})";
+            return Convert.ToInt32(command.ExecuteScalar());
+/*
             if (command.ExecuteNonQuery() != 1)
             {
                 throw new Exception("Database error!");
-            }
+            }*/
         }
 
 /*        public int GetNewId(IEntity entity)

@@ -35,7 +35,7 @@ namespace FitnesStudioClientApp.User_Controls
 
         private void BtnSacuvajGrupu_Click(object sender, EventArgs e)
         {
-            //dodajGrupuController.SacuvajGrupu();
+            dodajGrupuController.SacuvajGrupu(cbTreningProgram, tbNazivGrupe, tbBrojClanova, dgvClanstva, gbDodajClanove, lblGroupError);
         }
 
         private void UCDodajGrupu_Load(object sender, EventArgs e)

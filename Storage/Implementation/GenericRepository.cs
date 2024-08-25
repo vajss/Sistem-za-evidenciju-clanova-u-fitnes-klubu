@@ -54,9 +54,9 @@ namespace Storage.Implementation
             broker.Rollback();
         }
 
-        public void Save(IEntity entity)
+        public int Save(IEntity entity)
         {
-            broker.Save(entity);
+            return broker.Save(entity);
         }
 
         public void Update(IEntity entity)

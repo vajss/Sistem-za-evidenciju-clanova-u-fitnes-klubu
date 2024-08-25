@@ -4,6 +4,7 @@ using Storage.Implementation;
 using System;
 using System.Collections.Generic;
 using SystemOperations.ClanSO;
+using SystemOperations.GrupaSO;
 using SystemOperations.TrenerSO;
 using SystemOperations.TreningProgramSO;
 
@@ -61,7 +62,6 @@ namespace Controller
         {
             SacuvajClanaSO so = new SacuvajClanaSO();
             so.ExecuteTemplate(clan);
-
         }
 
         public List<Clan> VratiClanove(Clan clan)
@@ -77,6 +77,13 @@ namespace Controller
             VratiTreningProgrameSO so = new VratiTreningProgrameSO();
             so.ExecuteTemplate(treningProgram);
             return so.Result;
+        }
+
+        // GRUPA
+        public void SacuvajGrupu(Grupa grupa)
+        {
+            SacuvajGrupuSO so = new SacuvajGrupuSO();
+            so.ExecuteTemplate(grupa);
         }
     }
 }

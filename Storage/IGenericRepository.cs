@@ -5,7 +5,7 @@ namespace Storage
 {
     public interface IGenericRepository
     {
-        void Save(IEntity entity);
+        int Save(IEntity entity);
         List<IEntity> GetAll(IEntity e);
         List<IEntity> GetSpecific(IEntity entity);
         void Update(IEntity entity);

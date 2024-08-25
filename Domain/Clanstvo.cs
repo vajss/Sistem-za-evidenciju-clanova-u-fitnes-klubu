@@ -16,11 +16,11 @@ namespace Domain
         public int NeizmirenaDugovanja { get; set; }
         public Grupa Grupa { get; set; }
         [Browsable(false)]
-        public string TableName => "";
+        public string TableName => "Clanstvo";
         [Browsable(false)]
-        public string InsertValues => "";
+        public string InsertValues => $"{Grupa.Id}, {Clan.Id}, '{DatumUclanjenja}', '{NeizmirenaDugovanja}' ,'{DatumPoslednjegPlacanja}' ";
         [Browsable(false)]
-        public string IdName => "";
+        public string IdName => "Id";
         [Browsable(false)]
         public string JoinCondition => "";
         [Browsable(false)]
