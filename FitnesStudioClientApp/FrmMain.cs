@@ -7,8 +7,7 @@ namespace FitnesStudioClientApp
     public partial class FrmMain : Form
     {
 
-        MainViewController mainController = new MainViewController();
-
+        public MainViewController mainController = new MainViewController();
         public FrmMain()
         {
             InitializeComponent();

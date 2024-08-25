@@ -103,10 +103,9 @@
             this.btnShow.ForeColor = System.Drawing.SystemColors.Control;
             this.btnShow.Location = new System.Drawing.Point(317, 209);
             this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(25, 25);
+            this.btnShow.Size = new System.Drawing.Size(21, 21);
             this.btnShow.TabIndex = 12;
             this.btnShow.UseVisualStyleBackColor = false;
-            this.btnShow.Visible = false;
             this.btnShow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnShow_MouseDown);
             this.btnShow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnShow_MouseUp);
             // 

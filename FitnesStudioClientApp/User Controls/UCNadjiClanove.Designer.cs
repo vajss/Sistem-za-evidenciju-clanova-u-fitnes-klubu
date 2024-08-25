@@ -46,6 +46,7 @@
             this.tbPretraga.Name = "tbPretraga";
             this.tbPretraga.Size = new System.Drawing.Size(290, 30);
             this.tbPretraga.TabIndex = 0;
+            this.tbPretraga.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbPretraga_KeyDown);
             // 
             // lblPretraga
             // 
@@ -107,6 +108,7 @@
             this.dgvClanovi.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvClanovi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClanovi.Location = new System.Drawing.Point(24, 156);
+            this.dgvClanovi.MultiSelect = false;
             this.dgvClanovi.Name = "dgvClanovi";
             this.dgvClanovi.ReadOnly = true;
             this.dgvClanovi.Size = new System.Drawing.Size(720, 374);

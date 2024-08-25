@@ -221,7 +221,7 @@
             this.btnIzmeniClana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIzmeniClana.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btnIzmeniClana.ForeColor = System.Drawing.Color.White;
-            this.btnIzmeniClana.Location = new System.Drawing.Point(259, 460);
+            this.btnIzmeniClana.Location = new System.Drawing.Point(245, 460);
             this.btnIzmeniClana.Name = "btnIzmeniClana";
             this.btnIzmeniClana.Size = new System.Drawing.Size(129, 40);
             this.btnIzmeniClana.TabIndex = 16;

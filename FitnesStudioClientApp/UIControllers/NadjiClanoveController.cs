@@ -1,4 +1,5 @@
 ﻿using Domain;
+using FitnesStudioClientApp.User_Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,6 +51,17 @@ namespace FitnesStudioClientApp.UIControllers
             dgvClanovi.Columns["DatumRodjenja"].DefaultCellStyle.Format = "dd.MM.yyyy.";
             dgvClanovi.Columns["ClanId"].DefaultCellStyle.Format = "D6";
             dgvClanovi.Columns["Id"].Visible = false;
+        }
+
+        internal void IzmeniClana(FrmMain parentForm, Clan Clan)
+        {
+            if (Clan != null)
+            {
+                parentForm.mainController.ChangePanel(new UCDodajClana(new DodajClanaController(), Clan), parentForm);
+            } else
+            {
+                // TODO set error that no clan is selected
+            }
         }
     }
 }

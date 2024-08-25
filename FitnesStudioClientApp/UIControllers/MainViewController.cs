@@ -28,7 +28,7 @@ namespace FitnesStudioClientApp.UIControllers
 
         internal void OpenUCNadjiClanove(FrmMain frmMain)
         {
-            ChangePanel(new UCNadjiClanove(new NadjiClanoveController()), frmMain);
+            ChangePanel(new UCNadjiClanove(new NadjiClanoveController(), frmMain), frmMain);
         }
     }
 }

@@ -14,12 +14,29 @@ namespace FitnesStudioClientApp.User_Controls
             InitializeComponent();
         }
 
-        public UCDodajClana(DodajClanaController dodajClanaController, Clan clanZaIzmeniti = null)
+        public UCDodajClana(DodajClanaController dodajClanaController)
         {
             InitializeComponent();
             dtpDatumRodjenja.MaxDate = DateTime.Now;
-
             this.dodajClanaController = dodajClanaController;
+        }
+
+        public UCDodajClana(DodajClanaController dodajClanaController, Clan clanZaIzmeniti)
+        {
+            InitializeComponent();
+            dtpDatumRodjenja.MaxDate = DateTime.Now;
+            this.dodajClanaController = dodajClanaController;
+            SetupEdit(clanZaIzmeniti);
+        }
+
+        private void SetupEdit(Clan clan)
+        {
+            tbClanId.Text = clan.ClanId.ToString();
+            tbClanId.Enabled = false;
+            tbIme.Text = clan.Ime;
+
+            btnSacuvajClana.Visible = false;
+            btnIzmeniClana.Visible = true;
         }
 
         private void btnSacuvajClana_Click(object sender, System.EventArgs e)

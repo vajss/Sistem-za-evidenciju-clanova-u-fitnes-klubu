@@ -259,7 +259,7 @@
             // cbClanovi
             // 
             this.cbClanovi.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbClanovi.BackColor = System.Drawing.SystemColors.Window;
+            this.cbClanovi.BackColor = System.Drawing.Color.White;
             this.cbClanovi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbClanovi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbClanovi.FormattingEnabled = true;
@@ -314,7 +314,7 @@
             // cbTreningProgram
             // 
             this.cbTreningProgram.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbTreningProgram.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.cbTreningProgram.BackColor = System.Drawing.Color.White;
             this.cbTreningProgram.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTreningProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbTreningProgram.FormattingEnabled = true;
