@@ -67,8 +67,8 @@ namespace FitnesStudioClientApp.UIControllers
         internal void SetDateLimits(DateTimePicker dtpPoslednjePlacanje, DateTimePicker dtpUclanjenje)
         {
             dtpUclanjenje.MaxDate = DateTime.Now;
-            dtpPoslednjePlacanje.MinDate = dtpUclanjenje.Value;
-            dtpUclanjenje.MaxDate = DateTime.Now;
+            dtpPoslednjePlacanje.MinDate = dtpUclanjenje.Value.AddHours(-1);
+            dtpPoslednjePlacanje.MaxDate = DateTime.Now;
         }
     }
 }
