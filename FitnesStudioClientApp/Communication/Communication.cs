@@ -95,5 +95,15 @@ namespace FitnesStudioClientApp.Communication
             return (List<Clan>)client.GetResponseResult();
 
         }
+
+        internal List<TreningProgram> VratiTrerningPrograme()
+        {
+            Request request = new Request
+            {
+                Operation = Operation.VratiTreningPrograme,
+            };
+            client.SendRequest(request);
+            return (List<TreningProgram>)client.GetResponseResult();
+        }
     }
 }

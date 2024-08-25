@@ -15,7 +15,7 @@ namespace DataBaseBroker
 
         public DBBroker()
         {
-            connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FitnesKlub;Integrated Security=True;Connect Timeout=5");
+            connection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FitnesKlub;Integrated Security=True;Connect Timeout=5; MultipleActiveResultSets=true;");
         }
 
         public void OpenConnection()

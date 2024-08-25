@@ -8,6 +8,7 @@ namespace Common
         Login,
         Register,
         SacuvajClana,
-        VratiClanove
+        VratiClanove,
+        VratiTreningPrograme
     }
 }

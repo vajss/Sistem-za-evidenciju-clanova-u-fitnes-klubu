@@ -201,6 +201,7 @@
             // 
             // lblError
             // 
+            this.lblError.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblError.AutoSize = true;
             this.lblError.BackColor = System.Drawing.SystemColors.Control;
             this.lblError.Cursor = System.Windows.Forms.Cursors.Default;

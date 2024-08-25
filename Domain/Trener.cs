@@ -37,11 +37,11 @@ namespace Domain
         [Browsable(false)]
         public object SelectValues => "*";
 
-        public string WhereCondition => throw new NotImplementedException();
+        public string WhereCondition => "";
 
-        public string GetUpdateValues => throw new NotImplementedException();
+        public string GetUpdateValues => "";
 
-        public string GeneralCondition => throw new NotImplementedException();
+        public string GeneralCondition => "";
 
         public List<IEntity> GetEntities(SqlDataReader reader)
         {

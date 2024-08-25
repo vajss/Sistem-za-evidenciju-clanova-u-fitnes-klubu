@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
+using System.Runtime.Remoting.Messaging;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -30,6 +31,36 @@ namespace FitnesStudioClientApp.Helpers
             }
             
             return true;
+        }
+
+        public static bool ComboBoxValidation(ComboBox cb, Label errorLabel)
+        {
+            if (cb.SelectedIndex == -1)
+            {
+                errorLabel.Text = "Popunite naznačena polja.";
+                cb.BackColor = Color.Salmon;
+                return false;
+            }
+            else
+            {
+                cb.BackColor = Color.White;
+                return true;
+            }
+        }
+
+        public static bool IntValidation(TextBox tb)
+        {
+            if (!int.TryParse(tb.Text, out int _))
+            {
+                tb.Text = "Morate uneti broj";
+                tb.BackColor = Color.Salmon;
+                return false;
+            }
+            else
+            {
+                tb.BackColor = Color.White;
+                return true;
+            }
         }
 
         public static bool StartWithValidation(TextBox textBox, Label errorLabel)
@@ -63,12 +94,14 @@ namespace FitnesStudioClientApp.Helpers
         return true;
     }
 
-    public static bool DateValidation(TextBox tb)
+    public static bool DateValidation(TextBox tb, Label lblError)
     {
         if (string.IsNullOrWhiteSpace(tb.Text) ||
-            !DateTime.TryParseExact(tb.Text, "dd.MM.yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out _))
+            !DateTime.TryParseExact(tb.Text, "dd.MM.yyyy.", CultureInfo.InvariantCulture, DateTimeStyles.None, out _))
         {
+
             tb.BackColor = Color.Salmon;
+            lblError.Text = "Datum mora biti u formatu dd.MM.yyyy.";
             return false;
         }
 
@@ -76,6 +109,14 @@ namespace FitnesStudioClientApp.Helpers
         return true;
     }
 
-
+        internal static bool CompareDatesValidation(DateTimePicker pastDate, DateTimePicker futureDate, Label lblError, string errorMessage)
+        {
+            if (pastDate.Value.Date > futureDate.Value.Date)
+            {
+                lblError.Text = errorMessage;
+                return false;
+            }
+            return false;
+        }
     }
 }

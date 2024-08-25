@@ -122,6 +122,9 @@ namespace ServerApp
                 case Operation.VratiClanove:
                     response.Result = Controller.Controller.Instance.VratiClanove((Clan)request.RequestObject);
                     break;
+                case Operation.VratiTreningPrograme:
+                    response.Result = Controller.Controller.Instance.VratiTreningPrograme((TreningProgram)request.RequestObject);
+                    break;
 
                 /*      case Operation.VratiSale:
                         List<SalaZaTrening> rez = (List<SalaZaTrening>)Controller.Controller.Instance.VratiSveSale(new SalaZaTrening());
