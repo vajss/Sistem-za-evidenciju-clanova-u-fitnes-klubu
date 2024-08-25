@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Domain
 {
     [Serializable]
-    internal class Termin
+    public class Termin
     {
         public int id { get; set; }
 

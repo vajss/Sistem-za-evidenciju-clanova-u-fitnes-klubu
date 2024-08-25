@@ -22,8 +22,10 @@ namespace Domain
         public string Zanimanje { get; set; }
 
         public string Telefon { get; set; }
+        [Browsable(false)]
 
         public string TableName => "Clan";
+        [Browsable(false)]
 
         public string InsertValues => $"{ClanId}, '{Ime}', '{Prezime}', '{DatumRodjenja}', '{Zanimanje}', '{Telefon}'";
 
@@ -36,10 +38,13 @@ namespace Domain
         public string TableAlias => "";
         [Browsable(false)]
         public object SelectValues => "*";
+        [Browsable(false)]
 
         public string WhereCondition => throw new NotImplementedException();
+        [Browsable(false)]
 
         public string GetUpdateValues => throw new NotImplementedException();
+        [Browsable(false)]
 
         public string GeneralCondition => throw new NotImplementedException();
 

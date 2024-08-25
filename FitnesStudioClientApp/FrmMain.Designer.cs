@@ -34,9 +34,9 @@ namespace FitnesStudioClientApp
             this.članoviToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajClanaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grupeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dodajGrupuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.terminiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.dodajGrupuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMeni.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +49,7 @@ namespace FitnesStudioClientApp
             this.msMeni.Location = new System.Drawing.Point(0, 0);
             this.msMeni.Name = "msMeni";
             this.msMeni.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.msMeni.Size = new System.Drawing.Size(1146, 25);
+            this.msMeni.Size = new System.Drawing.Size(1221, 25);
             this.msMeni.TabIndex = 0;
             this.msMeni.Text = "menuStrip1";
             // 
@@ -78,6 +78,13 @@ namespace FitnesStudioClientApp
             this.grupeToolStripMenuItem.Size = new System.Drawing.Size(60, 21);
             this.grupeToolStripMenuItem.Text = "Grupe";
             // 
+            // dodajGrupuToolStripMenuItem
+            // 
+            this.dodajGrupuToolStripMenuItem.Name = "dodajGrupuToolStripMenuItem";
+            this.dodajGrupuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dodajGrupuToolStripMenuItem.Text = "Dodaj grupu";
+            this.dodajGrupuToolStripMenuItem.Click += new System.EventHandler(this.dodajGrupuToolStripMenuItem_Click);
+            // 
             // terminiToolStripMenuItem
             // 
             this.terminiToolStripMenuItem.Font = new System.Drawing.Font("Arial", 10F);
@@ -91,21 +98,14 @@ namespace FitnesStudioClientApp
             this.pnlMain.BackColor = System.Drawing.SystemColors.Control;
             this.pnlMain.Location = new System.Drawing.Point(0, 28);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1146, 683);
+            this.pnlMain.Size = new System.Drawing.Size(1221, 683);
             this.pnlMain.TabIndex = 1;
-            // 
-            // dodajGrupuToolStripMenuItem
-            // 
-            this.dodajGrupuToolStripMenuItem.Name = "dodajGrupuToolStripMenuItem";
-            this.dodajGrupuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.dodajGrupuToolStripMenuItem.Text = "Dodaj grupu";
-            this.dodajGrupuToolStripMenuItem.Click += new System.EventHandler(this.dodajGrupuToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1146, 711);
+            this.ClientSize = new System.Drawing.Size(1221, 711);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.msMeni);
             this.Font = new System.Drawing.Font("Arial", 10F);

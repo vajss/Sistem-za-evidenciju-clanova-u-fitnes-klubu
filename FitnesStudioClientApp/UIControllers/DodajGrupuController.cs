@@ -1,29 +1,55 @@
 ﻿using Domain;
 using FitnesStudioClientApp.Helpers;
 using System;
+using System.ComponentModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Windows.Forms;
 using View.Exceptions;
+
 
 namespace FitnesStudioClientApp.UIControllers
 {
     public class DodajGrupuController
     {
-        internal void DodajClanstvoUGrupu(ComboBox cbClanovi, TextBox tbBrojClanova, DataGridView dgvClanstva, DateTimePicker dtpUclanjenje, DateTimePicker dtpPoslednjePlacanje, TextBox tbNeizmireno, Label lblError)
+        BindingList<Clanstvo> clanstva = new BindingList<Clanstvo>();
+
+        internal void DodajClanstvoUGrupu(ComboBox cbClanovi, TextBox tbBrojClanova, DataGridView dgvClanstva, DateTimePicker dtpUclanjenje, DateTimePicker dtpPoslednjePlacanje, TextBox tbNeizmireno, ComboBox cbTreningProgram, Button btnObrisiClanove,  Label lblError)
         {
             if (!UserControlHelpers.ComboBoxValidation(cbClanovi, lblError) |
                 !UserControlHelpers.CompareDatesValidation(dtpUclanjenje, dtpPoslednjePlacanje, lblError, "Učlanjenje ne može biti neako poslednjeg plaćanja.")
-                /*!UserControlHelpers.EmptyFieldValidation(tbIme, lblError) |
-               !UserControlHelpers.EmptyFieldValidation(tbPrezime, lblError) |
-               !UserControlHelpers.EmptyFieldValidation(tbZanimanje, lblError) |
-               !UserControlHelpers.EmptyFieldValidation(tbTelefon, lblError) |
-               !UserControlHelpers.SixDigitValidation(tbClanId, lblError, "ClanId mora biti šesticifreni broj.")*/
                )
             {
+
                 lblError.Visible = true;
                 return;
             }
+
+            string[] parts = tbNeizmireno.Text.Split(' ');
+            string numberPart = parts[0];
+            int neizmirenaDugovanja = int.Parse(numberPart);
+
+            Clanstvo clanstvo = new Clanstvo
+            {
+                Clan = (Clan)cbClanovi.SelectedItem,
+                DatumPoslednjegPlacanja = dtpPoslednjePlacanje.Value,
+                DatumUclanjenja = dtpUclanjenje.Value,
+                NeizmirenaDugovanja = neizmirenaDugovanja
+            };
+
+            if (clanstva.Contains(clanstvo))
+            {
+                lblError.Text = "Član već dodat u grupu.";
+                lblError.Visible = true;
+                return;
+            }
+
+            clanstva.Add( clanstvo );
+            tbBrojClanova.Text = clanstva.Count.ToString();
+            dgvClanstva.Refresh();
             lblError.Visible = false;
+            cbTreningProgram.Enabled = false;
+            btnObrisiClanove.Enabled = true;
         }
 
         internal void UcitajClanove(ComboBox cmbClan)
@@ -41,11 +67,11 @@ namespace FitnesStudioClientApp.UIControllers
         }
 
 
-        internal int GetMonthsDifference(DateTime startDate, DateTime endDate, ComboBox program)
+        internal int GetDebt(DateTime endDate, ComboBox program)
         {
             int price = ((TreningProgram)(program.SelectedItem)).Cena;
-            int yearDifference = endDate.Year - startDate.Year;
-            int monthDifference = endDate.Month - startDate.Month;
+            int yearDifference = (DateTime.Now).Year - endDate.Year;
+            int monthDifference = (DateTime.Now).Month - endDate.Month;
 
             return (yearDifference * 12 + monthDifference) * price;
         }
@@ -69,6 +95,42 @@ namespace FitnesStudioClientApp.UIControllers
             dtpUclanjenje.MaxDate = DateTime.Now;
             dtpPoslednjePlacanje.MinDate = dtpUclanjenje.Value.AddHours(-1);
             dtpPoslednjePlacanje.MaxDate = DateTime.Now;
+        }
+
+        internal void SetDataGridView(DataGridView dgvClanstva)
+        {
+            dgvClanstva.DataSource = clanstva;
+            dgvClanstva.Columns["DatumUclanjenja"].HeaderText = "Datum učlanjenja";
+            dgvClanstva.Columns["DatumPoslednjegPlacanja"].HeaderText = "Poslednja članarina plaćena";
+            dgvClanstva.Columns["Clan"].HeaderText = "Član";
+            dgvClanstva.Columns["NeizmirenaDugovanja"].HeaderText = "Neizmirena dugovanja";
+            dgvClanstva.Columns["Grupa"].Visible = false;
+        }
+
+        internal void OnRowcountChange(DataGridView dgvClanstva, ComboBox cbTreningProgram, TextBox tbBrojClanova, Button btnObrisiClanove)
+        {
+            if (clanstva.Count == 0)
+            {
+                cbTreningProgram.Enabled = true;
+                btnObrisiClanove.Enabled = false;
+            }
+            else {
+                btnObrisiClanove.Enabled = true;
+            }
+            tbBrojClanova.Text = clanstva.Count.ToString();
+        }
+
+        internal void RemoveMembers(DataGridView dgvClanstva)
+        {
+            foreach (DataGridViewRow row in dgvClanstva.SelectedRows)
+            {
+                Clanstvo member = row.DataBoundItem as Clanstvo;
+                if (member != null)
+                {
+                    clanstva.Remove(member);
+                }
+            }
+
         }
     }
 }

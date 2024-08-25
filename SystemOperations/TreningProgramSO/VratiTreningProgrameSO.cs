@@ -12,10 +12,7 @@ namespace SystemOperations.TreningProgramSO
 
         protected override void ExecuteOperation(IEntity entity)
         {
-            Debug.WriteLine(">>>>>>>>>>>>  ######### PREW");
             Result = Repository.GetAll(new TreningProgram()).Cast<TreningProgram>().ToList();
-            Debug.WriteLine(">>>>>>>>>>>>  ######### POSLEEE");
-
         }
     }
 }

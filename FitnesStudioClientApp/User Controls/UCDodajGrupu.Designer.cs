@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lblNaziv = new System.Windows.Forms.Label();
-            this.tbClanId = new System.Windows.Forms.TextBox();
+            this.tbNazivGrupe = new System.Windows.Forms.TextBox();
             this.tbBrojClanova = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblTreningProgram = new System.Windows.Forms.Label();
@@ -56,29 +56,29 @@
             // 
             this.lblNaziv.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNaziv.AutoSize = true;
-            this.lblNaziv.Location = new System.Drawing.Point(45, 51);
+            this.lblNaziv.Location = new System.Drawing.Point(23, 51);
             this.lblNaziv.Name = "lblNaziv";
             this.lblNaziv.Size = new System.Drawing.Size(89, 17);
             this.lblNaziv.TabIndex = 0;
             this.lblNaziv.Text = "Naziv grupe:";
             // 
-            // tbClanId
+            // tbNazivGrupe
             // 
-            this.tbClanId.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbClanId.Font = new System.Drawing.Font("Arial", 11F);
-            this.tbClanId.Location = new System.Drawing.Point(189, 47);
-            this.tbClanId.Multiline = true;
-            this.tbClanId.Name = "tbClanId";
-            this.tbClanId.Size = new System.Drawing.Size(183, 25);
-            this.tbClanId.TabIndex = 8;
-            this.tbClanId.TextChanged += new System.EventHandler(this.TbClanId_TextChanged);
+            this.tbNazivGrupe.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbNazivGrupe.Font = new System.Drawing.Font("Arial", 11F);
+            this.tbNazivGrupe.Location = new System.Drawing.Point(167, 47);
+            this.tbNazivGrupe.Multiline = true;
+            this.tbNazivGrupe.Name = "tbNazivGrupe";
+            this.tbNazivGrupe.Size = new System.Drawing.Size(183, 25);
+            this.tbNazivGrupe.TabIndex = 8;
+            this.tbNazivGrupe.TextChanged += new System.EventHandler(this.tbNazivGrupe_TextChanged);
             // 
             // tbBrojClanova
             // 
             this.tbBrojClanova.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbBrojClanova.Enabled = false;
             this.tbBrojClanova.Font = new System.Drawing.Font("Arial", 11F);
-            this.tbBrojClanova.Location = new System.Drawing.Point(189, 142);
+            this.tbBrojClanova.Location = new System.Drawing.Point(167, 142);
             this.tbBrojClanova.Multiline = true;
             this.tbBrojClanova.Name = "tbBrojClanova";
             this.tbBrojClanova.Size = new System.Drawing.Size(183, 25);
@@ -88,7 +88,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(45, 146);
+            this.label2.Location = new System.Drawing.Point(23, 146);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 17);
             this.label2.TabIndex = 9;
@@ -98,7 +98,7 @@
             // 
             this.lblTreningProgram.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTreningProgram.AutoSize = true;
-            this.lblTreningProgram.Location = new System.Drawing.Point(45, 98);
+            this.lblTreningProgram.Location = new System.Drawing.Point(23, 98);
             this.lblTreningProgram.Name = "lblTreningProgram";
             this.lblTreningProgram.Size = new System.Drawing.Size(119, 17);
             this.lblTreningProgram.TabIndex = 11;
@@ -107,38 +107,43 @@
             // cbTreningProgram
             // 
             this.cbTreningProgram.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbTreningProgram.BackColor = System.Drawing.SystemColors.Window;
             this.cbTreningProgram.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTreningProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbTreningProgram.FormattingEnabled = true;
-            this.cbTreningProgram.Location = new System.Drawing.Point(189, 94);
+            this.cbTreningProgram.Location = new System.Drawing.Point(167, 94);
             this.cbTreningProgram.Name = "cbTreningProgram";
             this.cbTreningProgram.Size = new System.Drawing.Size(183, 25);
             this.cbTreningProgram.TabIndex = 12;
-            this.cbTreningProgram.SelectedIndexChanged += new System.EventHandler(this.CalculateDebt);
+            this.cbTreningProgram.SelectionChangeCommitted += new System.EventHandler(this.cbTreningProgram_SelectionChangeCommitted);
             // 
             // dgvClanstva
             // 
             this.dgvClanstva.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvClanstva.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClanstva.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvClanstva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClanstva.Location = new System.Drawing.Point(48, 199);
+            this.dgvClanstva.Location = new System.Drawing.Point(26, 199);
             this.dgvClanstva.Name = "dgvClanstva";
-            this.dgvClanstva.Size = new System.Drawing.Size(565, 350);
+            this.dgvClanstva.Size = new System.Drawing.Size(693, 350);
             this.dgvClanstva.TabIndex = 13;
+            this.dgvClanstva.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvClanstva_RowsRemoved);
             // 
             // btnObrisiClanove
             // 
             this.btnObrisiClanove.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnObrisiClanove.BackColor = System.Drawing.Color.Salmon;
+            this.btnObrisiClanove.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnObrisiClanove.Enabled = false;
             this.btnObrisiClanove.FlatAppearance.BorderSize = 0;
             this.btnObrisiClanove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnObrisiClanove.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnObrisiClanove.ForeColor = System.Drawing.Color.Transparent;
-            this.btnObrisiClanove.Location = new System.Drawing.Point(515, 574);
+            this.btnObrisiClanove.Location = new System.Drawing.Point(621, 574);
             this.btnObrisiClanove.Name = "btnObrisiClanove";
             this.btnObrisiClanove.Size = new System.Drawing.Size(98, 48);
             this.btnObrisiClanove.TabIndex = 15;
-            this.btnObrisiClanove.Text = "Obrisi označene";
+            this.btnObrisiClanove.Text = "Obriši označene";
             this.btnObrisiClanove.UseVisualStyleBackColor = false;
             this.btnObrisiClanove.Click += new System.EventHandler(this.BtnObrisiClanove_Click);
             // 
@@ -156,12 +161,13 @@
             this.gbDodajClanove.Controls.Add(this.cbClanovi);
             this.gbDodajClanove.Controls.Add(this.lblClan);
             this.gbDodajClanove.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.gbDodajClanove.Location = new System.Drawing.Point(678, 199);
+            this.gbDodajClanove.Location = new System.Drawing.Point(778, 199);
             this.gbDodajClanove.Name = "gbDodajClanove";
             this.gbDodajClanove.Size = new System.Drawing.Size(372, 350);
             this.gbDodajClanove.TabIndex = 16;
             this.gbDodajClanove.TabStop = false;
             this.gbDodajClanove.Text = "Dodaj članstvo u grupu";
+            this.gbDodajClanove.Visible = false;
             // 
             // lblError
             // 
@@ -262,7 +268,9 @@
             // cbClanovi
             // 
             this.cbClanovi.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbClanovi.BackColor = System.Drawing.SystemColors.Window;
             this.cbClanovi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbClanovi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbClanovi.FormattingEnabled = true;
             this.cbClanovi.Location = new System.Drawing.Point(185, 56);
             this.cbClanovi.Name = "cbClanovi";
@@ -284,11 +292,12 @@
             // 
             this.btnSacuvajGrupu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSacuvajGrupu.BackColor = System.Drawing.Color.PowderBlue;
+            this.btnSacuvajGrupu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSacuvajGrupu.FlatAppearance.BorderSize = 0;
             this.btnSacuvajGrupu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSacuvajGrupu.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSacuvajGrupu.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSacuvajGrupu.Location = new System.Drawing.Point(964, 574);
+            this.btnSacuvajGrupu.Location = new System.Drawing.Point(1064, 574);
             this.btnSacuvajGrupu.Name = "btnSacuvajGrupu";
             this.btnSacuvajGrupu.Size = new System.Drawing.Size(86, 48);
             this.btnSacuvajGrupu.TabIndex = 14;
@@ -300,6 +309,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.gbDodajClanove);
             this.Controls.Add(this.btnObrisiClanove);
             this.Controls.Add(this.btnSacuvajGrupu);
@@ -308,12 +318,12 @@
             this.Controls.Add(this.lblTreningProgram);
             this.Controls.Add(this.tbBrojClanova);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.tbClanId);
+            this.Controls.Add(this.tbNazivGrupe);
             this.Controls.Add(this.lblNaziv);
             this.Font = new System.Drawing.Font("Arial", 11F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UCDodajGrupu";
-            this.Size = new System.Drawing.Size(1099, 664);
+            this.Size = new System.Drawing.Size(1182, 664);
             this.Load += new System.EventHandler(this.UCDodajGrupu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClanstva)).EndInit();
             this.gbDodajClanove.ResumeLayout(false);
@@ -326,7 +336,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblNaziv;
-        private System.Windows.Forms.TextBox tbClanId;
+        private System.Windows.Forms.TextBox tbNazivGrupe;
         private System.Windows.Forms.TextBox tbBrojClanova;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblTreningProgram;

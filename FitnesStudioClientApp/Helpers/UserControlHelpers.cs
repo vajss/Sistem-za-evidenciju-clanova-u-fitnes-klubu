@@ -116,7 +116,7 @@ namespace FitnesStudioClientApp.Helpers
                 lblError.Text = errorMessage;
                 return false;
             }
-            return false;
+            return true;
         }
     }
 }
