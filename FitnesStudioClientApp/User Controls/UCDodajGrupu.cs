@@ -30,12 +30,13 @@ namespace FitnesStudioClientApp.User_Controls
         private void BtnObrisiClanove_Click(object sender, EventArgs e)
         {
             dodajGrupuController.RemoveMembers(dgvClanstva);
-            dodajGrupuController.OnRowcountChange(dgvClanstva, cbTreningProgram, tbBrojClanova, btnObrisiClanove);
+            dodajGrupuController.OnRowCountChange(cbTreningProgram, tbBrojClanova, btnObrisiClanove);
         }
 
         private void BtnSacuvajGrupu_Click(object sender, EventArgs e)
         {
-            dodajGrupuController.SacuvajGrupu(cbTreningProgram, tbNazivGrupe, tbBrojClanova, dgvClanstva, gbDodajClanove, lblGroupError);
+            dodajGrupuController.SacuvajGrupu(cbTreningProgram, tbNazivGrupe, tbBrojClanova, dgvClanstva, lblGroupError);
+            dodajGrupuController.ResetFields(cbClanovi, tbNeizmireno, dtpPoslednjePlacanje, dtpUclanjenje);
         }
 
         private void UCDodajGrupu_Load(object sender, EventArgs e)
@@ -46,13 +47,12 @@ namespace FitnesStudioClientApp.User_Controls
 
         private void BtnDodajClana_Click(object sender, EventArgs e)
         {
-            dodajGrupuController.DodajClanstvoUGrupu(cbClanovi, tbBrojClanova, dgvClanstva, dtpUclanjenje, dtpPoslednjePlacanje, tbNeizmireno, cbTreningProgram, btnObrisiClanove, lblError);
+            dodajGrupuController.DodajClanstvoUGrupu(cbClanovi, tbBrojClanova, dgvClanstva, dtpUclanjenje, dtpPoslednjePlacanje, tbNeizmireno, btnObrisiClanove, lblError);
         } 
 
         private void CalculateDebt(object sender, EventArgs e)
         {
             dodajGrupuController.SetDateLimits(dtpPoslednjePlacanje, dtpUclanjenje);
-            cbTreningProgram.BackColor = Color.White;
             if (cbTreningProgram.SelectedIndex == -1) return;
             tbNeizmireno.Text = dodajGrupuController.GetDebt(dtpPoslednjePlacanje.Value, cbTreningProgram).ToString() + " RSD";
         }
@@ -64,21 +64,13 @@ namespace FitnesStudioClientApp.User_Controls
 
         private void cbTreningProgram_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (!gbDodajClanove.Visible && cbTreningProgram.SelectedIndex != -1)
-            {
-                gbDodajClanove.Visible = true;
-                // tbNeizmireno.Text = dodajGrupuController.GetDebt(dtpPoslednjePlacanje.Value, cbTreningProgram).ToString() + " RSD";
-                // tbNeizmireno.Text = dodajGrupuController.GetDebt(dtpPoslednjePlacanje.Value, cbTreningProgram).ToString() + " RSD";
-            }
+            dodajGrupuController.RecalculateDebt(cbTreningProgram, dgvClanstva);
+            cbTreningProgram.BackColor = Color.White;
         }
 
         private void dgvClanstva_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
-            dodajGrupuController.OnRowcountChange(dgvClanstva, cbTreningProgram, tbBrojClanova, btnObrisiClanove);
+            dodajGrupuController.OnRowCountChange(cbTreningProgram, tbBrojClanova, btnObrisiClanove);
         }
-
-
-        // TODO blokiraj program promenu ako su clanovi vec dodati.
-        // Mozda sakrij celu grupu ako nije odabaran
     }
 }

@@ -8,14 +8,14 @@ namespace FitnesStudioClientApp.User_Controls
     public partial class UCLogIn : UserControl
     {
         private readonly LoginController loginController;
-        FrmInitialWindow parentForm;
+        FrmPocetna parentForm;
 
         public UCLogIn()
         {
             InitializeComponent();
         }
 
-        public UCLogIn(LoginController loginController, FrmInitialWindow frmInitialWindow)
+        public UCLogIn(LoginController loginController, FrmPocetna frmInitialWindow)
         {
             parentForm = frmInitialWindow;
             this.loginController = loginController;

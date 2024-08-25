@@ -10,6 +10,7 @@ namespace Common
         SacuvajClana,
         VratiClanove,
         VratiTreningPrograme,
-        SacuvajGrupu
+        SacuvajGrupu,
+        NadjiClanove
     }
 }

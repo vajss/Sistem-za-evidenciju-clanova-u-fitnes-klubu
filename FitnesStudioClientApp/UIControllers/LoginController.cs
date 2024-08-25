@@ -23,7 +23,7 @@ namespace FitnesStudioClientApp.UIControllers
             }
         }
 
-        internal void Login(TextBox tbKorisnickoIme, TextBox tbLozinka, FrmInitialWindow parentForm, Label lblError)
+        internal void Login(TextBox tbKorisnickoIme, TextBox tbLozinka, FrmPocetna parentForm, Label lblError)
         {
             if (!UserControlHelpers.EmptyFieldValidation(tbKorisnickoIme, lblError) |
                 !UserControlHelpers.EmptyFieldValidation(tbLozinka, lblError))

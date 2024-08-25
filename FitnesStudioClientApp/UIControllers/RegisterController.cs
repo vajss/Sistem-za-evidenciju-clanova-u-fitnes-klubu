@@ -16,7 +16,7 @@ namespace FitnesStudioClientApp.UIControllers
                  TextBox tbPassword,
                  TextBox tbRepeatPassword,
                  Label lblError,
-                 FrmInitialWindow frmInitialWindow,
+                 FrmPocetna frmInitialWindow,
                  LoginController loginController)
         {
             if (
@@ -47,8 +47,8 @@ namespace FitnesStudioClientApp.UIControllers
                 if (t != null)
                 {
                     MessageBox.Show($"Korisnik {t.KorisnickoIme} uspesno registrovan");
-                    InitialWindowControler.Instance.ChangePanel();
-                    InitialWindowControler.Instance.ChangePanel(new UCLogIn(loginController ,frmInitialWindow));
+                    PocetnaForma.Instance.ChangePanel();
+                    PocetnaForma.Instance.ChangePanel(new UCLogIn(loginController ,frmInitialWindow));
                 }
                 else
                 {

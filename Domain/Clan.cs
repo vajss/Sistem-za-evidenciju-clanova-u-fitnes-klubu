@@ -23,32 +23,27 @@ namespace Domain
 
         public string Telefon { get; set; }
         [Browsable(false)]
-
         public string TableName => "Clan";
         [Browsable(false)]
-
         public string InsertValues => $"{ClanId}, '{Ime}', '{Prezime}', '{DatumRodjenja}', '{Zanimanje}', '{Telefon}'";
-
+        [Browsable(false)]
         public string IdName => "Id";
         [Browsable(false)]
         public string JoinCondition => "";
         [Browsable(false)]
         public string JoinTable => "";
         [Browsable(false)]
-        public string TableAlias => "";
+        public string TableAlias => "C";
         [Browsable(false)]
         public object SelectValues => "*";
         [Browsable(false)]
-
         public string WhereCondition => throw new NotImplementedException();
         [Browsable(false)]
-
         public string GetUpdateValues => throw new NotImplementedException();
         [Browsable(false)]
-
-        public string GeneralCondition => throw new NotImplementedException();
-
-
+        public string GCondition { get; set; }
+        [Browsable(false)]
+        public string GeneralCondition => $"{GCondition}";
 
         public List<IEntity> GetEntities(SqlDataReader reader)
         {

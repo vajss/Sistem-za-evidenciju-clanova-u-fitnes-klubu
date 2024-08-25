@@ -1,4 +1,5 @@
-﻿using FitnesStudioClientApp.UIControllers;
+﻿using Domain;
+using FitnesStudioClientApp.UIControllers;
 using System;
 using System.Windows.Forms;
 
@@ -13,7 +14,7 @@ namespace FitnesStudioClientApp.User_Controls
             InitializeComponent();
         }
 
-        public UCDodajClana(DodajClanaController dodajClanaController)
+        public UCDodajClana(DodajClanaController dodajClanaController, Clan clanZaIzmeniti = null)
         {
             InitializeComponent();
             dtpDatumRodjenja.MaxDate = DateTime.Now;

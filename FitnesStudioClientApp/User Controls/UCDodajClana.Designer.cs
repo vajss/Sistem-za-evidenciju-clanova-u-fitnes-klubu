@@ -43,6 +43,7 @@
             this.dtpDatumRodjenja = new System.Windows.Forms.DateTimePicker();
             this.btnSacuvajClana = new System.Windows.Forms.Button();
             this.lblError = new System.Windows.Forms.Label();
+            this.btnIzmeniClana = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNaslov
@@ -212,10 +213,27 @@
             this.lblError.TabIndex = 15;
             this.lblError.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
+            // btnIzmeniClana
+            // 
+            this.btnIzmeniClana.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnIzmeniClana.BackColor = System.Drawing.Color.PowderBlue;
+            this.btnIzmeniClana.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.btnIzmeniClana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIzmeniClana.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btnIzmeniClana.ForeColor = System.Drawing.Color.White;
+            this.btnIzmeniClana.Location = new System.Drawing.Point(259, 460);
+            this.btnIzmeniClana.Name = "btnIzmeniClana";
+            this.btnIzmeniClana.Size = new System.Drawing.Size(129, 40);
+            this.btnIzmeniClana.TabIndex = 16;
+            this.btnIzmeniClana.Text = "Sačuvaj Izmene";
+            this.btnIzmeniClana.UseVisualStyleBackColor = false;
+            this.btnIzmeniClana.Visible = false;
+            // 
             // UCDodajClana
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnIzmeniClana);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnSacuvajClana);
             this.Controls.Add(this.dtpDatumRodjenja);
@@ -255,5 +273,6 @@
         private System.Windows.Forms.DateTimePicker dtpDatumRodjenja;
         private System.Windows.Forms.Button btnSacuvajClana;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Button btnIzmeniClana;
     }
 }

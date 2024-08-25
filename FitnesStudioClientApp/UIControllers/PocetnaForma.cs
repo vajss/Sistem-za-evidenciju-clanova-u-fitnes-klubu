@@ -5,20 +5,20 @@ using System.Windows.Forms;
 
 namespace FitnesStudioClientApp.UIControllers
 {
-    public class InitialWindowControler
+    public class PocetnaForma
     {
-        FrmInitialWindow frmInitialWindow;
+        FrmPocetna frmInitialWindow;
         LoginController loginController;
         RegisterController registerController;
 
-        private static InitialWindowControler instance;
-        private InitialWindowControler(){}
+        private static PocetnaForma instance;
+        private PocetnaForma(){}
 
         private static readonly object syncRoot = new object();
 
         public Trener Trener { get; internal set; }
 
-        public static InitialWindowControler Instance
+        public static PocetnaForma Instance
         {
             get
             {
@@ -28,7 +28,7 @@ namespace FitnesStudioClientApp.UIControllers
                     {
                         if (instance == null)
                         {
-                            instance = new InitialWindowControler();
+                            instance = new PocetnaForma();
                         }
                     }
                 }
@@ -36,7 +36,7 @@ namespace FitnesStudioClientApp.UIControllers
             }
         }
 
-        internal void Init(LoginController loginController, RegisterController registerController, FrmInitialWindow frmInitialWindow)
+        internal void Init(LoginController loginController, RegisterController registerController, FrmPocetna frmInitialWindow)
         {
             this.loginController = loginController;
             this.frmInitialWindow = frmInitialWindow;

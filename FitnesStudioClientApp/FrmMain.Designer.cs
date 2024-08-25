@@ -33,6 +33,7 @@ namespace FitnesStudioClientApp
             this.msMeni = new System.Windows.Forms.MenuStrip();
             this.članoviToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajClanaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.naToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grupeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajGrupuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.terminiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,7 +57,8 @@ namespace FitnesStudioClientApp
             // članoviToolStripMenuItem
             // 
             this.članoviToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dodajClanaToolStripMenuItem});
+            this.dodajClanaToolStripMenuItem,
+            this.naToolStripMenuItem});
             this.članoviToolStripMenuItem.Font = new System.Drawing.Font("Arial", 11F);
             this.članoviToolStripMenuItem.Name = "članoviToolStripMenuItem";
             this.članoviToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
@@ -68,6 +70,13 @@ namespace FitnesStudioClientApp
             this.dodajClanaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dodajClanaToolStripMenuItem.Text = "Dodaj člana";
             this.dodajClanaToolStripMenuItem.Click += new System.EventHandler(this.DodajClanaToolStripMenuItem_Click);
+            // 
+            // naToolStripMenuItem
+            // 
+            this.naToolStripMenuItem.Name = "naToolStripMenuItem";
+            this.naToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.naToolStripMenuItem.Text = "Članovi";
+            this.naToolStripMenuItem.Click += new System.EventHandler(this.naToolStripMenuItem_Click);
             // 
             // grupeToolStripMenuItem
             // 
@@ -81,7 +90,7 @@ namespace FitnesStudioClientApp
             // dodajGrupuToolStripMenuItem
             // 
             this.dodajGrupuToolStripMenuItem.Name = "dodajGrupuToolStripMenuItem";
-            this.dodajGrupuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dodajGrupuToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.dodajGrupuToolStripMenuItem.Text = "Dodaj grupu";
             this.dodajGrupuToolStripMenuItem.Click += new System.EventHandler(this.dodajGrupuToolStripMenuItem_Click);
             // 
@@ -131,6 +140,7 @@ namespace FitnesStudioClientApp
         private ToolStripMenuItem dodajClanaToolStripMenuItem;
         private Panel pnlMain;
         private ToolStripMenuItem dodajGrupuToolStripMenuItem;
+        private ToolStripMenuItem naToolStripMenuItem;
 
         public Panel PnlMain { get => pnlMain; set => pnlMain = value; }
     }

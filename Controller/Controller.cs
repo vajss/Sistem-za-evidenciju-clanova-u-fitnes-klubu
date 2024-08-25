@@ -71,6 +71,15 @@ namespace Controller
             return so.Result;
         }
 
+        public List<Clan> PretraziClanove(Clan clan)
+        {
+            PretragaClanovaSO so = new PretragaClanovaSO();
+            so.ExecuteTemplate(clan);
+            return so.Result;
+        }
+
+
+
         // TRENING PROGRAM
         public List<TreningProgram> VratiTreningPrograme(TreningProgram treningProgram)
         {

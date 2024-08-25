@@ -8,7 +8,7 @@ namespace FitnesStudioClientApp.UIControllers
 {
     public class DodajClanaController
     {
-        internal void DodajClana(TextBox tbClanId, TextBox tbIme, TextBox tbPrezime, DateTimePicker dtpDatumRodjenja, TextBox tbZanimanje, TextBox tbTelefon, Label lblError)
+        internal void DodajClana(TextBox tbClanId, TextBox tbIme, TextBox tbPrezime, DateTimePicker dtpDatumRodjenja, TextBox tbTelefon, TextBox tbZanimanje, Label lblError)
         {
             if (!UserControlHelpers.EmptyFieldValidation(tbClanId, lblError) |
                 !UserControlHelpers.EmptyFieldValidation(tbIme, lblError) |

@@ -1,6 +1,4 @@
 ﻿using FitnesStudioClientApp.User_Controls;
-using System;
-using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace FitnesStudioClientApp.UIControllers
@@ -10,13 +8,9 @@ namespace FitnesStudioClientApp.UIControllers
 
         public void ChangePanel(UserControl userControl, FrmMain frmMain)
         {
-            Debug.WriteLine(">>>>>>> outside3 ");
-
             frmMain.PnlMain.Controls.Clear();
             if (userControl != null)
             {
-                Debug.WriteLine(">>>>>>> insode", userControl);
-
                 userControl.Dock = DockStyle.Fill;
                 frmMain.PnlMain.Controls.Add(userControl);
             }
@@ -30,6 +24,11 @@ namespace FitnesStudioClientApp.UIControllers
         internal void OpenUCDodajGrupu(FrmMain frmMain)
         {
             ChangePanel(new UCDodajGrupu(new DodajGrupuController()), frmMain);
+        }
+
+        internal void OpenUCNadjiClanove(FrmMain frmMain)
+        {
+            ChangePanel(new UCNadjiClanove(new NadjiClanoveController()), frmMain);
         }
     }
 }

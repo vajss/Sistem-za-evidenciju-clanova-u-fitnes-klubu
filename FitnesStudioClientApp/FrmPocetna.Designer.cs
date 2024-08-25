@@ -2,7 +2,7 @@
 
 namespace FitnesStudioClientApp
 {
-    partial class FrmInitialWindow
+    partial class FrmPocetna
     {
         /// <summary>
         /// Required designer variable.

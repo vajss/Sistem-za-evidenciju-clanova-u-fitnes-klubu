@@ -5,19 +5,19 @@ using System.Windows.Forms;
 
 namespace FitnesStudioClientApp
 {
-    public partial class FrmInitialWindow : Form
+    public partial class FrmPocetna : Form
     {
-        public FrmInitialWindow()
+        public FrmPocetna()
         {
             Debug.WriteLine(">>> Is this ever called? ");
 
             InitializeComponent();
         }
 
-        public FrmInitialWindow(LoginController loginController, RegisterController registerController)
+        public FrmPocetna(LoginController loginController, RegisterController registerController)
         {
             InitializeComponent();
-            InitialWindowControler.Instance.Init(loginController, registerController, this);
+            PocetnaForma.Instance.Init(loginController, registerController, this);
         }
 
         public LoginController LoginController { get; }

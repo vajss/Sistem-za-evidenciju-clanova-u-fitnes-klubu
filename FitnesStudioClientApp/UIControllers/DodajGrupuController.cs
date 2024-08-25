@@ -2,8 +2,6 @@
 using FitnesStudioClientApp.Helpers;
 using System;
 using System.ComponentModel;
-using System.Data.SqlClient;
-using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 using View.Exceptions;
@@ -15,7 +13,7 @@ namespace FitnesStudioClientApp.UIControllers
     {
         BindingList<Clanstvo> clanstva = new BindingList<Clanstvo>();
 
-        internal void DodajClanstvoUGrupu(ComboBox cbClanovi, TextBox tbBrojClanova, DataGridView dgvClanstva, DateTimePicker dtpUclanjenje, DateTimePicker dtpPoslednjePlacanje, TextBox tbNeizmireno, ComboBox cbTreningProgram, Button btnObrisiClanove,  Label lblError)
+        internal void DodajClanstvoUGrupu(ComboBox cbClanovi, TextBox tbBrojClanova, DataGridView dgvClanstva, DateTimePicker dtpUclanjenje, DateTimePicker dtpPoslednjePlacanje, TextBox tbNeizmireno, Button btnObrisiClanove,  Label lblError)
         {
             if (!UserControlHelpers.ComboBoxValidation(cbClanovi, lblError) |
                 !UserControlHelpers.CompareDatesValidation(dtpUclanjenje, dtpPoslednjePlacanje, lblError, "Učlanjenje ne može biti neako poslednjeg plaćanja.")
@@ -49,7 +47,6 @@ namespace FitnesStudioClientApp.UIControllers
             tbBrojClanova.Text = clanstva.Count.ToString();
             dgvClanstva.Refresh();
             lblError.Visible = false;
-            cbTreningProgram.Enabled = false;
             btnObrisiClanove.Enabled = true;
         }
 
@@ -102,13 +99,15 @@ namespace FitnesStudioClientApp.UIControllers
         {
             dgvClanstva.DataSource = clanstva;
             dgvClanstva.Columns["DatumUclanjenja"].HeaderText = "Datum učlanjenja";
+            dgvClanstva.Columns["DatumUclanjenja"].DefaultCellStyle.Format = "dd.MM.yyyy.";
             dgvClanstva.Columns["DatumPoslednjegPlacanja"].HeaderText = "Poslednja članarina plaćena";
+            dgvClanstva.Columns["DatumPoslednjegPlacanja"].DefaultCellStyle.Format = "dd.MM.yyyy.";
             dgvClanstva.Columns["Clan"].HeaderText = "Član";
             dgvClanstva.Columns["NeizmirenaDugovanja"].HeaderText = "Neizmirena dugovanja";
             dgvClanstva.Columns["Grupa"].Visible = false;
         }
 
-        internal void OnRowcountChange(DataGridView dgvClanstva, ComboBox cbTreningProgram, TextBox tbBrojClanova, Button btnObrisiClanove)
+        internal void OnRowCountChange(ComboBox cbTreningProgram, TextBox tbBrojClanova, Button btnObrisiClanove)
         {
             if (clanstva.Count == 0)
             {
@@ -134,7 +133,7 @@ namespace FitnesStudioClientApp.UIControllers
 
         }
 
-        internal void SacuvajGrupu(ComboBox cbTreningProgram, TextBox tbNazivGrupe, TextBox tbBrojClanova, DataGridView dgvClanstva, GroupBox gbDodajClanove, Label lblError)
+        internal void SacuvajGrupu(ComboBox cbTreningProgram, TextBox tbNazivGrupe, TextBox tbBrojClanova, DataGridView dgvClanstva, Label lblError)
         {
             if (!UserControlHelpers.ComboBoxValidation(cbTreningProgram, lblError) |
                 !UserControlHelpers.EmptyFieldValidation(tbNazivGrupe, lblError)
@@ -159,18 +158,31 @@ namespace FitnesStudioClientApp.UIControllers
 
                 tbNazivGrupe.Text = "";
                 cbTreningProgram.SelectedIndex = -1;
-                cbTreningProgram.Enabled = true;
                 tbBrojClanova.Text = "";
                 dgvClanstva.Rows.Clear();
                 dgvClanstva.Refresh();
-                gbDodajClanove.Visible = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Greška čuvanju grupe.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
 
+        internal void RecalculateDebt(ComboBox cbTreningProgram, DataGridView dgvClanstva)
+        {
+            foreach (Clanstvo c in clanstva)
+            {
+                c.NeizmirenaDugovanja = GetDebt(c.DatumPoslednjegPlacanja, cbTreningProgram);
+            }
+            dgvClanstva.Refresh();
+        }
 
+        internal void ResetFields(ComboBox cbClanovi, TextBox tbNeizmireno, DateTimePicker dtpPoslednjePlacanje, DateTimePicker dtpUclanjenje)
+        {
+            cbClanovi.SelectedIndex = -1;
+            tbNeizmireno.Text = "0 RSD";
+            dtpPoslednjePlacanje.Value = DateTime.Now.AddHours(-1);
+            dtpUclanjenje.Value = DateTime.Now.AddHours(-2); ;
         }
     }
 }

@@ -13,7 +13,7 @@ namespace FitnesStudioClientApp.UIControllers
         private readonly MainViewController mainController = new MainViewController();
         private readonly LoginController loginController = new LoginController();
         private readonly RegisterController registerController = new RegisterController();
-        private FrmInitialWindow frmLogin;
+        private FrmPocetna frmLogin;
         private FrmMain frmMain;
 
         private static MainCoordinator instance;
@@ -35,7 +35,7 @@ namespace FitnesStudioClientApp.UIControllers
 
         public void OpenLoginForm()
         {
-            frmLogin = new FrmInitialWindow(loginController, registerController);
+            frmLogin = new FrmPocetna(loginController, registerController);
             frmLogin.Show();
         }
 

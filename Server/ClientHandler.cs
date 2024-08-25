@@ -118,6 +118,9 @@ namespace ServerApp
                 case Operation.SacuvajGrupu:
                     Controller.Controller.Instance.SacuvajGrupu((Grupa)request.RequestObject);
                     break;
+                case Operation.NadjiClanove:
+                    response.Result = Controller.Controller.Instance.PretraziClanove((Clan)request.RequestObject);
+                    break;
 
                 /*      case Operation.VratiSale:
                         List<SalaZaTrening> rez = (List<SalaZaTrening>)Controller.Controller.Instance.VratiSveSale(new SalaZaTrening());

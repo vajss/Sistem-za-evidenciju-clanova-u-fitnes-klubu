@@ -8,7 +8,7 @@ namespace FitnesStudioClientApp.User_Controls
     {
 
         private readonly RegisterController registerController;
-        private readonly FrmInitialWindow frmInitialWindow;
+        private readonly FrmPocetna frmInitialWindow;
         private readonly LoginController loginController;
 
         public UCRegisterUser()
@@ -16,7 +16,7 @@ namespace FitnesStudioClientApp.User_Controls
             InitializeComponent();
         }
 
-        public UCRegisterUser(RegisterController registerController, FrmInitialWindow frmInitialWindow, LoginController loginController)
+        public UCRegisterUser(RegisterController registerController, FrmPocetna frmInitialWindow, LoginController loginController)
         {
             this.registerController = registerController;
             this.frmInitialWindow = frmInitialWindow;

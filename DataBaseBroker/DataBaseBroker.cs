@@ -54,44 +54,18 @@ namespace DataBaseBroker
 
         public int Save(IEntity entity)
         {
-            /*            Debug.WriteLine($">>>>>> SAVE COMMAND: INSERT INTO {entity.TableName} OUTPUT Inserted.ID VALUES ({entity.InsertValues})");
-                        SqlCommand command = new SqlCommand("", connection, transaction);
-                        command.CommandText = $"INSERT INTO {entity.TableName} VALUES ({entity.InsertValues})";
-                        if (command.ExecuteNonQuery() != 1)
-                        {
-                            throw new Exception("Database error!");
-                        }*/
-            Debug.WriteLine($">>>>>> SAVE COMMAND: INSERT INTO {entity.TableName} OUTPUT Inserted.{entity.IdName} VALUES ({entity.InsertValues})");
             SqlCommand command = new SqlCommand("", connection, transaction);
             command.CommandText = $"INSERT INTO {entity.TableName} OUTPUT Inserted.ID VALUES ({entity.InsertValues})";
             return Convert.ToInt32(command.ExecuteScalar());
-/*
-            if (command.ExecuteNonQuery() != 1)
-            {
-                throw new Exception("Database error!");
-            }*/
         }
-
-/*        public int GetNewId(IEntity entity)
-        {
-            SqlCommand command = new SqlCommand("", connection, transaction);
-            command.CommandText = $"select max({entity.IdName}) from {entity.TableName}";
-            object result = command.ExecuteScalar();
-            if (result is DBNull)
-            {
-                return 1;
-            }
-            else
-            {
-                return (int)result;
-            }
-        }*/
 
         public List<IEntity> GetSpecific(IEntity entity)
         {
             List<IEntity> result;
             SqlCommand command = new SqlCommand("", connection, transaction);
+
             command.CommandText = $"select {entity.SelectValues} from {entity.TableName} {entity.TableAlias} {entity.JoinTable} {entity.JoinCondition} where {entity.GeneralCondition}";
+            Debug.WriteLine(">>>>>>>>>>> get specific: " + command.CommandText);
             SqlDataReader reader = command.ExecuteReader();
             result = entity.GetEntities(reader);
             reader.Close();

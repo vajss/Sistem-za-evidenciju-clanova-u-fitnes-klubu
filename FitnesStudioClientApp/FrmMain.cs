@@ -35,5 +35,10 @@ namespace FitnesStudioClientApp
         {
             mainController.OpenUCDodajGrupu(this);
         }
+
+        private void naToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            mainController.OpenUCNadjiClanove(this);
+        }
     }
 }

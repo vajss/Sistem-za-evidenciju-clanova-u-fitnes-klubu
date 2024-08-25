@@ -2,6 +2,7 @@
 using Domain;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.Sockets;
@@ -93,7 +94,6 @@ namespace FitnesStudioClientApp.Communication
             };
             client.SendRequest(request);
             return (List<Clan>)client.GetResponseResult();
-
         }
 
         internal List<TreningProgram> VratiTrerningPrograme()
@@ -115,6 +115,17 @@ namespace FitnesStudioClientApp.Communication
             };
             client.SendRequest(request);
             return (Grupa)client.GetResponseResult();
+        }
+
+        internal List<Clan> PretraziClanove(Clan clan)
+        {
+            Request request = new Request
+            {
+                Operation = Operation.NadjiClanove,
+                RequestObject = clan
+            };
+            client.SendRequest(request);
+            return (List<Clan>)client.GetResponseResult();
         }
     }
 }

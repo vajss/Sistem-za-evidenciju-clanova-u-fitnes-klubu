@@ -34,7 +34,6 @@
             this.tbBrojClanova = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblTreningProgram = new System.Windows.Forms.Label();
-            this.cbTreningProgram = new System.Windows.Forms.ComboBox();
             this.dgvClanstva = new System.Windows.Forms.DataGridView();
             this.btnObrisiClanove = new System.Windows.Forms.Button();
             this.gbDodajClanove = new System.Windows.Forms.GroupBox();
@@ -51,6 +50,7 @@
             this.btnSacuvajGrupu = new System.Windows.Forms.Button();
             this.lblGroupError = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cbTreningProgram = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClanstva)).BeginInit();
             this.gbDodajClanove.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -108,19 +108,6 @@
             this.lblTreningProgram.TabIndex = 11;
             this.lblTreningProgram.Text = "Trening program:";
             // 
-            // cbTreningProgram
-            // 
-            this.cbTreningProgram.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbTreningProgram.BackColor = System.Drawing.SystemColors.Window;
-            this.cbTreningProgram.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTreningProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbTreningProgram.FormattingEnabled = true;
-            this.cbTreningProgram.Location = new System.Drawing.Point(167, 94);
-            this.cbTreningProgram.Name = "cbTreningProgram";
-            this.cbTreningProgram.Size = new System.Drawing.Size(183, 25);
-            this.cbTreningProgram.TabIndex = 12;
-            this.cbTreningProgram.SelectionChangeCommitted += new System.EventHandler(this.cbTreningProgram_SelectionChangeCommitted);
-            // 
             // dgvClanstva
             // 
             this.dgvClanstva.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -129,6 +116,7 @@
             this.dgvClanstva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClanstva.Location = new System.Drawing.Point(26, 199);
             this.dgvClanstva.Name = "dgvClanstva";
+            this.dgvClanstva.ReadOnly = true;
             this.dgvClanstva.Size = new System.Drawing.Size(693, 350);
             this.dgvClanstva.TabIndex = 13;
             this.dgvClanstva.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvClanstva_RowsRemoved);
@@ -171,7 +159,6 @@
             this.gbDodajClanove.TabIndex = 16;
             this.gbDodajClanove.TabStop = false;
             this.gbDodajClanove.Text = "Dodaj članstvo u grupu";
-            this.gbDodajClanove.Visible = false;
             // 
             // lblError
             // 
@@ -324,17 +311,29 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // cbTreningProgram
+            // 
+            this.cbTreningProgram.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbTreningProgram.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.cbTreningProgram.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTreningProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbTreningProgram.FormattingEnabled = true;
+            this.cbTreningProgram.Location = new System.Drawing.Point(167, 98);
+            this.cbTreningProgram.Name = "cbTreningProgram";
+            this.cbTreningProgram.Size = new System.Drawing.Size(183, 25);
+            this.cbTreningProgram.TabIndex = 29;
+            // 
             // UCDodajGrupu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.cbTreningProgram);
             this.Controls.Add(this.lblGroupError);
             this.Controls.Add(this.gbDodajClanove);
             this.Controls.Add(this.btnObrisiClanove);
             this.Controls.Add(this.btnSacuvajGrupu);
             this.Controls.Add(this.dgvClanstva);
-            this.Controls.Add(this.cbTreningProgram);
             this.Controls.Add(this.lblTreningProgram);
             this.Controls.Add(this.tbBrojClanova);
             this.Controls.Add(this.label2);
@@ -361,7 +360,6 @@
         private System.Windows.Forms.TextBox tbBrojClanova;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblTreningProgram;
-        private System.Windows.Forms.ComboBox cbTreningProgram;
         private System.Windows.Forms.DataGridView dgvClanstva;
         private System.Windows.Forms.Button btnObrisiClanove;
         private System.Windows.Forms.GroupBox gbDodajClanove;
@@ -378,5 +376,6 @@
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Label lblGroupError;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ComboBox cbTreningProgram;
     }
 }
