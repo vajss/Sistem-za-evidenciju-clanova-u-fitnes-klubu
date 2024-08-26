@@ -71,7 +71,7 @@ namespace FitnesStudioClientApp.UIControllers
         {
             if (Clan != null)
             {
-                parentForm.mainController.ChangePanel(new UCDodajClana(new IzmeniClanaController(), Clan), parentForm);
+                parentForm.mainController.ChangePanel(new UCDodajClana(new IzmeniClanaController(), Clan, parentForm), parentForm);
             } else
             {
                 // TODO set error that no clan is selected

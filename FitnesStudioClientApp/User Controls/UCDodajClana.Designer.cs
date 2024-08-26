@@ -44,6 +44,7 @@
             this.btnSacuvajClana = new System.Windows.Forms.Button();
             this.lblError = new System.Windows.Forms.Label();
             this.btnIzmeniClana = new System.Windows.Forms.Button();
+            this.btnNazad = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNaslov
@@ -230,11 +231,29 @@
             this.btnIzmeniClana.Visible = false;
             this.btnIzmeniClana.Click += new System.EventHandler(this.btnIzmeniClana_Click);
             // 
+            // btnNazad
+            // 
+            this.btnNazad.BackColor = System.Drawing.Color.PowderBlue;
+            this.btnNazad.FlatAppearance.BorderSize = 0;
+            this.btnNazad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNazad.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnNazad.ForeColor = System.Drawing.Color.Transparent;
+            this.btnNazad.Location = new System.Drawing.Point(16, 17);
+            this.btnNazad.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnNazad.Name = "btnNazad";
+            this.btnNazad.Size = new System.Drawing.Size(97, 32);
+            this.btnNazad.TabIndex = 17;
+            this.btnNazad.Text = "< Nazad";
+            this.btnNazad.UseVisualStyleBackColor = true;
+            this.btnNazad.Visible = false;
+            this.btnNazad.Click += new System.EventHandler(this.btnNazad_Click);
+            // 
             // UCDodajClana
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnNazad);
             this.Controls.Add(this.btnIzmeniClana);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnSacuvajClana);
@@ -276,5 +295,6 @@
         private System.Windows.Forms.Button btnSacuvajClana;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Button btnIzmeniClana;
+        private System.Windows.Forms.Button btnNazad;
     }
 }

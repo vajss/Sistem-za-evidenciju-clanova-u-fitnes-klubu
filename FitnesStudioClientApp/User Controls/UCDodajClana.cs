@@ -10,6 +10,7 @@ namespace FitnesStudioClientApp.User_Controls
         private DodajClanaController dodajClanaController;
         private IzmeniClanaController izmeniClanaController;
         private Clan preselectedClan;
+        private FrmMain parentForm;
 
         public UCDodajClana()
         {
@@ -23,9 +24,10 @@ namespace FitnesStudioClientApp.User_Controls
             this.dodajClanaController = dodajClanaController;
         }
 
-        public UCDodajClana(IzmeniClanaController izmeniClanaController, Clan clanZaIzmeniti)
+        public UCDodajClana(IzmeniClanaController izmeniClanaController, Clan clanZaIzmeniti, FrmMain frmMain)
         {
             InitializeComponent();
+            parentForm = frmMain;
             dtpDatumRodjenja.MaxDate = DateTime.Now;
             this.izmeniClanaController = izmeniClanaController;
             SetupEdit(clanZaIzmeniti);
@@ -42,6 +44,8 @@ namespace FitnesStudioClientApp.User_Controls
             tbTelefon.Text = clan.Telefon;
             tbZanimanje.Text = clan.Zanimanje;
             dtpDatumRodjenja.Value = clan.DatumRodjenja;
+            btnNazad.Visible = true;
+            lblNaslov.Text = "Izmena člana";
 
             btnSacuvajClana.Visible = false;
             btnIzmeniClana.Visible = true;
@@ -55,6 +59,12 @@ namespace FitnesStudioClientApp.User_Controls
         private void btnIzmeniClana_Click(object sender, EventArgs e)
         {
             izmeniClanaController.IzmeniClana(tbClanId, tbIme, tbPrezime, dtpDatumRodjenja, tbTelefon, tbZanimanje, lblError, preselectedClan);
+            parentForm.mainController.OpenUCNadjiClanove(parentForm);
+        }
+
+        private void btnNazad_Click(object sender, EventArgs e)
+        {
+            parentForm.mainController.OpenUCNadjiClanove(parentForm);
         }
     }
 }
