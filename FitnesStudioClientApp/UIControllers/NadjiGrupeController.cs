@@ -26,7 +26,7 @@ namespace FitnesStudioClientApp.UIControllers
             {
                 Grupa grupa = new Grupa();
                 grupa.GCondition = $"G.Naziv LIKE '%{tbPretraga.Text}%'";
-                BindingList<Grupa> grupe = new BindingList<Grupa>(Communication.Communication.Instance.VratiSveGrupe()); // TODO pretrazi ovde ide
+                BindingList<Grupa> grupe = new BindingList<Grupa>(Communication.Communication.Instance.PretraziGrupe(grupa));
                 if (grupe?.Count != 0 && grupe?.Count != null)
                 {
                     dgvGrupe.DataSource = grupe;

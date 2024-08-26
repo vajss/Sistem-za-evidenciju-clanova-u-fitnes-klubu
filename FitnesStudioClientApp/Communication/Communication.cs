@@ -154,5 +154,16 @@ namespace FitnesStudioClientApp.Communication
             client.SendRequest(request);
             return (List<Grupa>)client.GetResponseResult();
         }
+
+        internal List<Grupa> PretraziGrupe(Grupa grupa)
+        {
+            Request request = new Request
+            {
+                Operation = Operation.NadjiGrupe,
+                RequestObject = grupa
+            };
+            client.SendRequest(request);
+            return (List<Grupa>)client.GetResponseResult();
+        }
     }
 }

@@ -45,6 +45,7 @@
     <Compile Include="ClanSO\PretragaClanovaSO.cs" />
     <Compile Include="ClanSO\SacuvajClanaSO.cs" />
     <Compile Include="ClanSO\VratiSveClanoveSO.cs" />
+    <Compile Include="GrupaSO\PretraziGrupeSO.cs" />
     <Compile Include="GrupaSO\SacuvajGrupuSO.cs" />
     <Compile Include="GrupaSO\VratiSveGrupeSO.cs" />
     <Compile Include="SytemOperationBase.cs" />

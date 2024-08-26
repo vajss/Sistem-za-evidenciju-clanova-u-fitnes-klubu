@@ -20,5 +20,19 @@ namespace FitnesStudioClientApp.User_Controls
             InitializeComponent();
             this.nadjiGrupeController.SetGrid(dgvGrupe);
         }
+
+        private void BtnPretrazi_Click(object sender, System.EventArgs e)
+        {
+            nadjiGrupeController.PretraziGrupe(tbPretraga, dgvGrupe, lblError);
+        }
+
+        private void tbPretraga_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                nadjiGrupeController.PretraziGrupe(tbPretraga, dgvGrupe, lblError);
+                e.SuppressKeyPress = true;
+            }
+        }
     }
 }

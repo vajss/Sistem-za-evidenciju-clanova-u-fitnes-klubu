@@ -3,6 +3,7 @@ using Storage;
 using Storage.Implementation;
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using SystemOperations.ClanSO;
 using SystemOperations.GrupaSO;
 using SystemOperations.TrenerSO;
@@ -104,6 +105,13 @@ namespace Controller
         public List<Grupa> VratiSveGrupe(Grupa grupa)
         {
             VratiSveGrupeSO so = new VratiSveGrupeSO();
+            so.ExecuteTemplate(grupa);
+            return so.Result;
+        }
+
+        public List<Grupa> PretraziGrupe(Grupa grupa)
+        {
+            PretraziGrupeSO so = new PretraziGrupeSO();
             so.ExecuteTemplate(grupa);
             return so.Result;
         }

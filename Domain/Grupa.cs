@@ -29,13 +29,13 @@ namespace Domain
         [Browsable(false)]
         public object SelectValues => "*";
         [Browsable(false)]
-        public string WhereCondition => "";
+        public string WhereCondition => $"G.Id={Id}";
         [Browsable(false)]
         public string GetUpdateValues => "";
         [Browsable(false)]
         public string GCondition { get; set; }
         [Browsable(false)]
-        public string GeneralCondition => "";
+        public string GeneralCondition => $"{GCondition}";
 
         public List<IEntity> GetEntities(SqlDataReader reader)
         {

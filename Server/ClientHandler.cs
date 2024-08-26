@@ -134,55 +134,9 @@ namespace ServerApp
                 case Operation.VratiSveGrupe:
                     response.Result = Controller.Controller.Instance.VratiSveGrupe((Grupa)request.RequestObject);
                     break;
-                /*      case Operation.VratiSale:
-                        List<SalaZaTrening> rez = (List<SalaZaTrening>)Controller.Controller.Instance.VratiSveSale(new SalaZaTrening());
-                        response.Result = rez;
-                        break;
-                    case Operation.SacuvajGrupu:
-                        Controller.Controller.Instance.SacuvajGrupu((GrupaZaTreniranje)request.RequestObject);
-                        break;
-                    case Operation.VratiGrupe:
-                        response.Result = (List<GrupaZaTreniranje>)Controller.Controller.Instance.VratiSveGrupe(new GrupaZaTreniranje());
-                        break;
-                    case Operation.SacuvajClana:
-                        Controller.Controller.Instance.SacuvajClana((ClanKluba)request.RequestObject);
-                        break;
-                    case Operation.PretraziClana:
-                        response.Result = (List<ClanKluba>)Controller.Controller.Instance.PretraziClana((ClanKluba)request.RequestObject);
-                        break;
-                    case Operation.EvidentirajPlacanjeClanarine:
-                        Controller.Controller.Instance.EvidentirajPlacanjeClanarine((Clanarina)request.RequestObject);
-                        break;
-                    case Operation.PretraziTreninge:
-                        response.Result = (List<Trening>)Controller.Controller.Instance.PretraziTreninge((Trening)request.RequestObject);
-                        break;
-                    case Operation.SacuvajPrisustva:
-                        Controller.Controller.Instance.SacuvajPrisustva(new List<Prisustvo>((BindingList<Prisustvo>)request.RequestObject));
-                        break;
-                    case Operation.SacuvajIzmeneClana:
-                        Controller.Controller.Instance.SacuvajIzmeneClana((ClanKluba)request.RequestObject);
-                        break;
-                    case Operation.UcitajTrening:
-                        response.Result = (Trening)Controller.Controller.Instance.UcitajTrening((Trening)request.RequestObject);
-                        break;
-                    case Operation.SacuvajIzmeneTreninga:
-                        Controller.Controller.Instance.SacuvajIzmeneTreninga((Trening)request.RequestObject);
-                        break;
-                    case Operation.UcitajClanaKluba:
-                        response.Result = (ClanKluba)Controller.Controller.Instance.UcitajClanaaKluba((ClanKluba)request.RequestObject);
-                        break;
-                    case Operation.VratiPrisustva:
-                        response.Result = Controller.Controller.Instance.VratiPrisustva((Prisustvo)request.RequestObject);
-                        break;
-                    case Operation.VratiClanarine:
-                        response.Result = Controller.Controller.Instance.UcitajClanarinu((Clanarina)request.RequestObject);
-                        break;
-                    case Operation.PretraziGrupe:
-                        response.Result = Controller.Controller.Instance.PretraziGrupu((GrupaZaTreniranje)request.RequestObject);
-                        break;
-                    case Operation.UcitajGrupu:
-                        response.Result = Controller.Controller.Instance.UcitajGrupu((GrupaZaTreniranje)request.RequestObject);
-                        break;*/
+                case Operation.NadjiGrupe:
+                    response.Result = Controller.Controller.Instance.PretraziGrupe((Grupa)request.RequestObject);
+                    break;
                 default:
                     break;
             }

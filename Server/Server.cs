@@ -54,7 +54,7 @@ namespace ServerApp
                     clientHandlerThread.Start();
                 }
             }
-            catch (SocketException ex)
+            catch (SocketException)
             {
                 Debug.WriteLine(">>> Server stoped... ");
             }
