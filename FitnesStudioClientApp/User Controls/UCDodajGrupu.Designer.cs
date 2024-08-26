@@ -261,7 +261,6 @@
             this.cbClanovi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbClanovi.BackColor = System.Drawing.Color.Gainsboro;
             this.cbClanovi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbClanovi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbClanovi.FormattingEnabled = true;
             this.cbClanovi.Location = new System.Drawing.Point(185, 56);
             this.cbClanovi.Name = "cbClanovi";
@@ -316,7 +315,6 @@
             this.cbTreningProgram.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbTreningProgram.BackColor = System.Drawing.Color.Gainsboro;
             this.cbTreningProgram.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTreningProgram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbTreningProgram.FormattingEnabled = true;
             this.cbTreningProgram.Location = new System.Drawing.Point(167, 98);
             this.cbTreningProgram.Name = "cbTreningProgram";

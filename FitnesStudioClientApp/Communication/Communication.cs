@@ -1,5 +1,6 @@
 ﻿using Common;
 using Domain;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Sockets;
@@ -164,6 +165,17 @@ namespace FitnesStudioClientApp.Communication
             };
             client.SendRequest(request);
             return (List<Grupa>)client.GetResponseResult();
+        }
+
+        internal Termin DodajTermin(Termin termin)
+        {
+            Request request = new Request
+            {
+                Operation = Operation.SacuvajTermin,
+                RequestObject = termin
+            };
+            client.SendRequest(request);
+            return (Termin)client.GetResponseResult();
         }
     }
 }

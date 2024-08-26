@@ -137,6 +137,9 @@ namespace ServerApp
                 case Operation.NadjiGrupe:
                     response.Result = Controller.Controller.Instance.PretraziGrupe((Grupa)request.RequestObject);
                     break;
+                case Operation.SacuvajTermin:
+                    Controller.Controller.Instance.SacuvajTermin((Termin)request.RequestObject);
+                    break;
                 default:
                     break;
             }

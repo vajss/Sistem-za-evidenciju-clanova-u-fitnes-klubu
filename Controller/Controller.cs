@@ -1,11 +1,10 @@
 ﻿using Domain;
 using Storage;
 using Storage.Implementation;
-using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using SystemOperations.ClanSO;
 using SystemOperations.GrupaSO;
+using SystemOperations.TerminSO;
 using SystemOperations.TrenerSO;
 using SystemOperations.TreningProgramSO;
 
@@ -85,8 +84,6 @@ namespace Controller
             return so.Result;
         }
 
-
-
         // TRENING PROGRAM
         public List<TreningProgram> VratiTreningPrograme(TreningProgram treningProgram)
         {
@@ -114,6 +111,13 @@ namespace Controller
             PretraziGrupeSO so = new PretraziGrupeSO();
             so.ExecuteTemplate(grupa);
             return so.Result;
+        }
+
+        // TERMIN
+        public void SacuvajTermin(Termin termin)
+        {
+            SacuvajTerminSO so = new SacuvajTerminSO();
+            so.ExecuteTemplate(termin);
         }
     }
 }

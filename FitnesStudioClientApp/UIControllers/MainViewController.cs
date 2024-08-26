@@ -32,6 +32,12 @@ namespace FitnesStudioClientApp.UIControllers
             ChangePanel(new UCDodajGrupu(new DodajGrupuController()), frmMain);
         }
 
+        internal void OpenUCDodajTermin(FrmMain frmMain)
+        {
+            ChangePanel(new UCDodajTermin(new DodajTerminController()), frmMain);
+
+        }
+
         internal void OpenUCNadjiClanove(FrmMain frmMain)
         {
             ChangePanel(new UCNadjiClanove(new NadjiClanoveController(), frmMain), frmMain);

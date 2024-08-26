@@ -39,47 +39,33 @@ namespace FitnesStudioClientApp.Helpers
         {
             if (cb.SelectedIndex == -1)
             {
-                errorLabel.Text = "Popunite naznačena polja.";
+                errorLabel.Text = "Popunite sva polja.";
                 cb.BackColor = Color.Salmon;
                 return false;
             }
             else
             {
-                cb.BackColor = Color.White;
+                cb.BackColor = Color.WhiteSmoke;
                 return true;
             }
         }
 
-        public static bool IntValidation(TextBox tb)
+        public static bool IntValidation(TextBox tb, Label lblError)
         {
             if (!int.TryParse(tb.Text, out int _))
             {
-                tb.Text = "Morate uneti broj";
+                lblError.Visible = true;
+                lblError.Text = "Morate uneti broj za trajanje";
                 tb.BackColor = Color.Salmon;
                 return false;
             }
             else
             {
+                lblError.Visible = false;
+                lblError.Text = "";
                 tb.BackColor = Color.White;
                 return true;
             }
-        }
-
-        public static bool StartWithValidation(TextBox textBox, Label errorLabel)
-        {
- /*           if (password.Text != repeatPassword.Text)
-            {
-                errorLabel.Text = "Lozinke se ne poklapaju.";
-                errorLabel.Visible = true;
-                return false;
-            }
-
-            if (string.IsNullOrWhiteSpace(errorLabel.Text))
-            {
-                errorLabel.Visible = false;
-            }
-*/
-            return true;
         }
 
     public static bool SixDigitValidation(TextBox tb, Label errorLabel, string message)

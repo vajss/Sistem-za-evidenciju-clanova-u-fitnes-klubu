@@ -67,6 +67,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UIControllers\DodajClanaController.cs" />
     <Compile Include="UIControllers\DodajGrupuController.cs" />
+    <Compile Include="UIControllers\DodajTerminController.cs" />
     <Compile Include="UIControllers\IzmeniClanaController.cs" />
     <Compile Include="UIControllers\NadjiGrupeController.cs" />
     <Compile Include="UIControllers\PocetnaForma.cs" />
@@ -86,6 +87,12 @@
     </Compile>
     <Compile Include="User Controls\UCDodajGrupu.Designer.cs">
       <DependentUpon>UCDodajGrupu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\UCDodajTermin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UCDodajTermin.Designer.cs">
+      <DependentUpon>UCDodajTermin.cs</DependentUpon>
     </Compile>
     <Compile Include="User Controls\UCLogIn.cs">
       <SubType>UserControl</SubType>
@@ -132,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UCDodajGrupu.resx">
       <DependentUpon>UCDodajGrupu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UCDodajTermin.resx">
+      <DependentUpon>UCDodajTermin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UCLogIn.resx">
       <DependentUpon>UCLogIn.cs</DependentUpon>

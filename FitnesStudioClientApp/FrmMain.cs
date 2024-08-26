@@ -47,16 +47,17 @@ namespace FitnesStudioClientApp
             mainController.OpenUCNadjiGrupe(this);
         }
 
-        private void pocetnaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            mainController.OpenPocetna(this);
-        }
-
-        private void odjavaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OdjavaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainCoordinator.Instance?.LogOut();
             this.Dispose();
             MainCoordinator.Instance.OpenLoginForm();
+        }
+
+        private void DodajTerminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mainController.OpenUCDodajTermin(this);
+
         }
     }
 }

@@ -15,6 +15,7 @@ namespace Common
         NadjiClanove,
         IzmeniClana,
         VratiSveGrupe,
-        NadjiGrupe
+        NadjiGrupe,
+        SacuvajTermin
     }
 }
