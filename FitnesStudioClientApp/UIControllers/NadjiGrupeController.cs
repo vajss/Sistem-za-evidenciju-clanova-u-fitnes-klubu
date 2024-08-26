@@ -3,6 +3,7 @@ using Domain;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System;
+using System.Runtime.Remoting;
 
 namespace FitnesStudioClientApp.UIControllers
 {
@@ -38,6 +39,10 @@ namespace FitnesStudioClientApp.UIControllers
                     dgvGrupe.Rows.Clear();
                     lblError.Text = "Nema rezultata za datu pretragu";
                 }
+            }
+            catch (ServerException se)
+            {
+                throw se;
             }
             catch (Exception ex)
             {

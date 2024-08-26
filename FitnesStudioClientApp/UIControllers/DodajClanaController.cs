@@ -1,7 +1,7 @@
 ﻿using Domain;
 using FitnesStudioClientApp.Helpers;
 using System;
-using System.Diagnostics;
+using System.Runtime.Remoting;
 using System.Windows.Forms;
 
 namespace FitnesStudioClientApp.UIControllers
@@ -44,6 +44,10 @@ namespace FitnesStudioClientApp.UIControllers
                 tbZanimanje.Text = "";
                 tbTelefon.Text = "";
 
+            }
+            catch (ServerException se)
+            {
+                throw se;
             }
             catch (Exception ex)
             {

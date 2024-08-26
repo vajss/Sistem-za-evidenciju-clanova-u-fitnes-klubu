@@ -7,7 +7,7 @@ namespace FitnesStudioClientApp.UIControllers
     public class MainViewController
     {
 
-        public void ChangePanel(UserControl userControl, FrmMain frmMain)
+        public void ChangePanel(UserControl userControl = null, FrmMain frmMain = null)
         {
             frmMain.PnlMain.Controls.Clear();
             if (userControl != null)
@@ -15,6 +15,11 @@ namespace FitnesStudioClientApp.UIControllers
                 userControl.Dock = DockStyle.Fill;
                 frmMain.PnlMain.Controls.Add(userControl);
             }
+        }
+
+        internal void OpenPocetna(FrmMain frmMain)
+        {
+            ChangePanel(null, frmMain);
         }
 
         internal void OpenUCDodajClana(FrmMain frmMain)

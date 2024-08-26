@@ -2,7 +2,7 @@
 using FitnesStudioClientApp.Helpers;
 using FitnesStudioClientApp.User_Controls;
 using System;
-using System.Diagnostics;
+using System.Runtime.Remoting;
 using System.Windows.Forms;
 
 namespace FitnesStudioClientApp.UIControllers
@@ -54,7 +54,10 @@ namespace FitnesStudioClientApp.UIControllers
                 {
                     throw new Exception("Nepoznat problem prilikom registracije.");
                 }
-
+            }
+            catch (ServerException se)
+            {
+                throw se;
             }
             catch (Exception ex)
             {

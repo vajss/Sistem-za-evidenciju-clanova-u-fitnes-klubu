@@ -2,6 +2,7 @@
 using FitnesStudioClientApp.Helpers;
 using System;
 using System.Net.Sockets;
+using System.Runtime.Remoting;
 using System.Windows.Forms;
 using View.Exceptions;
 
@@ -56,6 +57,10 @@ namespace FitnesStudioClientApp.UIControllers
                     throw new SystemNotFoundException();
                 }
 
+            }
+            catch (ServerException se)
+            {
+                throw se;
             }
             catch (Exception ex)
             {

@@ -2,8 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FitnesStudioClientApp.UIControllers
 {
@@ -32,6 +34,22 @@ namespace FitnesStudioClientApp.UIControllers
         }
 
         public Trener Trener { get; internal set; }
+
+        public void LogOut()
+        {
+            try
+            {
+                Communication.Communication.Instance.LogOut(Trener);
+                Communication.Communication.Instance.Disconnect();
+                Trener = null;
+            }
+            catch (ServerException) {}
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Neuspešno odjavljivanje.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
 
         public void OpenLoginForm()
         {

@@ -1,5 +1,4 @@
 ﻿using Common;
-using System;
 using System.IO;
 using System.Net.Sockets;
 using View.Exceptions;
@@ -28,7 +27,6 @@ namespace FitnesStudioClientApp.Communication
             }
             catch (SocketException ex)
             {
-
                 throw new System.Runtime.Remoting.ServerException(ex.Message);
             }
         }

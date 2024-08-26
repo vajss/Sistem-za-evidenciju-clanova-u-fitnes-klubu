@@ -33,8 +33,8 @@
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.btnLogIn = new System.Windows.Forms.Button();
-            this.btnShow = new System.Windows.Forms.Button();
             this.lblError = new System.Windows.Forms.Label();
+            this.btnShow = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbUsername
@@ -92,23 +92,6 @@
             this.btnLogIn.UseVisualStyleBackColor = false;
             this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
-            // btnShow
-            // 
-            this.btnShow.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnShow.BackColor = System.Drawing.SystemColors.Control;
-            this.btnShow.BackgroundImage = global::FitnesStudioClientApp.Properties.Resources.hide2;
-            this.btnShow.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
-            this.btnShow.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
-            this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShow.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnShow.Location = new System.Drawing.Point(317, 209);
-            this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(21, 21);
-            this.btnShow.TabIndex = 12;
-            this.btnShow.UseVisualStyleBackColor = false;
-            this.btnShow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnShow_MouseDown);
-            this.btnShow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnShow_MouseUp);
-            // 
             // lblError
             // 
             this.lblError.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -121,10 +104,29 @@
             this.lblError.TabIndex = 13;
             this.lblError.Visible = false;
             // 
+            // btnShow
+            // 
+            this.btnShow.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnShow.BackColor = System.Drawing.Color.White;
+            this.btnShow.BackgroundImage = global::FitnesStudioClientApp.Properties.Resources.hide2;
+            this.btnShow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnShow.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.btnShow.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShow.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnShow.Location = new System.Drawing.Point(317, 211);
+            this.btnShow.Name = "btnShow";
+            this.btnShow.Size = new System.Drawing.Size(21, 21);
+            this.btnShow.TabIndex = 12;
+            this.btnShow.UseVisualStyleBackColor = false;
+            this.btnShow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnShow_MouseDown);
+            this.btnShow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnShow_MouseUp);
+            // 
             // UCLogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.btnLogIn);

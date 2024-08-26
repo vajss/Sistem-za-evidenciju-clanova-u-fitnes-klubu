@@ -103,6 +103,13 @@ namespace ServerApp
 
                     response.Result = trener;
                     break;
+                case Operation.LogOut:
+                    Trener logOutTrener = (Trener)request.RequestObject;
+                    if (logOutTrener != null)
+                    {
+                        treneri.Remove(logedInTrener);
+                    }
+                    break;
                 case Operation.Register:
                     response.Result = Controller.Controller.Instance.Register((Trener)request.RequestObject);
                     break;

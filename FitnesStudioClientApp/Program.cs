@@ -24,7 +24,7 @@ namespace FitnesStudioClientApp
                 }
                 catch (ServerException se)
                 {
-                    MessageBox.Show(se.Message);
+                    MessageBox.Show($"Izgubljena konekcija sa serverom. Prijavite se ponovo. \n\n Greška: {se.Message}", "Izgubljena konekcija sa serverom" , MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

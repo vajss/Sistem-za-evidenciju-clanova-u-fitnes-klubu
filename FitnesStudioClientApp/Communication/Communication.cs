@@ -1,13 +1,8 @@
 ﻿using Common;
 using Domain;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
-using System.Linq;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FitnesStudioClientApp.Communication
 {
@@ -34,7 +29,7 @@ namespace FitnesStudioClientApp.Communication
             Debug.WriteLine(">>>>>>>> JEL DODJE DOVDE");
         }
 
-        internal void Disconnect()
+        public void Disconnect()
         {
             socket.Close();
             socket = null;
@@ -62,6 +57,17 @@ namespace FitnesStudioClientApp.Communication
             };
             client.SendRequest(request);
             return (Trener)client.GetResponseResult();
+        }
+
+        internal Trener LogOut(Trener t)
+        {
+            Request request = new Request
+            {
+                Operation = Operation.LogOut,
+                RequestObject = t
+            };
+            client.SendRequest(request);
+            return t;
         }
 
         internal Trener Register(Trener trener)

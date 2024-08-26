@@ -7,6 +7,8 @@ namespace FitnesStudioClientApp
 {
     public partial class FrmPocetna : Form
     {
+        public LoginController LoginController { get; }
+
         public FrmPocetna()
         {
             Debug.WriteLine(">>> Is this ever called? ");
@@ -20,11 +22,11 @@ namespace FitnesStudioClientApp
             PocetnaForma.Instance.Init(loginController, registerController, this);
         }
 
-        public LoginController LoginController { get; }
+        
 
         private void FrmInitialWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Environment.Exit(0);
+            //Environment.Exit(0);
         }
     }
 }

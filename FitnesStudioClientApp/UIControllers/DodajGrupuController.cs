@@ -3,6 +3,7 @@ using FitnesStudioClientApp.Helpers;
 using System;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.Remoting;
 using System.Windows.Forms;
 using View.Exceptions;
 
@@ -58,6 +59,10 @@ namespace FitnesStudioClientApp.UIControllers
                 cmbClan.SelectedIndex = -1;
                 cmbClan.Text = "Izaberi člana";
             }
+            catch (ServerException se)
+            {
+                throw se;
+            }
             catch (SystemOperationException ex)
             {
                 MessageBox.Show(ex.Message, "Greška pri uitavanju.", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -81,6 +86,10 @@ namespace FitnesStudioClientApp.UIControllers
                 cbTreningProgram.DataSource = Communication.Communication.Instance.VratiTrerningPrograme();
                 cbTreningProgram.SelectedIndex = -1;
                 cbTreningProgram.Text = "Izaberi Trening program.";
+            }
+            catch (ServerException se)
+            {
+                throw se;
             }
             catch (SystemOperationException ex)
             {
@@ -161,6 +170,10 @@ namespace FitnesStudioClientApp.UIControllers
                 tbBrojClanova.Text = "";
                 dgvClanstva.Rows.Clear();
                 dgvClanstva.Refresh();
+            }
+            catch (ServerException se)
+            {
+                throw se;
             }
             catch (Exception ex)
             {

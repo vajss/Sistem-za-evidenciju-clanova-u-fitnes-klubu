@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using Common;
+using Domain;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,6 +7,7 @@ using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace ServerApp
 {
@@ -47,7 +49,6 @@ namespace ServerApp
                     Socket clientSocket = serverSocket.Accept();
                     ClientHandler client = new ClientHandler(clientSocket, treneri);
                     clients.Add(client);
-                    //client.OdjavljenKlijent += Handler_OdjavljenKlijent; // TODO hmmmmm sta li ovo treba da radi
                     Thread clientHandlerThread = new Thread(client.StartHandler);
                     clientHandlerThread.IsBackground = false;
                     clientHandlerThread.Start();
@@ -55,16 +56,9 @@ namespace ServerApp
             }
             catch (SocketException ex)
             {
-                Debug.WriteLine(">>> Server listening interupted: " + ex.Message);
-                // System.Windows.Forms.MessageBox.Show("Kraj rada!");
+                Debug.WriteLine(">>> Server stoped... ");
             }
         }
-
-        /*  public void Handler_OdjavljenKlijent(object sender, EventArgs args)
-          {
-              clients.Remove((ClientHandler)sender);
-          }
-  */ // TODO will I need this?
 
         public void Stop()
         {

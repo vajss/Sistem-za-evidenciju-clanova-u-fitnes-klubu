@@ -178,5 +178,14 @@
   <ItemGroup>
     <None Include="Resources\hide21.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view-gym-room-training-sports.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view-gym-room-training-sports1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

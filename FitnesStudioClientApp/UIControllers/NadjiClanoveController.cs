@@ -2,6 +2,7 @@
 using FitnesStudioClientApp.User_Controls;
 using System;
 using System.ComponentModel;
+using System.Runtime.Remoting;
 using System.Windows.Forms;
 
 namespace FitnesStudioClientApp.UIControllers
@@ -10,8 +11,18 @@ namespace FitnesStudioClientApp.UIControllers
     {
         internal void SetGrid(DataGridView dgvClanovi)
         {
-            dgvClanovi.DataSource = new BindingList<Clan>(Communication.Communication.Instance.VratiSveClanove());
-            SetGridColumnProperties(dgvClanovi);
+            try
+            {
+                dgvClanovi.DataSource = new BindingList<Clan>(Communication.Communication.Instance.VratiSveClanove());
+                SetGridColumnProperties(dgvClanovi);
+            }
+            catch (ServerException se) {
+                throw se;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Izgubljena konekcija sa serverom. Prijavite se ponovo.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         internal void PretraziClanove(TextBox tbPretraga, DataGridView dgvClanovi, Label lblError)
@@ -37,6 +48,10 @@ namespace FitnesStudioClientApp.UIControllers
                     dgvClanovi.Rows.Clear();
                     lblError.Text = "Nema rezultata za datu pretragu";
                 }
+            }
+            catch (ServerException se)
+            {
+                throw se;
             }
             catch (Exception ex)
             {

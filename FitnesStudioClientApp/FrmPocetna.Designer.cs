@@ -93,10 +93,11 @@ namespace FitnesStudioClientApp
             this.btnNazad.UseVisualStyleBackColor = false;
             this.btnNazad.Visible = false;
             // 
-            // FrmInitialWindow
+            // FrmPocetna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(864, 533);
             this.Controls.Add(this.btnNazad);
             this.Controls.Add(this.btnLogIn);
@@ -104,7 +105,7 @@ namespace FitnesStudioClientApp
             this.Controls.Add(this.pnlMain);
             this.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "FrmInitialWindow";
+            this.Name = "FrmPocetna";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log in";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmInitialWindow_FormClosed);

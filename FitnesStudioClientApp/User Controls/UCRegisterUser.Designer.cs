@@ -174,6 +174,7 @@ namespace FitnesStudioClientApp.User_Controls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.tbRepeatPassword);

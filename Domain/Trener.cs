@@ -64,5 +64,14 @@ namespace Domain
         {
             return Ime + " " + Prezime;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Trener t)
+            {
+                return t.Id == Id;
+            }
+            return false;
+        }
     }
 }

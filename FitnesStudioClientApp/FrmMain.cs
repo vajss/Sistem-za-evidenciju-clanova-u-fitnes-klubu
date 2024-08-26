@@ -1,4 +1,6 @@
-﻿using FitnesStudioClientApp.UIControllers;
+﻿using Domain;
+using FitnesStudioClientApp.UIControllers;
+using System;
 using System.Windows.Forms;
 
 namespace FitnesStudioClientApp
@@ -20,6 +22,7 @@ namespace FitnesStudioClientApp
 
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
+            MainCoordinator.Instance.LogOut();
             MainCoordinator.Instance.OpenLoginForm();
         }
 
@@ -42,6 +45,18 @@ namespace FitnesStudioClientApp
         private void pretražiGrupeToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             mainController.OpenUCNadjiGrupe(this);
+        }
+
+        private void pocetnaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mainController.OpenPocetna(this);
+        }
+
+        private void odjavaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainCoordinator.Instance?.LogOut();
+            this.Dispose();
+            MainCoordinator.Instance.OpenLoginForm();
         }
     }
 }

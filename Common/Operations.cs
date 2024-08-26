@@ -6,6 +6,7 @@ namespace Common
     public enum Operation
     {
         Login,
+        LogOut,
         Register,
         SacuvajClana,
         VratiSveClanove,
