@@ -44,6 +44,7 @@ namespace DataBaseBroker
             List<IEntity> result;
             SqlCommand command = new SqlCommand("", connection, transaction);
             command.CommandText = $"select {entity.SelectValues} from {entity.TableName} {entity.TableAlias} {entity.JoinTable} {entity.JoinCondition}";
+            Debug.WriteLine(">>>>>>>>>>> get ALL: " + command.CommandText);
             SqlDataReader reader = command.ExecuteReader();
             result = entity.GetEntities(reader);
             reader.Close();

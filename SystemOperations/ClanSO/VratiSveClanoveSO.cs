@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace SystemOperations.ClanSO
 {
-    public class VratiClanoveSO : SystemOperationBase
+    public class VratiSveClanoveSO : SystemOperationBase
     {
         public List<Clan> Result { get; private set; }
 

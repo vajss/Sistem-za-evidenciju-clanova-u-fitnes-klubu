@@ -1,4 +1,5 @@
 ﻿using FitnesStudioClientApp.User_Controls;
+using System;
 using System.Windows.Forms;
 
 namespace FitnesStudioClientApp.UIControllers
@@ -29,6 +30,12 @@ namespace FitnesStudioClientApp.UIControllers
         internal void OpenUCNadjiClanove(FrmMain frmMain)
         {
             ChangePanel(new UCNadjiClanove(new NadjiClanoveController(), frmMain), frmMain);
+        }
+
+        internal void OpenUCNadjiGrupe(FrmMain frmMain)
+        {
+            ChangePanel(new UCNadjiGrupe(new NadjiGrupeController(), frmMain), frmMain);
+
         }
     }
 }

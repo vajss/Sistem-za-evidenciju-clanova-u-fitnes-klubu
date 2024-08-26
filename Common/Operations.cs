@@ -8,10 +8,11 @@ namespace Common
         Login,
         Register,
         SacuvajClana,
-        VratiClanove,
+        VratiSveClanove,
         VratiTreningPrograme,
         SacuvajGrupu,
         NadjiClanove,
-        IzmeniClana
+        IzmeniClana,
+        VratiSveGrupe
     }
 }

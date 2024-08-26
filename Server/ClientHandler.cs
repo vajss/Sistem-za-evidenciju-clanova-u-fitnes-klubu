@@ -109,8 +109,8 @@ namespace ServerApp
                 case Operation.SacuvajClana:
                     Controller.Controller.Instance.SacuvajClana((Clan)request.RequestObject);
                     break;
-                case Operation.VratiClanove:
-                    response.Result = Controller.Controller.Instance.VratiClanove((Clan)request.RequestObject);
+                case Operation.VratiSveClanove:
+                    response.Result = Controller.Controller.Instance.VratiSveClanove((Clan)request.RequestObject);
                     break;
                 case Operation.VratiTreningPrograme:
                     response.Result = Controller.Controller.Instance.VratiTreningPrograme((TreningProgram)request.RequestObject);
@@ -123,6 +123,9 @@ namespace ServerApp
                     break;
                 case Operation.IzmeniClana:
                     Controller.Controller.Instance.IzmeniClana((Clan)request.RequestObject);
+                    break;
+                case Operation.VratiSveGrupe:
+                    response.Result = Controller.Controller.Instance.VratiSveGrupe((Grupa)request.RequestObject);
                     break;
                 /*      case Operation.VratiSale:
                         List<SalaZaTrening> rez = (List<SalaZaTrening>)Controller.Controller.Instance.VratiSveSale(new SalaZaTrening());

@@ -21,23 +21,42 @@ namespace Domain
         [Browsable(false)]
         public string IdName => "Id";
         [Browsable(false)]
-        public string JoinCondition => "";
+        public string JoinCondition => "ON (G.TreningProgramId = TP.Id)";
         [Browsable(false)]
-        public string JoinTable => "";
+        public string JoinTable => "JOIN TreningProgram TP";
         [Browsable(false)]
-        public string TableAlias => "";
+        public string TableAlias => "G";
         [Browsable(false)]
-        public object SelectValues => "";
+        public object SelectValues => "*";
         [Browsable(false)]
         public string WhereCondition => "";
         [Browsable(false)]
         public string GetUpdateValues => "";
         [Browsable(false)]
+        public string GCondition { get; set; }
+        [Browsable(false)]
         public string GeneralCondition => "";
 
         public List<IEntity> GetEntities(SqlDataReader reader)
         {
-            throw new NotImplementedException();
+            List<IEntity> result = new List<IEntity>();
+            while (reader.Read())
+            {
+                result.Add(new Grupa
+                {
+                    Id = (int)reader[0],
+                    Naziv = (string)reader[1],
+                    BrojClanova = (int)reader[2],
+                    TreningProgram = new TreningProgram
+                    {
+                        Id = (int)reader[4],
+                        Tezina = (int)reader[5],
+                        Naziv = (string)reader[6],
+                        Cena = (int)reader[7],
+                    }
+                });
+            }
+            return result;
         }
 
         public override string ToString()

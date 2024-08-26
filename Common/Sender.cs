@@ -5,15 +5,13 @@ namespace Common
 {
     public class Sender
     {
-        private readonly Socket socket;
-        private NetworkStream stream;
-        private BinaryFormatter formatter;
+        private readonly NetworkStream stream;
+        private readonly BinaryFormatter formatter;
 
         public Sender(Socket socket)
         {
-            this.socket = socket;
-            this.stream = new NetworkStream(socket);
-            this.formatter = new BinaryFormatter();
+            stream = new NetworkStream(socket);
+            formatter = new BinaryFormatter();
         }
 
         public void Send(object message)

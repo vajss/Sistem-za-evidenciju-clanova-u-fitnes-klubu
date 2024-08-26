@@ -1,7 +1,6 @@
 ﻿using Domain;
 using Domen;
 using System.Data;
-using System.Diagnostics;
 
 namespace SystemOperations.ClanSO
 {
@@ -17,7 +16,6 @@ namespace SystemOperations.ClanSO
                     throw new DuplicateNameException("ClientId mora biti jedinstvern.");
                 }
             }
-
             Repository.Save(clan);
         }
     }

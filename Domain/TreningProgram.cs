@@ -2,6 +2,7 @@
 using Domen;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Diagnostics;
 
@@ -17,25 +18,25 @@ namespace Domain
         public string Naziv { get; set; }
 
         public int Cena { get; set; }
-
+        [Browsable(false)]
         public string TableName => "TreningProgram";
-
+        [Browsable(false)]
         public string InsertValues => "";
-
+        [Browsable(false)]
         public string IdName => "Id";
-
+        [Browsable(false)]
         public string JoinCondition => "";
-
+        [Browsable(false)]
         public string JoinTable => "";
-
-        public string TableAlias => "";
-
+        [Browsable(false)]
+        public string TableAlias => "TP";
+        [Browsable(false)]
         public object SelectValues => "*";
-
+        [Browsable(false)]
         public string WhereCondition => "";
-
+        [Browsable(false)]
         public string GetUpdateValues => "";
-
+        [Browsable(false)]
         public string GeneralCondition => "";
 
         public List<IEntity> GetEntities(SqlDataReader reader)

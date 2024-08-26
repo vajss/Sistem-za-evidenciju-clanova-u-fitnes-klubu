@@ -54,7 +54,7 @@ namespace FitnesStudioClientApp.UIControllers
         {
             try
             {
-                cmbClan.DataSource = Communication.Communication.Instance.VratiClanove();
+                cmbClan.DataSource = Communication.Communication.Instance.VratiSveClanove();
                 cmbClan.SelectedIndex = -1;
                 cmbClan.Text = "Izaberi člana";
             }

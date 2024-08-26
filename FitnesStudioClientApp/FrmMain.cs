@@ -1,5 +1,4 @@
 ﻿using FitnesStudioClientApp.UIControllers;
-using FitnesStudioClientApp.User_Controls;
 using System.Windows.Forms;
 
 namespace FitnesStudioClientApp
@@ -38,6 +37,11 @@ namespace FitnesStudioClientApp
         private void naToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             mainController.OpenUCNadjiClanove(this);
+        }
+
+        private void pretražiGrupeToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            mainController.OpenUCNadjiGrupe(this);
         }
     }
 }

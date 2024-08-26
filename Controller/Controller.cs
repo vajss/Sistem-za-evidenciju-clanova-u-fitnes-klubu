@@ -70,9 +70,9 @@ namespace Controller
             so.ExecuteTemplate(clan);
         }
 
-        public List<Clan> VratiClanove(Clan clan)
+        public List<Clan> VratiSveClanove(Clan clan)
         {
-            VratiClanoveSO so = new VratiClanoveSO();
+            VratiSveClanoveSO so = new VratiSveClanoveSO();
             so.ExecuteTemplate(clan);
             return so.Result;
         }
@@ -99,6 +99,13 @@ namespace Controller
         {
             SacuvajGrupuSO so = new SacuvajGrupuSO();
             so.ExecuteTemplate(grupa);
+        }
+
+        public List<Grupa> VratiSveGrupe(Grupa grupa)
+        {
+            VratiSveGrupeSO so = new VratiSveGrupeSO();
+            so.ExecuteTemplate(grupa);
+            return so.Result;
         }
     }
 }

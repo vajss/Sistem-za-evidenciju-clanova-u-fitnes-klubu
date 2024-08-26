@@ -10,9 +10,7 @@ namespace FitnesStudioClientApp.UIControllers
     {
         internal void SetGrid(DataGridView dgvClanovi)
         {
-            dgvClanovi.DataSource = new BindingList<Clan>(Communication.Communication.Instance.VratiClanove());
-            //dgvClanovi.Refresh();
-            //dgvClanovi.DataSource = new BindingList<Clan>();
+            dgvClanovi.DataSource = new BindingList<Clan>(Communication.Communication.Instance.VratiSveClanove());
             SetGridColumnProperties(dgvClanovi);
         }
 

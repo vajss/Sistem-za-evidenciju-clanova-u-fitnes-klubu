@@ -53,7 +53,7 @@ namespace ServerApp
         {
             GraphicsPath GraphPath = new GraphicsPath();
             GraphPath.AddArc(Rect.X, Rect.Y, radius, radius, 90, 180);
-            GraphPath.AddArc(Rect.X + Rect.Width - radius, Rect.Y + Rect.Height - radius, radius, radius, 270, 180);
+            GraphPath.AddArc(Rect.X + Rect.Width - radius, Rect.Y, radius, radius, 270, 180);
             GraphPath.CloseFigure();
             return GraphPath;
         }

@@ -97,11 +97,11 @@ namespace FitnesStudioClientApp.Communication
             return (Clan)client.GetResponseResult();
         }
 
-        internal List<Clan> VratiClanove()
+        internal List<Clan> VratiSveClanove()
         {
             Request request = new Request
             {
-                Operation = Operation.VratiClanove,
+                Operation = Operation.VratiSveClanove,
             };
             client.SendRequest(request);
             return (List<Clan>)client.GetResponseResult();
@@ -137,6 +137,16 @@ namespace FitnesStudioClientApp.Communication
             };
             client.SendRequest(request);
             return (List<Clan>)client.GetResponseResult();
+        }
+
+        internal List<Grupa> VratiSveGrupe()
+        {
+            Request request = new Request
+            {
+                Operation = Operation.VratiSveGrupe
+            };
+            client.SendRequest(request);
+            return (List<Grupa>)client.GetResponseResult();
         }
     }
 }
