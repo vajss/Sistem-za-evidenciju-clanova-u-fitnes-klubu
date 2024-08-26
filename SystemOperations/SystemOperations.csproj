@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClanSO\IzmeniClanaSO.cs" />
     <Compile Include="ClanSO\PretragaClanovaSO.cs" />
     <Compile Include="ClanSO\SacuvajClanaSO.cs" />
     <Compile Include="ClanSO\VratiClanoveSO.cs" />

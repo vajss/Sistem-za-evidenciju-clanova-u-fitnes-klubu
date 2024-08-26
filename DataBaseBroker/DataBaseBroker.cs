@@ -77,6 +77,8 @@ namespace DataBaseBroker
         {
             SqlCommand command = new SqlCommand("", connection, transaction);
             command.CommandText = $"UPDATE {entity.TableName} SET {entity.GetUpdateValues} WHERE {entity.WhereCondition}";
+            Debug.WriteLine(">>>>>>>>>>> Update query: " + command.CommandText);
+
             if (command.ExecuteNonQuery() != 1)
             {
                 throw new Exception("Database error!");

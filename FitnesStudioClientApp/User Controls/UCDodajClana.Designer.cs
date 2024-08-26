@@ -228,6 +228,7 @@
             this.btnIzmeniClana.Text = "Sačuvaj Izmene";
             this.btnIzmeniClana.UseVisualStyleBackColor = false;
             this.btnIzmeniClana.Visible = false;
+            this.btnIzmeniClana.Click += new System.EventHandler(this.btnIzmeniClana_Click);
             // 
             // UCDodajClana
             // 

@@ -64,6 +64,12 @@ namespace Controller
             so.ExecuteTemplate(clan);
         }
 
+        public void IzmeniClana(Clan clan)
+        {
+            IzmeniClanaSO so = new IzmeniClanaSO();
+            so.ExecuteTemplate(clan);
+        }
+
         public List<Clan> VratiClanove(Clan clan)
         {
             VratiClanoveSO so = new VratiClanoveSO();

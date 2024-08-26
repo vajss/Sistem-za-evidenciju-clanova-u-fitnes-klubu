@@ -8,6 +8,8 @@ namespace FitnesStudioClientApp.User_Controls
     public partial class UCDodajClana : UserControl
     {
         private DodajClanaController dodajClanaController;
+        private IzmeniClanaController izmeniClanaController;
+        private Clan preselectedClan;
 
         public UCDodajClana()
         {
@@ -21,19 +23,25 @@ namespace FitnesStudioClientApp.User_Controls
             this.dodajClanaController = dodajClanaController;
         }
 
-        public UCDodajClana(DodajClanaController dodajClanaController, Clan clanZaIzmeniti)
+        public UCDodajClana(IzmeniClanaController izmeniClanaController, Clan clanZaIzmeniti)
         {
             InitializeComponent();
             dtpDatumRodjenja.MaxDate = DateTime.Now;
-            this.dodajClanaController = dodajClanaController;
+            this.izmeniClanaController = izmeniClanaController;
             SetupEdit(clanZaIzmeniti);
         }
 
         private void SetupEdit(Clan clan)
         {
+            preselectedClan = clan;
+
             tbClanId.Text = clan.ClanId.ToString();
             tbClanId.Enabled = false;
             tbIme.Text = clan.Ime;
+            tbPrezime.Text = clan.Prezime;
+            tbTelefon.Text = clan.Telefon;
+            tbZanimanje.Text = clan.Zanimanje;
+            dtpDatumRodjenja.Value = clan.DatumRodjenja;
 
             btnSacuvajClana.Visible = false;
             btnIzmeniClana.Visible = true;
@@ -42,6 +50,11 @@ namespace FitnesStudioClientApp.User_Controls
         private void btnSacuvajClana_Click(object sender, System.EventArgs e)
         {
             dodajClanaController.DodajClana(tbClanId, tbIme, tbPrezime, dtpDatumRodjenja, tbTelefon, tbZanimanje, lblError);
+        }
+
+        private void btnIzmeniClana_Click(object sender, EventArgs e)
+        {
+            izmeniClanaController.IzmeniClana(tbClanId, tbIme, tbPrezime, dtpDatumRodjenja, tbTelefon, tbZanimanje, lblError, preselectedClan);
         }
     }
 }

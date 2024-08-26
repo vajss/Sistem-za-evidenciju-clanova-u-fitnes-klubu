@@ -86,6 +86,17 @@ namespace FitnesStudioClientApp.Communication
             return (Clan)client.GetResponseResult();
         }
 
+        internal Clan IzmeniClana(Clan clan)
+        {
+            Request request = new Request
+            {
+                Operation = Operation.IzmeniClana,
+                RequestObject = clan
+            };
+            client.SendRequest(request);
+            return (Clan)client.GetResponseResult();
+        }
+
         internal List<Clan> VratiClanove()
         {
             Request request = new Request

@@ -21,7 +21,8 @@ namespace Domain
 
         public string Zanimanje { get; set; }
 
-        public string Telefon { get; set; }
+        public string Telefon { get; set; } // TODO maybe limit to be only numbers or some regex
+
         [Browsable(false)]
         public string TableName => "Clan";
         [Browsable(false)]
@@ -37,9 +38,9 @@ namespace Domain
         [Browsable(false)]
         public object SelectValues => "*";
         [Browsable(false)]
-        public string WhereCondition => throw new NotImplementedException();
+        public string WhereCondition => $"Id={Id}";
         [Browsable(false)]
-        public string GetUpdateValues => throw new NotImplementedException();
+        public string GetUpdateValues => $"Ime='{Ime}', Prezime='{Prezime}', DatumRodjenja='{DatumRodjenja}', Zanimanje='{Zanimanje}', Telefon='{Telefon}'";
         [Browsable(false)]
         public string GCondition { get; set; }
         [Browsable(false)]

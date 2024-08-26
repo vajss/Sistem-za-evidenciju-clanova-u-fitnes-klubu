@@ -121,7 +121,9 @@ namespace ServerApp
                 case Operation.NadjiClanove:
                     response.Result = Controller.Controller.Instance.PretraziClanove((Clan)request.RequestObject);
                     break;
-
+                case Operation.IzmeniClana:
+                    Controller.Controller.Instance.IzmeniClana((Clan)request.RequestObject);
+                    break;
                 /*      case Operation.VratiSale:
                         List<SalaZaTrening> rez = (List<SalaZaTrening>)Controller.Controller.Instance.VratiSveSale(new SalaZaTrening());
                         response.Result = rez;

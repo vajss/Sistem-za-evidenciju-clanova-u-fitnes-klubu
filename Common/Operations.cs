@@ -11,6 +11,7 @@ namespace Common
         VratiClanove,
         VratiTreningPrograme,
         SacuvajGrupu,
-        NadjiClanove
+        NadjiClanove,
+        IzmeniClana
     }
 }

@@ -1,7 +1,6 @@
 ﻿using Domain;
 using FitnesStudioClientApp.User_Controls;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
 
@@ -41,7 +40,7 @@ namespace FitnesStudioClientApp.UIControllers
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Greška pri Pretrazi članova.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Greška pri pretrazi članova.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -57,7 +56,7 @@ namespace FitnesStudioClientApp.UIControllers
         {
             if (Clan != null)
             {
-                parentForm.mainController.ChangePanel(new UCDodajClana(new DodajClanaController(), Clan), parentForm);
+                parentForm.mainController.ChangePanel(new UCDodajClana(new IzmeniClanaController(), Clan), parentForm);
             } else
             {
                 // TODO set error that no clan is selected
