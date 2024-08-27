@@ -177,5 +177,16 @@ namespace FitnesStudioClientApp.Communication
             client.SendRequest(request);
             return (Termin)client.GetResponseResult();
         }
+
+        internal List<Termin> PretraziTermine(Termin termin)
+        {
+            Request request = new Request
+            {
+                Operation = Operation.NadjiTermine,
+                RequestObject = termin
+            };
+            client.SendRequest(request);
+            return (List<Termin>)client.GetResponseResult();
+        }
     }
 }

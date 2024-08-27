@@ -1,7 +1,9 @@
 ﻿using Domain;
 using Storage;
 using Storage.Implementation;
+using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using SystemOperations.ClanSO;
 using SystemOperations.GrupaSO;
 using SystemOperations.TerminSO;
@@ -118,6 +120,13 @@ namespace Controller
         {
             SacuvajTerminSO so = new SacuvajTerminSO();
             so.ExecuteTemplate(termin);
+        }
+
+        public List<Termin> PretraziTermine(Termin termin)
+        {
+            PretragaTerminaSO so = new PretragaTerminaSO();
+            so.ExecuteTemplate(termin);
+            return so.Result;
         }
     }
 }

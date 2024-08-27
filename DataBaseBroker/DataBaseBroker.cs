@@ -56,6 +56,7 @@ namespace DataBaseBroker
         {
             SqlCommand command = new SqlCommand("", connection, transaction);
             command.CommandText = $"INSERT INTO {entity.TableName} OUTPUT Inserted.ID VALUES ({entity.InsertValues})";
+            Debug.WriteLine(">>>>>>>>>>> Save: " + command.CommandText);
             return Convert.ToInt32(command.ExecuteScalar());
         }
 

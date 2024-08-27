@@ -29,7 +29,7 @@ namespace FitnesStudioClientApp.User_Controls
 
         private void BtnSacuvaj_Click(object sender, EventArgs e)
         {
-            dodajTerminController.DodajTermin(cbGrupa, dtpDatum, tbTrajanje, lblError, lblTrajanjeError);
+            dodajTerminController.DodajTermin(tbTerminId, cbGrupa, dtpDatum, tbTrajanje, lblError, lblTrajanjeError, lblTerminIdError);
         }
     }
 }

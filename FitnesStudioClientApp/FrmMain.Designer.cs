@@ -38,9 +38,10 @@ namespace FitnesStudioClientApp
             this.dodajGrupuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pretražiGrupeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.terminiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dodajTerminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pretragaTerminaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.odjavaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.dodajTerminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msMeni.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,7 +100,7 @@ namespace FitnesStudioClientApp
             // 
             this.dodajGrupuToolStripMenuItem.Font = new System.Drawing.Font("Arial", 11F);
             this.dodajGrupuToolStripMenuItem.Name = "dodajGrupuToolStripMenuItem";
-            this.dodajGrupuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dodajGrupuToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.dodajGrupuToolStripMenuItem.Text = "Dodaj grupu";
             this.dodajGrupuToolStripMenuItem.Click += new System.EventHandler(this.dodajGrupuToolStripMenuItem_Click);
             // 
@@ -107,18 +108,35 @@ namespace FitnesStudioClientApp
             // 
             this.pretražiGrupeToolStripMenuItem.Font = new System.Drawing.Font("Arial", 11F);
             this.pretražiGrupeToolStripMenuItem.Name = "pretražiGrupeToolStripMenuItem";
-            this.pretražiGrupeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pretražiGrupeToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.pretražiGrupeToolStripMenuItem.Text = "Pretraži grupe";
             this.pretražiGrupeToolStripMenuItem.Click += new System.EventHandler(this.pretražiGrupeToolStripMenuItem_Click);
             // 
             // terminiToolStripMenuItem
             // 
             this.terminiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dodajTerminToolStripMenuItem});
+            this.dodajTerminToolStripMenuItem,
+            this.pretragaTerminaToolStripMenuItem});
             this.terminiToolStripMenuItem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.terminiToolStripMenuItem.Name = "terminiToolStripMenuItem";
             this.terminiToolStripMenuItem.Size = new System.Drawing.Size(70, 23);
             this.terminiToolStripMenuItem.Text = "Termini";
+            // 
+            // dodajTerminToolStripMenuItem
+            // 
+            this.dodajTerminToolStripMenuItem.Font = new System.Drawing.Font("Arial", 11F);
+            this.dodajTerminToolStripMenuItem.Name = "dodajTerminToolStripMenuItem";
+            this.dodajTerminToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dodajTerminToolStripMenuItem.Text = "Dodaj termin";
+            this.dodajTerminToolStripMenuItem.Click += new System.EventHandler(this.DodajTerminToolStripMenuItem_Click);
+            // 
+            // pretragaTerminaToolStripMenuItem
+            // 
+            this.pretragaTerminaToolStripMenuItem.Font = new System.Drawing.Font("Arial", 11F);
+            this.pretragaTerminaToolStripMenuItem.Name = "pretragaTerminaToolStripMenuItem";
+            this.pretragaTerminaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pretragaTerminaToolStripMenuItem.Text = "Pretraži termine";
+            this.pretragaTerminaToolStripMenuItem.Click += new System.EventHandler(this.PretragaTerminaToolStripMenuItem_Click);
             // 
             // odjavaToolStripMenuItem
             // 
@@ -140,14 +158,6 @@ namespace FitnesStudioClientApp
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(1221, 728);
             this.pnlMain.TabIndex = 1;
-            // 
-            // dodajTerminToolStripMenuItem
-            // 
-            this.dodajTerminToolStripMenuItem.Font = new System.Drawing.Font("Arial", 11F);
-            this.dodajTerminToolStripMenuItem.Name = "dodajTerminToolStripMenuItem";
-            this.dodajTerminToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.dodajTerminToolStripMenuItem.Text = "Dodaj Termin";
-            this.dodajTerminToolStripMenuItem.Click += new System.EventHandler(this.DodajTerminToolStripMenuItem_Click);
             // 
             // FrmMain
             // 
@@ -183,6 +193,7 @@ namespace FitnesStudioClientApp
         private ToolStripMenuItem pretražiGrupeToolStripMenuItem;
         private ToolStripMenuItem odjavaToolStripMenuItem;
         private ToolStripMenuItem dodajTerminToolStripMenuItem;
+        private ToolStripMenuItem pretragaTerminaToolStripMenuItem;
 
         public Panel PnlMain { get => pnlMain; set => pnlMain = value; }
     }

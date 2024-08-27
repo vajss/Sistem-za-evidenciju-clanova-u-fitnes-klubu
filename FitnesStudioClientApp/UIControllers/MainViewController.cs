@@ -48,5 +48,10 @@ namespace FitnesStudioClientApp.UIControllers
             ChangePanel(new UCNadjiGrupe(new NadjiGrupeController(), frmMain), frmMain);
 
         }
+
+        internal void OpenUCNadjiTermin(FrmMain frmMain)
+        {
+            ChangePanel(new UCNadjiTermin(new NadjiTerminController()), frmMain);
+        }
     }
 }

@@ -59,5 +59,10 @@ namespace FitnesStudioClientApp
             mainController.OpenUCDodajTermin(this);
 
         }
+
+        private void PretragaTerminaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mainController.OpenUCNadjiTermin(this);
+        }
     }
 }

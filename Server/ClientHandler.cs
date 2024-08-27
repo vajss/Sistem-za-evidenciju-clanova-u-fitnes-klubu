@@ -140,6 +140,9 @@ namespace ServerApp
                 case Operation.SacuvajTermin:
                     Controller.Controller.Instance.SacuvajTermin((Termin)request.RequestObject);
                     break;
+                case Operation.NadjiTermine:
+                    response.Result = Controller.Controller.Instance.PretraziTermine((Termin)request.RequestObject);
+                    break;
                 default:
                     break;
             }

@@ -1,11 +1,7 @@
 ﻿using DataBaseBroker;
 using Domen;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Storage.Implementation
 {
@@ -29,15 +25,9 @@ namespace Storage.Implementation
 
         public List<IEntity> GetAll(IEntity entity)
         {
-            Debug.WriteLine("get all <<<<<<<<<<");
+            Debug.WriteLine(">>>>>> get all");
             return broker.GetAll(entity);
         }
-
-        // TODO not sure I need this
-        /*public int GetNewId(IEntity e)
-        {
-            return broker.GetNewId(e);
-        }*/
 
         public List<IEntity> GetSpecific(IEntity entity)
         {

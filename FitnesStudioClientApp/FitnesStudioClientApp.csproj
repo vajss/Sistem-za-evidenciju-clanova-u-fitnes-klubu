@@ -70,6 +70,7 @@
     <Compile Include="UIControllers\DodajTerminController.cs" />
     <Compile Include="UIControllers\IzmeniClanaController.cs" />
     <Compile Include="UIControllers\NadjiGrupeController.cs" />
+    <Compile Include="UIControllers\NadjiTerminController.cs" />
     <Compile Include="UIControllers\PocetnaForma.cs" />
     <Compile Include="UIControllers\LoginController.cs" />
     <Compile Include="MainCoordinator.cs" />
@@ -112,6 +113,12 @@
     <Compile Include="User Controls\UCNadjiGrupe.Designer.cs">
       <DependentUpon>UCNadjiGrupe.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Controls\UCNadjiTermin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\UCNadjiTermin.Designer.cs">
+      <DependentUpon>UCNadjiTermin.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Controls\UCRegisterUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -151,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UCNadjiGrupe.resx">
       <DependentUpon>UCNadjiGrupe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\UCNadjiTermin.resx">
+      <DependentUpon>UCNadjiTermin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UCRegisterUser.resx">
       <DependentUpon>UCRegisterUser.cs</DependentUpon>

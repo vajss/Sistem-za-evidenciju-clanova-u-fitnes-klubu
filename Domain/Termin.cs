@@ -9,8 +9,8 @@ namespace Domain
     [Serializable]
     public class Termin : IEntity
     {
-
         public int Id { get; set; }
+        public string TerminId { get; set; }
         public DateTime Datum { get; set; }
         public int Trajanje { get; set; }
         public Grupa Grupa { get; set; }
@@ -18,7 +18,7 @@ namespace Domain
         [Browsable(false)]
         public string TableName => "Termin";
         [Browsable(false)]
-        public string InsertValues => $"'{Datum}', '{Trajanje}', {Grupa.Id}";
+        public string InsertValues => $"'{TerminId}','{Datum}', '{Trajanje}', {Grupa.Id}";
         [Browsable(false)]
         public string IdName => "Id";
         [Browsable(false)]
@@ -43,15 +43,16 @@ namespace Domain
             List<IEntity> result = new List<IEntity>();
             while (reader.Read())
             {
-                result.Add(new Clan
+                result.Add(new Termin
                 {
                     Id = (int)reader[0],
-                    ClanId = (int)reader[1],
-                    Ime = (string)reader[2],
-                    Prezime = (string)reader[3],
-                    DatumRodjenja = Convert.ToDateTime(reader[4]),
-                    Zanimanje = (string)reader[5],
-                    Telefon = (string)reader[6]
+                    TerminId = (string)reader[1],
+                    Datum = Convert.ToDateTime(reader[2]),
+                    Trajanje = (int)reader[3],
+                    Grupa = new Grupa { 
+                        Id = (int)reader[5],
+                        Naziv = (string)reader[6]
+                    }
                 });
             }
             return result;

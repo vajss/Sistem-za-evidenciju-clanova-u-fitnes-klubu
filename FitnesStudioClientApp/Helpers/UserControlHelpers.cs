@@ -106,5 +106,19 @@ namespace FitnesStudioClientApp.Helpers
             }
             return true;
         }
+
+        internal static bool StartWIthValidator(TextBox tb, Label errorLabel, string prefix)
+        {
+            if (!Regex.IsMatch(tb.Text, @"^T-"))
+            {
+                tb.BackColor = Color.Salmon;
+                errorLabel.Text = $"Mora početi sa '{prefix}'.";
+                return false;
+            }
+            errorLabel.Text = "";
+            errorLabel.Visible = false;
+            tb.BackColor = Color.White;
+            return true;
+        }
     }
 }

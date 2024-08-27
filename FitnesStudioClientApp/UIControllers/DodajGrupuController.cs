@@ -108,6 +108,7 @@ namespace FitnesStudioClientApp.UIControllers
         {
             dgvClanstva.DataSource = clanstva;
             dgvClanstva.Columns["DatumUclanjenja"].HeaderText = "Datum učlanjenja";
+            dgvClanstva.Columns["BrojClanova"].HeaderText = "Broj članova";
             dgvClanstva.Columns["DatumUclanjenja"].DefaultCellStyle.Format = "dd.MM.yyyy.";
             dgvClanstva.Columns["DatumPoslednjegPlacanja"].HeaderText = "Poslednja članarina plaćena";
             dgvClanstva.Columns["DatumPoslednjegPlacanja"].DefaultCellStyle.Format = "dd.MM.yyyy.";

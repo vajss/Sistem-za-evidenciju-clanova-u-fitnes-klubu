@@ -39,6 +39,9 @@
             this.btnSacuvaj = new System.Windows.Forms.Button();
             this.lblError = new System.Windows.Forms.Label();
             this.lblTrajanjeError = new System.Windows.Forms.Label();
+            this.tbTerminId = new System.Windows.Forms.TextBox();
+            this.lblTerminId = new System.Windows.Forms.Label();
+            this.lblTerminIdError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dtpDatum
@@ -129,7 +132,7 @@
             this.lblNaslov.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNaslov.AutoSize = true;
             this.lblNaslov.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.lblNaslov.Location = new System.Drawing.Point(125, 72);
+            this.lblNaslov.Location = new System.Drawing.Point(125, 67);
             this.lblNaslov.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNaslov.Name = "lblNaslov";
             this.lblNaslov.Size = new System.Drawing.Size(111, 19);
@@ -144,7 +147,7 @@
             this.btnSacuvaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSacuvaj.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btnSacuvaj.ForeColor = System.Drawing.Color.White;
-            this.btnSacuvaj.Location = new System.Drawing.Point(317, 354);
+            this.btnSacuvaj.Location = new System.Drawing.Point(317, 325);
             this.btnSacuvaj.Margin = new System.Windows.Forms.Padding(4);
             this.btnSacuvaj.Name = "btnSacuvaj";
             this.btnSacuvaj.Size = new System.Drawing.Size(109, 33);
@@ -174,18 +177,58 @@
             this.lblTrajanjeError.BackColor = System.Drawing.SystemColors.Control;
             this.lblTrajanjeError.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblTrajanjeError.ForeColor = System.Drawing.Color.Salmon;
-            this.lblTrajanjeError.Location = new System.Drawing.Point(250, 323);
+            this.lblTrajanjeError.Location = new System.Drawing.Point(475, 266);
             this.lblTrajanjeError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTrajanjeError.Name = "lblTrajanjeError";
             this.lblTrajanjeError.Size = new System.Drawing.Size(0, 13);
             this.lblTrajanjeError.TabIndex = 30;
             this.lblTrajanjeError.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
+            // tbTerminId
+            // 
+            this.tbTerminId.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbTerminId.Font = new System.Drawing.Font("Arial", 11F);
+            this.tbTerminId.Location = new System.Drawing.Point(253, 110);
+            this.tbTerminId.Margin = new System.Windows.Forms.Padding(4);
+            this.tbTerminId.Multiline = true;
+            this.tbTerminId.Name = "tbTerminId";
+            this.tbTerminId.Size = new System.Drawing.Size(173, 23);
+            this.tbTerminId.TabIndex = 32;
+            // 
+            // lblTerminId
+            // 
+            this.lblTerminId.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTerminId.AutoSize = true;
+            this.lblTerminId.Font = new System.Drawing.Font("Arial", 11F);
+            this.lblTerminId.Location = new System.Drawing.Point(160, 112);
+            this.lblTerminId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTerminId.Name = "lblTerminId";
+            this.lblTerminId.Size = new System.Drawing.Size(74, 17);
+            this.lblTerminId.TabIndex = 31;
+            this.lblTerminId.Text = "Termin ID:";
+            // 
+            // lblTerminIdError
+            // 
+            this.lblTerminIdError.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTerminIdError.AutoSize = true;
+            this.lblTerminIdError.BackColor = System.Drawing.SystemColors.Control;
+            this.lblTerminIdError.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblTerminIdError.ForeColor = System.Drawing.Color.Salmon;
+            this.lblTerminIdError.Location = new System.Drawing.Point(437, 116);
+            this.lblTerminIdError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTerminIdError.Name = "lblTerminIdError";
+            this.lblTerminIdError.Size = new System.Drawing.Size(0, 13);
+            this.lblTerminIdError.TabIndex = 33;
+            this.lblTerminIdError.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
             // UCDodajTermin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.lblTerminIdError);
+            this.Controls.Add(this.tbTerminId);
+            this.Controls.Add(this.lblTerminId);
             this.Controls.Add(this.lblTrajanjeError);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnSacuvaj);
@@ -217,5 +260,8 @@
         private System.Windows.Forms.Button btnSacuvaj;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Label lblTrajanjeError;
+        private System.Windows.Forms.TextBox tbTerminId;
+        private System.Windows.Forms.Label lblTerminId;
+        private System.Windows.Forms.Label lblTerminIdError;
     }
 }

@@ -9,20 +9,24 @@ namespace FitnesStudioClientApp.UIControllers
 {
     public class DodajTerminController
     {
-        internal void DodajTermin(ComboBox cbGrupa, DateTimePicker dtpDatum, TextBox tbTrajanje, Label lblError, Label lblTrajanjeError)
+        internal void DodajTermin(TextBox tbTerminId, ComboBox cbGrupa, DateTimePicker dtpDatum, TextBox tbTrajanje, Label lblError, Label lblTrajanjeError, Label lblTerminIdError)
         {
 
 
             if (!UserControlHelpers.EmptyFieldValidation(tbTrajanje, lblError) |
+                !UserControlHelpers.EmptyFieldValidation(tbTerminId, lblError) |
+                !UserControlHelpers.StartWIthValidator(tbTerminId, lblTerminIdError, "T-") |
                 !UserControlHelpers.IntValidation(tbTrajanje, lblTrajanjeError) |
                 !UserControlHelpers.ComboBoxValidation(cbGrupa, lblError)
                 )
             {
+                lblTerminIdError.Visible = true;
                 lblError.Visible = true;
                 lblTrajanjeError.Visible = true;
                 return;
             }
 
+            lblTerminIdError.Visible = false;
             lblError.Visible = false;
             lblTrajanjeError.Visible = false;
 
@@ -30,6 +34,7 @@ namespace FitnesStudioClientApp.UIControllers
             {
                 Termin t = new Termin
                 {
+                    TerminId = tbTerminId.Text,
                     Grupa = (Grupa)cbGrupa.SelectedItem,
                     Datum = dtpDatum.Value,
                     Trajanje = Int32.Parse(tbTrajanje.Text),
@@ -40,6 +45,7 @@ namespace FitnesStudioClientApp.UIControllers
 
                 cbGrupa.SelectedIndex = -1;
                 tbTrajanje.Text = "";
+                tbTerminId.Text = "";
             }
             catch (ServerException se)
             {
