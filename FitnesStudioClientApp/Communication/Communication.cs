@@ -26,8 +26,6 @@ namespace FitnesStudioClientApp.Communication
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             socket.Connect("127.0.0.1", 9000);
             client = new CommunicationClient(socket);
-
-            Debug.WriteLine(">>>>>>>> JEL DODJE DOVDE");
         }
 
         public void Disconnect()
