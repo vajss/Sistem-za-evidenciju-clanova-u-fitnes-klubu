@@ -2,6 +2,7 @@
 using FitnesStudioClientApp.User_Controls;
 using System;
 using System.ComponentModel;
+using System.Data.SqlClient;
 using System.Runtime.Remoting;
 using System.Windows.Forms;
 
@@ -67,14 +68,15 @@ namespace FitnesStudioClientApp.UIControllers
             dgvClanovi.Columns["Id"].Visible = false;
         }
 
-        internal void IzmeniClana(FrmMain parentForm, Clan Clan)
+        internal void IzmeniClana(FrmMain parentForm, Clan clan, Label lblError)
         {
-            if (Clan != null)
+            if (clan != null)
             {
-                parentForm.mainController.ChangePanel(new UCDodajClana(new IzmeniClanaController(), Clan, parentForm), parentForm);
+                parentForm.mainController.ChangePanel(new UCDodajClana(new IzmeniClanaController(), clan, parentForm), parentForm);
             } else
             {
-                // TODO set error that no clan is selected
+                lblError.Visible = true;
+                lblError.Text = "Nije odabrano clanstvo.";
             }
         }
     }

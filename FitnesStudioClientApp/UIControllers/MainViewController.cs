@@ -29,7 +29,7 @@ namespace FitnesStudioClientApp.UIControllers
 
         internal void OpenUCDodajGrupu(FrmMain frmMain)
         {
-            ChangePanel(new UCDodajGrupu(new DodajGrupuController()), frmMain);
+            ChangePanel(new UCDodajIzmeniGrupu(new DodajIzmeniGrupuController()), frmMain);
         }
 
         internal void OpenUCDodajTermin(FrmMain frmMain)

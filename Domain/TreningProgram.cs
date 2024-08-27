@@ -60,5 +60,14 @@ namespace Domain
         {
             return Naziv;
         }
+
+        public override bool Equals(object treningProgram)
+        {
+            if (treningProgram is TreningProgram tp)
+            {
+                return tp.Id ==  Id;
+            }
+            return false;
+        }
     }
 }

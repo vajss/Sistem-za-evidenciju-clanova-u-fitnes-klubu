@@ -25,5 +25,14 @@ namespace FitnesStudioClientApp.User_Controls
         {
             nadjiTerminController.PretraziTermine(tbPretraga, dgvTermini, lblError);
         }
+
+        private void TbPretraga_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                nadjiTerminController.PretraziTermine(tbPretraga, dgvTermini, lblError);
+                e.SuppressKeyPress = true;
+            }
+        }
     }
 }

@@ -52,7 +52,7 @@ namespace Domain
                     Clan = new Clan
                     {
                         Id = (int)reader[6],
-                        ClanId = (int)reader[2],
+                        ClanId = (int)reader[7],
                         Ime = (string)reader[8],
                         Prezime = (string)reader[9],
                         DatumRodjenja = Convert.ToDateTime(reader[10]),
@@ -68,11 +68,11 @@ namespace Domain
             return result;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object clanstvo)
         {
-            if (obj is Clanstvo c)
+            if (clanstvo is Clanstvo c)
             {
-                return c.Clan?.ClanId == Clan?.ClanId && c.Grupa?.Id == Grupa?.Id;
+                return c.Clan?.ClanId == Clan?.ClanId; // && c.Grupa?.Id == Grupa?.Id;
             }
             return false;
         }

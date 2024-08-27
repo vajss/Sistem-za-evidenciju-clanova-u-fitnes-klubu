@@ -25,7 +25,7 @@ namespace FitnesStudioClientApp.User_Controls
 
         private void BtnIzmeni_Click(object sender, EventArgs e)
         {
-            nadjiClanoveController.IzmeniClana(parentForm, (Clan)dgvClanovi.CurrentRow.DataBoundItem);
+            nadjiClanoveController.IzmeniClana(parentForm, (Clan)dgvClanovi.CurrentRow?.DataBoundItem, lblIzmeniError);
         }
 
         private void BtnPretrazi_Click(object sender, EventArgs e)

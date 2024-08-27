@@ -35,6 +35,7 @@
             this.btnIzmeni = new System.Windows.Forms.Button();
             this.dgvClanovi = new System.Windows.Forms.DataGridView();
             this.lblError = new System.Windows.Forms.Label();
+            this.lblIzmeniError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClanovi)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +94,7 @@
             this.btnIzmeni.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIzmeni.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIzmeni.ForeColor = System.Drawing.Color.Transparent;
-            this.btnIzmeni.Location = new System.Drawing.Point(646, 554);
+            this.btnIzmeni.Location = new System.Drawing.Point(646, 566);
             this.btnIzmeni.Name = "btnIzmeni";
             this.btnIzmeni.Size = new System.Drawing.Size(98, 39);
             this.btnIzmeni.TabIndex = 28;
@@ -125,11 +126,23 @@
             this.lblError.Size = new System.Drawing.Size(0, 19);
             this.lblError.TabIndex = 30;
             // 
+            // lblIzmeniError
+            // 
+            this.lblIzmeniError.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblIzmeniError.AutoSize = true;
+            this.lblIzmeniError.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
+            this.lblIzmeniError.ForeColor = System.Drawing.Color.Salmon;
+            this.lblIzmeniError.Location = new System.Drawing.Point(602, 541);
+            this.lblIzmeniError.Name = "lblIzmeniError";
+            this.lblIzmeniError.Size = new System.Drawing.Size(0, 18);
+            this.lblIzmeniError.TabIndex = 31;
+            // 
             // UCNadjiClanove
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.lblIzmeniError);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.dgvClanovi);
             this.Controls.Add(this.btnIzmeni);
@@ -156,5 +169,6 @@
         private System.Windows.Forms.Button btnIzmeni;
         private System.Windows.Forms.DataGridView dgvClanovi;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Label lblIzmeniError;
     }
 }

@@ -69,5 +69,14 @@ namespace Domain
         {
             return Ime + " " + Prezime;
         }
+
+        public override bool Equals(object clan)
+        {
+            if (clan is Clan c)
+            {
+                return c.Id == Id;
+            }
+            return false;
+        }
     }
 }

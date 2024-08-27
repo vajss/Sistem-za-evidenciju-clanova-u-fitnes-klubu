@@ -106,6 +106,7 @@
             this.tbPretraga.Name = "tbPretraga";
             this.tbPretraga.Size = new System.Drawing.Size(290, 30);
             this.tbPretraga.TabIndex = 31;
+            this.tbPretraga.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbPretraga_KeyDown);
             // 
             // UCNadjiTermin
             // 
@@ -119,7 +120,7 @@
             this.Controls.Add(this.lblPretraga);
             this.Controls.Add(this.tbPretraga);
             this.Font = new System.Drawing.Font("Arial", 11F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UCNadjiTermin";
             this.Size = new System.Drawing.Size(768, 685);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTermini)).EndInit();

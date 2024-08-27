@@ -35,6 +35,7 @@
             this.lblNaslov = new System.Windows.Forms.Label();
             this.lblPretraga = new System.Windows.Forms.Label();
             this.tbPretraga = new System.Windows.Forms.TextBox();
+            this.lblIzmenaError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrupe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,12 +71,13 @@
             this.btnIzmeniGrupu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIzmeniGrupu.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIzmeniGrupu.ForeColor = System.Drawing.Color.Transparent;
-            this.btnIzmeniGrupu.Location = new System.Drawing.Point(644, 566);
+            this.btnIzmeniGrupu.Location = new System.Drawing.Point(644, 572);
             this.btnIzmeniGrupu.Name = "btnIzmeniGrupu";
             this.btnIzmeniGrupu.Size = new System.Drawing.Size(98, 39);
             this.btnIzmeniGrupu.TabIndex = 35;
             this.btnIzmeniGrupu.Text = "Izmeni grupu";
             this.btnIzmeniGrupu.UseVisualStyleBackColor = false;
+            this.btnIzmeniGrupu.Click += new System.EventHandler(this.btnIzmeniGrupu_Click);
             // 
             // btnPretrazi
             // 
@@ -124,11 +126,23 @@
             this.tbPretraga.TabIndex = 31;
             this.tbPretraga.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbPretraga_KeyDown);
             // 
+            // lblIzmenaError
+            // 
+            this.lblIzmenaError.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblIzmenaError.AutoSize = true;
+            this.lblIzmenaError.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
+            this.lblIzmenaError.ForeColor = System.Drawing.Color.Salmon;
+            this.lblIzmenaError.Location = new System.Drawing.Point(618, 547);
+            this.lblIzmenaError.Name = "lblIzmenaError";
+            this.lblIzmenaError.Size = new System.Drawing.Size(0, 18);
+            this.lblIzmenaError.TabIndex = 38;
+            // 
             // UCNadjiGrupe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.lblIzmenaError);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.dgvGrupe);
             this.Controls.Add(this.btnIzmeniGrupu);
@@ -155,5 +169,6 @@
         private System.Windows.Forms.Label lblNaslov;
         private System.Windows.Forms.Label lblPretraga;
         private System.Windows.Forms.TextBox tbPretraga;
+        private System.Windows.Forms.Label lblIzmenaError;
     }
 }

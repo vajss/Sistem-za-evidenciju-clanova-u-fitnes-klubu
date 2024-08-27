@@ -1,4 +1,5 @@
-﻿using FitnesStudioClientApp.UIControllers;
+﻿using Domain;
+using FitnesStudioClientApp.UIControllers;
 using System.Windows.Forms;
 
 namespace FitnesStudioClientApp.User_Controls
@@ -6,7 +7,7 @@ namespace FitnesStudioClientApp.User_Controls
     public partial class UCNadjiGrupe : UserControl
     {
         private NadjiGrupeController nadjiGrupeController;
-        private FrmMain frmMain;
+        private FrmMain parentForm;
 
         public UCNadjiGrupe()
         {
@@ -16,7 +17,7 @@ namespace FitnesStudioClientApp.User_Controls
         public UCNadjiGrupe(NadjiGrupeController nadjiGrupeController, FrmMain frmMain)
         {
             this.nadjiGrupeController = nadjiGrupeController;
-            this.frmMain = frmMain;
+            this.parentForm = frmMain;
             InitializeComponent();
             this.nadjiGrupeController.SetGrid(dgvGrupe);
         }
@@ -33,6 +34,11 @@ namespace FitnesStudioClientApp.User_Controls
                 nadjiGrupeController.PretraziGrupe(tbPretraga, dgvGrupe, lblError);
                 e.SuppressKeyPress = true;
             }
+        }
+
+        private void btnIzmeniGrupu_Click(object sender, System.EventArgs e)
+        {
+            nadjiGrupeController.IzmeniGrupu(parentForm, (Grupa)dgvGrupe.CurrentRow?.DataBoundItem, lblIzmenaError);
         }
     }
 }

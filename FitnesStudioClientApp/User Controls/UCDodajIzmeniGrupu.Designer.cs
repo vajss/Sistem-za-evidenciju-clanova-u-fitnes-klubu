@@ -1,6 +1,6 @@
 ﻿namespace FitnesStudioClientApp.User_Controls
 {
-    partial class UCDodajGrupu
+    partial class UCDodajIzmeniGrupu
     {
         /// <summary> 
         /// Required designer variable.
@@ -50,6 +50,8 @@
             this.btnSacuvajGrupu = new System.Windows.Forms.Button();
             this.lblGroupError = new System.Windows.Forms.Label();
             this.cbTreningProgram = new System.Windows.Forms.ComboBox();
+            this.btnIzmeniGrupu = new System.Windows.Forms.Button();
+            this.btnNazad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClanstva)).BeginInit();
             this.gbDodajClanove.SuspendLayout();
             this.SuspendLayout();
@@ -334,11 +336,49 @@
             this.cbTreningProgram.TabIndex = 29;
             this.cbTreningProgram.SelectionChangeCommitted += new System.EventHandler(this.cbTreningProgram_SelectionChangeCommitted);
             // 
+            // btnIzmeniGrupu
+            // 
+            this.btnIzmeniGrupu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnIzmeniGrupu.BackColor = System.Drawing.Color.PowderBlue;
+            this.btnIzmeniGrupu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIzmeniGrupu.FlatAppearance.BorderSize = 0;
+            this.btnIzmeniGrupu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIzmeniGrupu.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIzmeniGrupu.ForeColor = System.Drawing.Color.Transparent;
+            this.btnIzmeniGrupu.Location = new System.Drawing.Point(26, 585);
+            this.btnIzmeniGrupu.Name = "btnIzmeniGrupu";
+            this.btnIzmeniGrupu.Size = new System.Drawing.Size(86, 48);
+            this.btnIzmeniGrupu.TabIndex = 30;
+            this.btnIzmeniGrupu.Text = "Izmeni grupu";
+            this.btnIzmeniGrupu.UseVisualStyleBackColor = false;
+            this.btnIzmeniGrupu.Visible = false;
+            this.btnIzmeniGrupu.Click += new System.EventHandler(this.btnIzmeniGrupu_Click);
+            // 
+            // btnNazad
+            // 
+            this.btnNazad.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnNazad.BackColor = System.Drawing.Color.PowderBlue;
+            this.btnNazad.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNazad.FlatAppearance.BorderSize = 0;
+            this.btnNazad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNazad.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNazad.ForeColor = System.Drawing.Color.Transparent;
+            this.btnNazad.Location = new System.Drawing.Point(5, 5);
+            this.btnNazad.Name = "btnNazad";
+            this.btnNazad.Size = new System.Drawing.Size(86, 35);
+            this.btnNazad.TabIndex = 31;
+            this.btnNazad.Text = "< Nazad";
+            this.btnNazad.UseVisualStyleBackColor = false;
+            this.btnNazad.Visible = false;
+            this.btnNazad.Click += new System.EventHandler(this.BtnIzmeniGrupu_button_Click);
+            // 
             // UCDodajGrupu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnNazad);
+            this.Controls.Add(this.btnIzmeniGrupu);
             this.Controls.Add(this.cbTreningProgram);
             this.Controls.Add(this.lblGroupError);
             this.Controls.Add(this.gbDodajClanove);
@@ -387,5 +427,7 @@
         private System.Windows.Forms.Label lblGroupError;
         private System.Windows.Forms.ComboBox cbTreningProgram;
         private System.Windows.Forms.Button btnIzmeniClanstvo;
+        private System.Windows.Forms.Button btnIzmeniGrupu;
+        private System.Windows.Forms.Button btnNazad;
     }
 }

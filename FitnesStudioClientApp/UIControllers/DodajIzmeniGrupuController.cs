@@ -3,6 +3,7 @@ using FitnesStudioClientApp.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Remoting;
 using System.Windows.Forms;
@@ -11,7 +12,7 @@ using View.Exceptions;
 
 namespace FitnesStudioClientApp.UIControllers
 {
-    public class DodajGrupuController
+    public class DodajIzmeniGrupuController
     {
         BindingList<Clanstvo> clanstva = new BindingList<Clanstvo>();
 
@@ -100,13 +101,24 @@ namespace FitnesStudioClientApp.UIControllers
 
         internal void SetDateLimits(DateTimePicker dtpPoslednjePlacanje, DateTimePicker dtpUclanjenje)
         {
-            dtpUclanjenje.MaxDate = DateTime.Now;
-            dtpPoslednjePlacanje.MinDate = dtpUclanjenje.Value.AddHours(-1);
-            dtpPoslednjePlacanje.MaxDate = DateTime.Now;
+            try
+            {
+                dtpUclanjenje.MaxDate = DateTime.Now.AddMinutes(1);
+                dtpPoslednjePlacanje.MinDate = dtpUclanjenje.Value.AddHours(-1);
+                dtpPoslednjePlacanje.MaxDate = DateTime.Now;
+            }
+            catch (Exception e){
+                Debug.WriteLine($"Datumi: {e.Message}");
+            }
         }
 
-        internal void SetDataGridView(DataGridView dgvClanstva)
+        internal void SetDataGridView(DataGridView dgvClanstva, List<Clanstvo> existingClanstva = null)
         {
+            if (!(existingClanstva?.Count == 0) && existingClanstva != null)
+            {
+                clanstva = new BindingList<Clanstvo>(existingClanstva);
+            }
+
             dgvClanstva.DataSource = clanstva;
             dgvClanstva.Columns["DatumUclanjenja"].HeaderText = "Datum učlanjenja";
             dgvClanstva.Columns["DatumUclanjenja"].DefaultCellStyle.Format = "dd.MM.yyyy.";
@@ -199,7 +211,7 @@ namespace FitnesStudioClientApp.UIControllers
             dtpUclanjenje.Value = DateTime.Now.AddHours(-2); ;
         }
 
-        internal void IzmeniClanstvo(ComboBox cbClanovi, TextBox tbBrojClanova, DataGridView dgvClanstva, DateTimePicker dtpUclanjenje, DateTimePicker dtpPoslednjePlacanje, TextBox tbNeizmireno, Button btnObrisiClanove, Label lblError)
+        internal void IzmeniClanstvo(ComboBox cbClanovi, DateTimePicker dtpUclanjenje, DateTimePicker dtpPoslednjePlacanje, TextBox tbNeizmireno, Label lblError)
         {
             string[] parts = tbNeizmireno.Text.Split(' ');
             string numberPart = parts[0];
@@ -230,10 +242,19 @@ namespace FitnesStudioClientApp.UIControllers
 
         internal void SetClanstvoToChange(ComboBox cbClanovi, Clanstvo selectedClanstvo, DateTimePicker dtpUclanjenje, DateTimePicker dtpPoslednjePlacanje, TextBox tbNeizmireno)
         {
-            cbClanovi.SelectedItem = selectedClanstvo.Clan;
-            tbNeizmireno.Text = selectedClanstvo.NeizmirenaDugovanja.ToString() + " RSD";
-            dtpUclanjenje.Value = selectedClanstvo.DatumUclanjenja;
-            dtpPoslednjePlacanje.Value = selectedClanstvo.DatumPoslednjegPlacanja;
+            try
+            {
+                cbClanovi.SelectedItem = selectedClanstvo.Clan;
+                tbNeizmireno.Text = selectedClanstvo.NeizmirenaDugovanja.ToString() + " RSD";
+
+                dtpUclanjenje.Value = selectedClanstvo.DatumUclanjenja.AddMinutes(-1);
+                dtpPoslednjePlacanje.Value = selectedClanstvo.DatumPoslednjegPlacanja.AddMinutes(-2);
+            }
+            catch (ArgumentOutOfRangeException){
+
+                MessageBox.Show("Datum je neispravan.");
+            }
+
         }
     }
 }

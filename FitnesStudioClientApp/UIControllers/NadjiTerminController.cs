@@ -48,8 +48,6 @@ namespace FitnesStudioClientApp.UIControllers
             dgvClanovi.DataSource = new BindingList<Termin>();
             dgvClanovi.Columns["Id"].Visible = false;
             dgvClanovi.Columns["Id"].HeaderText = "Termin Id";
-
-
         }
     }
 }

@@ -1,32 +1,55 @@
 ﻿using Domain;
 using FitnesStudioClientApp.UIControllers;
 using System;
-using System.Diagnostics;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace FitnesStudioClientApp.User_Controls
 {
-    public partial class UCDodajGrupu : UserControl
+    public partial class UCDodajIzmeniGrupu : UserControl
     {
-        private DodajGrupuController dodajGrupuController;
+        private DodajIzmeniGrupuController dodajGrupuController;
+        private Grupa grupa;
+        private FrmMain parentForm;
 
-        public UCDodajGrupu()
+        public UCDodajIzmeniGrupu()
         {
-            InitializeComponent();
+            Init();
         }
 
-        public UCDodajGrupu(DodajGrupuController dodajGrupuController)
+        public UCDodajIzmeniGrupu(DodajIzmeniGrupuController dodajGrupuController)
         {
-            // TODO should have input that says if we are editing or creating group
-            // and then change buttons based on that.
-
             this.dodajGrupuController = dodajGrupuController;
+            Init();
+        }
+
+        public UCDodajIzmeniGrupu(DodajIzmeniGrupuController dodajGrupuController, Grupa grupa, FrmMain parentForm)
+        {
+            this.dodajGrupuController = dodajGrupuController;
+            this.grupa = grupa;
+            this.parentForm = parentForm;
+            Init(grupa.Clanstva);
+            SetupEdit(grupa);
+        }
+
+        private void SetupEdit(Grupa grupa)
+        {
+            btnSacuvajGrupu.Visible = false;
+            btnIzmeniGrupu.Visible = true;
+            btnNazad.Visible = true;
+
+            tbNazivGrupe.Text = grupa.Naziv;
+            tbBrojClanova.Text = grupa.BrojClanova.ToString();
+        }
+
+        private void Init(List<Clanstvo> clanstva = null)
+        {
             InitializeComponent();
             tbNeizmireno.Text = "0 RSD";
             dodajGrupuController.SetDateLimits(dtpPoslednjePlacanje, dtpUclanjenje);
-            dodajGrupuController.SetDataGridView(dgvClanstva);
+            dodajGrupuController.SetDataGridView(dgvClanstva, clanstva);
             cbTreningProgram.SelectionChangeCommitted += new System.EventHandler(CalculateDebt);
         }
 
@@ -46,6 +69,10 @@ namespace FitnesStudioClientApp.User_Controls
         {
             dodajGrupuController.UcitajClanove(cbClanovi);
             dodajGrupuController.UcitajTreningPrograme(cbTreningProgram);
+            if (grupa is Grupa g)
+            {
+                cbTreningProgram.SelectedItem = g.TreningProgram;
+            }
         }
 
         private void BtnDodajClana_Click(object sender, EventArgs e)
@@ -78,7 +105,7 @@ namespace FitnesStudioClientApp.User_Controls
 
         private void BtnIzmeniClanstvo_Click(object sender, EventArgs e)
         {
-            dodajGrupuController.IzmeniClanstvo(cbClanovi, tbBrojClanova, dgvClanstva, dtpUclanjenje, dtpPoslednjePlacanje, tbNeizmireno, btnObrisiClanove, lblError);
+            dodajGrupuController.IzmeniClanstvo(cbClanovi, dtpUclanjenje, dtpPoslednjePlacanje, tbNeizmireno, lblError);
         }
 
         private void DgvClanstva_SelectionChanged(object sender, EventArgs e)
@@ -91,6 +118,16 @@ namespace FitnesStudioClientApp.User_Controls
                     dodajGrupuController.SetClanstvoToChange(cbClanovi, selectedClanstvo, dtpUclanjenje, dtpPoslednjePlacanje, tbNeizmireno);
                 }
             }
+        }
+
+        private void btnIzmeniGrupu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnIzmeniGrupu_button_Click(object sender, EventArgs e)
+        {
+            parentForm.mainController.OpenUCNadjiGrupe(parentForm);
         }
     }
 }

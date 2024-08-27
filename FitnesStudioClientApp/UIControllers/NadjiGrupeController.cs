@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System;
 using System.Runtime.Remoting;
+using FitnesStudioClientApp.User_Controls;
 
 namespace FitnesStudioClientApp.UIControllers
 {
@@ -60,6 +61,18 @@ namespace FitnesStudioClientApp.UIControllers
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Greška pri pretrazi članova.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        internal void IzmeniGrupu(FrmMain parentForm, Grupa grupa, Label lblError)
+        {
+            if (grupa != null)
+            {
+                parentForm.mainController.ChangePanel(new UCDodajIzmeniGrupu(new DodajIzmeniGrupuController(), grupa, parentForm), parentForm);
+            }
+            else
+            {
+                lblError.Text = "Nije odabrana grupa.";
             }
         }
     }  
