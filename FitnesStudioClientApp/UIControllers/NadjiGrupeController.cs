@@ -13,6 +13,8 @@ namespace FitnesStudioClientApp.UIControllers
         {
             dgvGrupe.DataSource = new BindingList<Grupa>(Communication.Communication.Instance.VratiSveGrupe());
             dgvGrupe.Columns["TreningProgram"].HeaderText = "Trening program";
+            dgvGrupe.Columns["BrojClanova"].HeaderText = "Broj članova";
+
         }
 
         internal void PretraziGrupe(TextBox tbPretraga, DataGridView dgvGrupe, Label lblError)

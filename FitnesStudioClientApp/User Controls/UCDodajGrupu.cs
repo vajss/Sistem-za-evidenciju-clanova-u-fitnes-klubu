@@ -1,7 +1,10 @@
-﻿using FitnesStudioClientApp.UIControllers;
+﻿using Domain;
+using FitnesStudioClientApp.UIControllers;
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace FitnesStudioClientApp.User_Controls
 {
@@ -71,6 +74,23 @@ namespace FitnesStudioClientApp.User_Controls
         private void dgvClanstva_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             dodajGrupuController.OnRowCountChange(cbTreningProgram, tbBrojClanova, btnObrisiClanove);
+        }
+
+        private void BtnIzmeniClanstvo_Click(object sender, EventArgs e)
+        {
+            dodajGrupuController.IzmeniClanstvo(cbClanovi, tbBrojClanova, dgvClanstva, dtpUclanjenje, dtpPoslednjePlacanje, tbNeizmireno, btnObrisiClanove, lblError);
+        }
+
+        private void DgvClanstva_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvClanstva.SelectedRows.Count == 1)
+            {
+                DataGridViewRow selectedRow = dgvClanstva.SelectedRows[0];
+                if (selectedRow.DataBoundItem is Clanstvo selectedClanstvo)
+                {
+                    dodajGrupuController.SetClanstvoToChange(cbClanovi, selectedClanstvo, dtpUclanjenje, dtpPoslednjePlacanje, tbNeizmireno);
+                }
+            }
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Domain;
 using FitnesStudioClientApp.Helpers;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.Remoting;
@@ -108,7 +109,6 @@ namespace FitnesStudioClientApp.UIControllers
         {
             dgvClanstva.DataSource = clanstva;
             dgvClanstva.Columns["DatumUclanjenja"].HeaderText = "Datum učlanjenja";
-            dgvClanstva.Columns["BrojClanova"].HeaderText = "Broj članova";
             dgvClanstva.Columns["DatumUclanjenja"].DefaultCellStyle.Format = "dd.MM.yyyy.";
             dgvClanstva.Columns["DatumPoslednjegPlacanja"].HeaderText = "Poslednja članarina plaćena";
             dgvClanstva.Columns["DatumPoslednjegPlacanja"].DefaultCellStyle.Format = "dd.MM.yyyy.";
@@ -197,6 +197,43 @@ namespace FitnesStudioClientApp.UIControllers
             tbNeizmireno.Text = "0 RSD";
             dtpPoslednjePlacanje.Value = DateTime.Now.AddHours(-1);
             dtpUclanjenje.Value = DateTime.Now.AddHours(-2); ;
+        }
+
+        internal void IzmeniClanstvo(ComboBox cbClanovi, TextBox tbBrojClanova, DataGridView dgvClanstva, DateTimePicker dtpUclanjenje, DateTimePicker dtpPoslednjePlacanje, TextBox tbNeizmireno, Button btnObrisiClanove, Label lblError)
+        {
+            string[] parts = tbNeizmireno.Text.Split(' ');
+            string numberPart = parts[0];
+            int neizmirenaDugovanja = int.Parse(numberPart);
+
+            Clanstvo clanstvoZaIzmeniti = new Clanstvo
+            {
+                Clan = (Clan)cbClanovi.SelectedItem,
+                DatumPoslednjegPlacanja = dtpPoslednjePlacanje.Value,
+                DatumUclanjenja = dtpUclanjenje.Value,
+                NeizmirenaDugovanja = neizmirenaDugovanja
+            };
+
+            if (!clanstva.Contains(clanstvoZaIzmeniti))
+            {
+                lblError.Text = "Samo dodata članstva se mogu izmeniti";
+                lblError.Visible = true;
+                return;
+            }
+
+            lblError.Text = "";
+            lblError.Visible = false;
+
+            List<Clanstvo> clanstvaList = clanstva.ToList();
+            int selectedIndex = clanstvaList.FindIndex(i => i.Clan.Id == clanstvoZaIzmeniti.Clan.Id);
+            clanstva[selectedIndex] = clanstvoZaIzmeniti;
+        }
+
+        internal void SetClanstvoToChange(ComboBox cbClanovi, Clanstvo selectedClanstvo, DateTimePicker dtpUclanjenje, DateTimePicker dtpPoslednjePlacanje, TextBox tbNeizmireno)
+        {
+            cbClanovi.SelectedItem = selectedClanstvo.Clan;
+            tbNeizmireno.Text = selectedClanstvo.NeizmirenaDugovanja.ToString() + " RSD";
+            dtpUclanjenje.Value = selectedClanstvo.DatumUclanjenja;
+            dtpPoslednjePlacanje.Value = selectedClanstvo.DatumPoslednjegPlacanja;
         }
     }
 }
