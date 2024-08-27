@@ -55,7 +55,7 @@ namespace FitnesStudioClientApp.User_Controls
 
         private void BtnObrisiClanove_Click(object sender, EventArgs e)
         {
-            dodajGrupuController.RemoveMembers(dgvClanstva);
+            dodajGrupuController.RemoveMembers(dgvClanstva, lblGroupError);
             dodajGrupuController.OnRowCountChange(cbTreningProgram, tbBrojClanova, btnObrisiClanove);
         }
 
@@ -122,7 +122,7 @@ namespace FitnesStudioClientApp.User_Controls
 
         private void btnIzmeniGrupu_Click(object sender, EventArgs e)
         {
-
+            dodajGrupuController.SacuvajGrupu(cbTreningProgram, tbNazivGrupe, tbBrojClanova, dgvClanstva, lblGroupError, true);
         }
 
         private void BtnIzmeniGrupu_button_Click(object sender, EventArgs e)

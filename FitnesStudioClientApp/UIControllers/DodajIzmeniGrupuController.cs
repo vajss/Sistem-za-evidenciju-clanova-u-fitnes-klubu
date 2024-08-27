@@ -3,6 +3,7 @@ using FitnesStudioClientApp.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Remoting;
@@ -142,8 +143,18 @@ namespace FitnesStudioClientApp.UIControllers
             tbBrojClanova.Text = clanstva.Count.ToString();
         }
 
-        internal void RemoveMembers(DataGridView dgvClanstva)
+        internal void RemoveMembers(DataGridView dgvClanstva, Label lblError)
         {
+            if (dgvClanstva.SelectedRows?.Count == 0)
+            {
+                lblError.Visible = true;
+                lblError.Text = "Nema izabranih clanstava za obrisati.";
+                return;
+            }
+
+            lblError.Visible = false;
+            lblError.Text = "";
+
             foreach (DataGridViewRow row in dgvClanstva.SelectedRows)
             {
                 Clanstvo member = row.DataBoundItem as Clanstvo;
@@ -155,7 +166,7 @@ namespace FitnesStudioClientApp.UIControllers
 
         }
 
-        internal void SacuvajGrupu(ComboBox cbTreningProgram, TextBox tbNazivGrupe, TextBox tbBrojClanova, DataGridView dgvClanstva, Label lblError)
+        internal void SacuvajGrupu(ComboBox cbTreningProgram, TextBox tbNazivGrupe, TextBox tbBrojClanova, DataGridView dgvClanstva, Label lblError, bool izmeni = false)
         {
             if (!UserControlHelpers.ComboBoxValidation(cbTreningProgram, lblError) |
                 !UserControlHelpers.EmptyFieldValidation(tbNazivGrupe, lblError)
@@ -174,9 +185,10 @@ namespace FitnesStudioClientApp.UIControllers
                     TreningProgram = cbTreningProgram.SelectedItem as TreningProgram,
                     Clanstva = clanstva.ToList()
                 };
-                g = Communication.Communication.Instance.SacuvajGrupu(g);
 
-                MessageBox.Show("Grupa uspešno sačuvana.");
+                g = izmeni ? Communication.Communication.Instance.IzmeniGrupu(g) : Communication.Communication.Instance.SacuvajGrupu(g);
+
+                MessageBox.Show(izmeni ? "Grupa uspešno izmenjena." : "Grupa uspešno sačuvana.");
 
                 tbNazivGrupe.Text = "";
                 cbTreningProgram.SelectedIndex = -1;
