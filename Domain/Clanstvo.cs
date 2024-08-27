@@ -26,13 +26,15 @@ namespace Domain
         [Browsable(false)]
         public string JoinTable => "";
         [Browsable(false)]
-        public string TableAlias => "";
+        public string TableAlias => "CL";
         [Browsable(false)]
         public object SelectValues => "";
         [Browsable(false)]
         public string WhereCondition => "";
         [Browsable(false)]
         public string GetUpdateValues => "";
+        [Browsable(false)]
+        public string GCondition { get; set; }
         [Browsable(false)]
         public string GeneralCondition => "";
 

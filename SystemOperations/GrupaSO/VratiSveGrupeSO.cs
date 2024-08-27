@@ -12,6 +12,16 @@ namespace SystemOperations.GrupaSO
         protected override void ExecuteOperation(IEntity entity)
         {
             Result = Repository.GetAll(new Grupa()).Cast<Grupa>().ToList();
+
+            Result.ForEach((Grupa grupa) => {
+                Clanstvo clanstvo = new Clanstvo { 
+                     Grupa = grupa,
+                };
+
+                clanstvo.GCondition = $"CL.GrupaId = {grupa.Id}";
+                List<Clanstvo> clanstva = Repository.GetAll(clanstvo).Cast<Clanstvo>().ToList();
+                grupa.Clanstva = clanstva;
+            });
         }
     }
 }
