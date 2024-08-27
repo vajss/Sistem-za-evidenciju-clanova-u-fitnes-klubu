@@ -19,7 +19,7 @@ namespace SystemOperations.GrupaSO
                 };
 
                 clanstvo.GCondition = $"CL.GrupaId = {grupa.Id}";
-                List<Clanstvo> clanstva = Repository.GetAll(clanstvo).Cast<Clanstvo>().ToList();
+                List<Clanstvo> clanstva = Repository.GetSpecific(clanstvo).Cast<Clanstvo>().ToList();
                 grupa.Clanstva = clanstva;
             });
         }

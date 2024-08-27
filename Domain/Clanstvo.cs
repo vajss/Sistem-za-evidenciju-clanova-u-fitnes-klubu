@@ -22,13 +22,13 @@ namespace Domain
         [Browsable(false)]
         public string IdName => "Id";
         [Browsable(false)]
-        public string JoinCondition => "";
+        public string JoinCondition => "ON (CL.ClanId= C.Id)";
         [Browsable(false)]
-        public string JoinTable => "";
+        public string JoinTable => "JOIN Clan C";
         [Browsable(false)]
         public string TableAlias => "CL";
         [Browsable(false)]
-        public object SelectValues => "";
+        public object SelectValues => "*";
         [Browsable(false)]
         public string WhereCondition => "";
         [Browsable(false)]
@@ -36,11 +36,36 @@ namespace Domain
         [Browsable(false)]
         public string GCondition { get; set; }
         [Browsable(false)]
-        public string GeneralCondition => "";
+        public string GeneralCondition => $"{GCondition}";
 
         public List<IEntity> GetEntities(SqlDataReader reader)
         {
-            throw new NotImplementedException("GetEntities not implemented in Clanstva.");
+            List<IEntity> result = new List<IEntity>();
+            while (reader.Read())
+            {
+                result.Add(new Clanstvo
+                {
+                    Grupa = new Grupa
+                    {
+                        Id = (int)reader[1],
+                    },
+                    Clan = new Clan
+                    {
+                        Id = (int)reader[6],
+                        ClanId = (int)reader[2],
+                        Ime = (string)reader[8],
+                        Prezime = (string)reader[9],
+                        DatumRodjenja = Convert.ToDateTime(reader[10]),
+                        Zanimanje = (string)reader[11],
+                        Telefon = (string)reader[12],
+                    },
+                    DatumUclanjenja = Convert.ToDateTime(reader[3]),
+                    NeizmirenaDugovanja = (int)reader[4],
+                    DatumPoslednjegPlacanja = Convert.ToDateTime(reader[5])
+
+                });
+            }
+            return result;
         }
 
         public override bool Equals(object obj)

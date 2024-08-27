@@ -11,10 +11,21 @@ namespace FitnesStudioClientApp.UIControllers
     {
         internal void SetGrid(DataGridView dgvGrupe)
         {
-            dgvGrupe.DataSource = new BindingList<Grupa>(Communication.Communication.Instance.VratiSveGrupe());
-            dgvGrupe.Columns["TreningProgram"].HeaderText = "Trening program";
-            dgvGrupe.Columns["BrojClanova"].HeaderText = "Broj članova";
 
+            try
+            {
+                dgvGrupe.DataSource = new BindingList<Grupa>(Communication.Communication.Instance.VratiSveGrupe());
+                dgvGrupe.Columns["TreningProgram"].HeaderText = "Trening program";
+                dgvGrupe.Columns["BrojClanova"].HeaderText = "Broj članova";
+            }
+            catch (ServerException se)
+            {
+                throw se;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Greška pri pretrazi članova.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         internal void PretraziGrupe(TextBox tbPretraga, DataGridView dgvGrupe, Label lblError)
