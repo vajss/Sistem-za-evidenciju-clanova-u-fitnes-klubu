@@ -73,8 +73,8 @@
     <Compile Include="UIControllers\NadjiTerminController.cs" />
     <Compile Include="UIControllers\PocetnaForma.cs" />
     <Compile Include="UIControllers\LoginController.cs" />
-    <Compile Include="MainCoordinator.cs" />
-    <Compile Include="UIControllers\MainViewController.cs" />
+    <Compile Include="UIControllers\MainController.cs" />
+    <Compile Include="MainViewCoordinator.cs" />
     <Compile Include="UIControllers\NadjiClanoveController.cs" />
     <Compile Include="UIControllers\RegisterController.cs" />
     <Compile Include="User Controls\UCDodajIzmeniClana.cs">

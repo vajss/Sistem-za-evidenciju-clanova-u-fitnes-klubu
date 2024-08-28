@@ -8,13 +8,13 @@ namespace FitnesStudioClientApp
     public partial class FrmMain : Form
     {
 
-        public MainViewController mainController = new MainViewController();
+        public MainViewCoordinator mainController = new MainViewCoordinator();
         public FrmMain()
         {
             InitializeComponent();
         }
 
-        public FrmMain(MainViewController mainController)
+        public FrmMain(MainViewCoordinator mainController)
         {
             InitializeComponent();
             this.mainController = mainController;
@@ -22,8 +22,8 @@ namespace FitnesStudioClientApp
 
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-            MainCoordinator.Instance.LogOut();
-            MainCoordinator.Instance.OpenLoginForm();
+            MainController.Instance.LogOut();
+            MainController.Instance.OpenLoginForm();
         }
 
         private void DodajClanaToolStripMenuItem_Click(object sender, System.EventArgs e)
@@ -49,9 +49,9 @@ namespace FitnesStudioClientApp
 
         private void OdjavaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MainCoordinator.Instance?.LogOut();
+            MainController.Instance?.LogOut();
             this.Dispose();
-            MainCoordinator.Instance.OpenLoginForm();
+            MainController.Instance.OpenLoginForm();
         }
 
         private void DodajTerminToolStripMenuItem_Click(object sender, EventArgs e)

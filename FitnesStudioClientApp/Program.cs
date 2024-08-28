@@ -19,7 +19,7 @@ namespace FitnesStudioClientApp
             {
                 try
                 {
-                    MainCoordinator.Instance.OpenLoginForm();
+                    MainController.Instance.OpenLoginForm();
                     Application.Run();
                 }
                 catch (ServerException se)

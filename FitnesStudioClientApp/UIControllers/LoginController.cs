@@ -48,8 +48,8 @@ namespace FitnesStudioClientApp.UIControllers
                         MessageBox.Show("Ovaj korisnik je već ulogovan.");
                         return;
                     }
-                    MainCoordinator.Instance.Trener = t;
-                    MainCoordinator.Instance.OpenMainForm();
+                    MainController.Instance.Trener = t;
+                    MainController.Instance.OpenMainForm();
                     parentForm.Dispose();
                 }
                 else

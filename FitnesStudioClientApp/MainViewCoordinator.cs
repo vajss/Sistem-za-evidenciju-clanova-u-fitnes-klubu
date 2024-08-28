@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace FitnesStudioClientApp.UIControllers
 {
-    public class MainViewController
+    public class MainViewCoordinator
     {
 
         public void ChangePanel(UserControl userControl = null, FrmMain frmMain = null)

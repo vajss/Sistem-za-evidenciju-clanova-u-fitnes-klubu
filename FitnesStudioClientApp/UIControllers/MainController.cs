@@ -9,25 +9,25 @@ using System.Windows.Forms;
 
 namespace FitnesStudioClientApp.UIControllers
 {
-    public class MainCoordinator
+    public class MainController
     {
 
-        private readonly MainViewController mainController = new MainViewController();
+        private readonly MainViewCoordinator mainController = new MainViewCoordinator();
         private readonly LoginController loginController = new LoginController();
         private readonly RegisterController registerController = new RegisterController();
         private FrmPocetna frmLogin;
         private FrmMain frmMain;
 
-        private static MainCoordinator instance;
-        private MainCoordinator() { }
+        private static MainController instance;
+        private MainController() { }
 
-        public static MainCoordinator Instance
+        public static MainController Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new MainCoordinator();
+                    instance = new MainController();
                 }
                 return instance;
             }
