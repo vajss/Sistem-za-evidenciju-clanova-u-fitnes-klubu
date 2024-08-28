@@ -77,11 +77,11 @@
     <Compile Include="UIControllers\MainViewController.cs" />
     <Compile Include="UIControllers\NadjiClanoveController.cs" />
     <Compile Include="UIControllers\RegisterController.cs" />
-    <Compile Include="User Controls\UCDodajClana.cs">
+    <Compile Include="User Controls\UCDodajIzmeniClana.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Controls\UCDodajClana.Designer.cs">
-      <DependentUpon>UCDodajClana.cs</DependentUpon>
+    <Compile Include="User Controls\UCDodajIzmeniClana.Designer.cs">
+      <DependentUpon>UCDodajIzmeniClana.cs</DependentUpon>
     </Compile>
     <Compile Include="User Controls\UCDodajIzmeniGrupu.cs">
       <SubType>UserControl</SubType>
@@ -141,8 +141,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="User Controls\UCDodajClana.resx">
-      <DependentUpon>UCDodajClana.cs</DependentUpon>
+    <EmbeddedResource Include="User Controls\UCDodajIzmeniClana.resx">
+      <DependentUpon>UCDodajIzmeniClana.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Controls\UCDodajIzmeniGrupu.resx">
       <DependentUpon>UCDodajIzmeniGrupu.cs</DependentUpon>

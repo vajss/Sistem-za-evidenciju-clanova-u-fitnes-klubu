@@ -1,6 +1,6 @@
 ﻿namespace FitnesStudioClientApp.User_Controls
 {
-    partial class UCDodajClana
+    partial class UCDodajIzmeniClana
     {
         /// <summary> 
         /// Required designer variable.

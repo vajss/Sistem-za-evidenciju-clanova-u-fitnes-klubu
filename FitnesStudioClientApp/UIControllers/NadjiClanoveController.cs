@@ -72,7 +72,7 @@ namespace FitnesStudioClientApp.UIControllers
         {
             if (clan != null)
             {
-                parentForm.mainController.ChangePanel(new UCDodajClana(new IzmeniClanaController(), clan, parentForm), parentForm);
+                parentForm.mainController.ChangePanel(new UCDodajIzmeniClana(new IzmeniClanaController(), clan, parentForm), parentForm);
             } else
             {
                 lblError.Visible = true;

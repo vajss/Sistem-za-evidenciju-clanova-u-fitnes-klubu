@@ -5,26 +5,26 @@ using System.Windows.Forms;
 
 namespace FitnesStudioClientApp.User_Controls
 {
-    public partial class UCDodajClana : UserControl
+    public partial class UCDodajIzmeniClana : UserControl
     {
         private DodajClanaController dodajClanaController;
         private IzmeniClanaController izmeniClanaController;
         private Clan preselectedClan;
         private FrmMain parentForm;
 
-        public UCDodajClana()
+        public UCDodajIzmeniClana()
         {
             InitializeComponent();
         }
 
-        public UCDodajClana(DodajClanaController dodajClanaController)
+        public UCDodajIzmeniClana(DodajClanaController dodajClanaController)
         {
             InitializeComponent();
             dtpDatumRodjenja.MaxDate = DateTime.Now;
             this.dodajClanaController = dodajClanaController;
         }
 
-        public UCDodajClana(IzmeniClanaController izmeniClanaController, Clan clanZaIzmeniti, FrmMain frmMain)
+        public UCDodajIzmeniClana(IzmeniClanaController izmeniClanaController, Clan clanZaIzmeniti, FrmMain frmMain)
         {
             InitializeComponent();
             parentForm = frmMain;
