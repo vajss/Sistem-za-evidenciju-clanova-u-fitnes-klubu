@@ -85,6 +85,18 @@ namespace DataBaseBroker
                 throw new Exception("Database error!");
             }
         }
+
+        public void Delete(IEntity entity)
+        {
+            SqlCommand command = new SqlCommand("", connection, transaction);
+            command.CommandText = $" DELETE from {entity.TableName} WHERE {entity.WhereCondition}";
+            Debug.WriteLine(">>>>>>>>>>> Delete query: " + command.CommandText);
+
+            if (command.ExecuteNonQuery() != 1)
+            {
+                throw new Exception("Database error!");
+            }
+        }
     }
 }
 

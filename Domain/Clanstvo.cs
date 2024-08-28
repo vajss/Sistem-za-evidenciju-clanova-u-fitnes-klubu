@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace Domain
 {
@@ -30,9 +31,9 @@ namespace Domain
         [Browsable(false)]
         public object SelectValues => "*";
         [Browsable(false)]
-        public string WhereCondition => "";
+        public string WhereCondition => $"ClanId = {Clan.Id} AND GrupaId = {Grupa.Id}";
         [Browsable(false)]
-        public string GetUpdateValues => "";
+        public string GetUpdateValues => $"DatumUclanjenja='{DatumUclanjenja}', DatumPoslednjegPlacanja='{DatumPoslednjegPlacanja}', NeizmirenaDugovanja={NeizmirenaDugovanja}";
         [Browsable(false)]
         public string GCondition { get; set; }
         [Browsable(false)]

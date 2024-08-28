@@ -101,6 +101,12 @@ namespace Controller
             so.ExecuteTemplate(grupa);
         }
 
+        public void IzmeniGrupu(Grupa grupa)
+        {
+            IzmeniGrupuSO so = new IzmeniGrupuSO();
+            so.ExecuteTemplate(grupa);
+        }
+
         public List<Grupa> VratiSveGrupe(Grupa grupa)
         {
             VratiSveGrupeSO so = new VratiSveGrupeSO();

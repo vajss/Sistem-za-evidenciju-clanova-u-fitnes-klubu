@@ -29,9 +29,9 @@ namespace Domain
         [Browsable(false)]
         public object SelectValues => "*";
         [Browsable(false)]
-        public string WhereCondition => $"G.Id={Id}";
+        public string WhereCondition => $"Id={Id}";
         [Browsable(false)]
-        public string GetUpdateValues => "";
+        public string GetUpdateValues => $"Naziv='{Naziv}', BrojClanova={BrojClanova}, TreningProgramId={TreningProgram.Id}";
         [Browsable(false)]
         public string GCondition { get; set; }
         [Browsable(false)]

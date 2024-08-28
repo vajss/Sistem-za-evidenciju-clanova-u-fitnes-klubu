@@ -8,7 +8,7 @@ namespace FitnesStudioClientApp.UIControllers
 {
     public class IzmeniClanaController
     {
-        internal void IzmeniClana(TextBox tbClanId, TextBox tbIme, TextBox tbPrezime, DateTimePicker dtpDatumRodjenja, TextBox tbTelefon, TextBox tbZanimanje, Label lblError, Clan preselectedClan)
+        internal void IzmeniClana(TextBox tbClanId, TextBox tbIme, TextBox tbPrezime, DateTimePicker dtpDatumRodjenja, TextBox tbTelefon, TextBox tbZanimanje, Label lblError, Clan preselectedClan, FrmMain parentForm)
         {
             if (!UserControlHelpers.EmptyFieldValidation(tbClanId, lblError) |
                 !UserControlHelpers.EmptyFieldValidation(tbIme, lblError) |
@@ -44,7 +44,7 @@ namespace FitnesStudioClientApp.UIControllers
                 tbPrezime.Text = "";
                 tbZanimanje.Text = "";
                 tbTelefon.Text = "";
-
+                parentForm.mainController.OpenUCNadjiClanove(parentForm);
             }
             catch (ServerException se)
             {

@@ -9,6 +9,7 @@ using System.IO;
 using System.Net.Sockets;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Windows.Forms;
 
 namespace ServerApp
 {
@@ -17,13 +18,6 @@ namespace ServerApp
         private Socket clientSocket;
         private readonly BindingList<Trener> treneri;
         private Trener logedInTrener;
-
-        //  private Receiver receiver;
-        //  private Sender sender;
-        /*private readonly BindingList<Trener> treneri;
-        private Trener ulogovanTrener;
-*/
-        // public EventHandler OdjavljenKlijent;
 
         internal void Stop()
         {
@@ -71,6 +65,10 @@ namespace ServerApp
             {
                 Console.WriteLine("Doslo je do prekida veze");
                 treneri.Remove(logedInTrener);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Došlo je do greške pri čuvanju u bazi." + e.Message);
             }
         }
 
@@ -142,6 +140,9 @@ namespace ServerApp
                     break;
                 case Operation.NadjiTermine:
                     response.Result = Controller.Controller.Instance.PretraziTermine((Termin)request.RequestObject);
+                    break;
+                case Operation.IzmeniGrupu:
+                    Controller.Controller.Instance.IzmeniGrupu((Grupa)request.RequestObject);
                     break;
                 default:
                     break;

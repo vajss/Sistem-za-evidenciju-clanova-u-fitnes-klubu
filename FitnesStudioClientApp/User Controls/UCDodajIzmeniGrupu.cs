@@ -120,9 +120,9 @@ namespace FitnesStudioClientApp.User_Controls
             }
         }
 
-        private void btnIzmeniGrupu_Click(object sender, EventArgs e)
+        private void BtnIzmeniGrupu_Click(object sender, EventArgs e)
         {
-            dodajGrupuController.SacuvajGrupu(cbTreningProgram, tbNazivGrupe, tbBrojClanova, dgvClanstva, lblGroupError, true);
+            dodajGrupuController.SacuvajGrupu(cbTreningProgram, tbNazivGrupe, tbBrojClanova, dgvClanstva, lblGroupError, true, grupa, parentForm);
         }
 
         private void BtnIzmeniGrupu_button_Click(object sender, EventArgs e)

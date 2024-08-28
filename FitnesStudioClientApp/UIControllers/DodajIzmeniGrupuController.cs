@@ -3,7 +3,6 @@ using FitnesStudioClientApp.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Remoting;
@@ -166,7 +165,7 @@ namespace FitnesStudioClientApp.UIControllers
 
         }
 
-        internal void SacuvajGrupu(ComboBox cbTreningProgram, TextBox tbNazivGrupe, TextBox tbBrojClanova, DataGridView dgvClanstva, Label lblError, bool izmeni = false)
+        internal void SacuvajGrupu(ComboBox cbTreningProgram, TextBox tbNazivGrupe, TextBox tbBrojClanova, DataGridView dgvClanstva, Label lblError, bool izmeni = false, Grupa grupa = null, FrmMain parentForm = null)
         {
             if (!UserControlHelpers.ComboBoxValidation(cbTreningProgram, lblError) |
                 !UserControlHelpers.EmptyFieldValidation(tbNazivGrupe, lblError)
@@ -186,6 +185,11 @@ namespace FitnesStudioClientApp.UIControllers
                     Clanstva = clanstva.ToList()
                 };
 
+                if (izmeni)
+                {
+                    g.Id = grupa.Id;
+                }
+
                 g = izmeni ? Communication.Communication.Instance.IzmeniGrupu(g) : Communication.Communication.Instance.SacuvajGrupu(g);
 
                 MessageBox.Show(izmeni ? "Grupa uspešno izmenjena." : "Grupa uspešno sačuvana.");
@@ -195,6 +199,11 @@ namespace FitnesStudioClientApp.UIControllers
                 tbBrojClanova.Text = "";
                 dgvClanstva.Rows.Clear();
                 dgvClanstva.Refresh();
+
+                if (izmeni)
+                {
+                    parentForm.mainController.OpenUCNadjiGrupe(parentForm);
+                }                
             }
             catch (ServerException se)
             {
@@ -202,7 +211,8 @@ namespace FitnesStudioClientApp.UIControllers
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Greška čuvanju grupe.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string messageType = izmeni ? "izmeni" : "čuvanju";
+                MessageBox.Show(ex.Message, $"Greška pri {messageType} grupe.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

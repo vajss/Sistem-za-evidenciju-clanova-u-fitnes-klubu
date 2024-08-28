@@ -213,7 +213,7 @@
             this.btnSacuvajClana.TabIndex = 14;
             this.btnSacuvajClana.Text = "Sačuvaj člana";
             this.btnSacuvajClana.UseVisualStyleBackColor = false;
-            this.btnSacuvajClana.Click += new System.EventHandler(this.btnSacuvajClana_Click);
+            this.btnSacuvajClana.Click += new System.EventHandler(this.BtnSacuvajClana_Click);
             // 
             // lblError
             // 
@@ -245,7 +245,7 @@
             this.btnIzmeniClana.Text = "Sačuvaj Izmene";
             this.btnIzmeniClana.UseVisualStyleBackColor = false;
             this.btnIzmeniClana.Visible = false;
-            this.btnIzmeniClana.Click += new System.EventHandler(this.btnIzmeniClana_Click);
+            this.btnIzmeniClana.Click += new System.EventHandler(this.BtnIzmeniClana_Click);
             // 
             // btnNazad
             // 
@@ -262,7 +262,7 @@
             this.btnNazad.Text = "< Nazad";
             this.btnNazad.UseVisualStyleBackColor = true;
             this.btnNazad.Visible = false;
-            this.btnNazad.Click += new System.EventHandler(this.btnNazad_Click);
+            this.btnNazad.Click += new System.EventHandler(this.BtnNazad_Click);
             // 
             // UCDodajClana
             // 

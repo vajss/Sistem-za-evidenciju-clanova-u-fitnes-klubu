@@ -51,18 +51,17 @@ namespace FitnesStudioClientApp.User_Controls
             btnIzmeniClana.Visible = true;
         }
 
-        private void btnSacuvajClana_Click(object sender, System.EventArgs e)
+        private void BtnSacuvajClana_Click(object sender, System.EventArgs e)
         {
             dodajClanaController.DodajClana(tbClanId, tbIme, tbPrezime, dtpDatumRodjenja, tbTelefon, tbZanimanje, lblError);
         }
 
-        private void btnIzmeniClana_Click(object sender, EventArgs e)
+        private void BtnIzmeniClana_Click(object sender, EventArgs e)
         {
-            izmeniClanaController.IzmeniClana(tbClanId, tbIme, tbPrezime, dtpDatumRodjenja, tbTelefon, tbZanimanje, lblError, preselectedClan);
-            parentForm.mainController.OpenUCNadjiClanove(parentForm);
+            izmeniClanaController.IzmeniClana(tbClanId, tbIme, tbPrezime, dtpDatumRodjenja, tbTelefon, tbZanimanje, lblError, preselectedClan, parentForm);
         }
 
-        private void btnNazad_Click(object sender, EventArgs e)
+        private void BtnNazad_Click(object sender, EventArgs e)
         {
             parentForm.mainController.OpenUCNadjiClanove(parentForm);
         }

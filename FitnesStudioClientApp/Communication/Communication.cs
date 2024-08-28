@@ -187,9 +187,15 @@ namespace FitnesStudioClientApp.Communication
             return (List<Termin>)client.GetResponseResult();
         }
 
-        internal Grupa IzmeniGrupu(Grupa g)
+        internal Grupa IzmeniGrupu(Grupa grupa)
         {
-            throw new NotImplementedException();
+            Request request = new Request
+            {
+                Operation = Operation.IzmeniGrupu,
+                RequestObject = grupa
+            };
+            client.SendRequest(request);
+            return (Grupa)client.GetResponseResult();
         }
     }
 }

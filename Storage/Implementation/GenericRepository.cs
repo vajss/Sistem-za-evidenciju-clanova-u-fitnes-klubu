@@ -49,6 +49,11 @@ namespace Storage.Implementation
             return broker.Save(entity);
         }
 
+        public void Delete(IEntity entity)
+        {
+            broker.Delete(entity);
+        }
+
         public void Update(IEntity entity)
         {
             broker.Update(entity);

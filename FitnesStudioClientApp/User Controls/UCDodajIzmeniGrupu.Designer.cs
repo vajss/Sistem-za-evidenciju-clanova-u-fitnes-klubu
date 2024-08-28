@@ -352,7 +352,7 @@
             this.btnIzmeniGrupu.Text = "Izmeni grupu";
             this.btnIzmeniGrupu.UseVisualStyleBackColor = false;
             this.btnIzmeniGrupu.Visible = false;
-            this.btnIzmeniGrupu.Click += new System.EventHandler(this.btnIzmeniGrupu_Click);
+            this.btnIzmeniGrupu.Click += new System.EventHandler(this.BtnIzmeniGrupu_Click);
             // 
             // btnNazad
             // 
