@@ -37,7 +37,7 @@ namespace FitnesStudioClientApp.UIControllers
                 };
 
                 Communication.Communication.Instance.IzmeniClana(c); // TODO greska pri pretrazi clana nakon cuvanja ovde!!!
-                MessageBox.Show("Clan je uspesno izmenjen!");
+                MessageBox.Show("Član je uspešno izmenjen!");
 
                 tbClanId.Text = "";
                 tbIme.Text = "";

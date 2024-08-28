@@ -41,7 +41,7 @@ namespace FitnesStudioClientApp.UIControllers
                 };
 
                 t = Communication.Communication.Instance.DodajTermin(t);
-                MessageBox.Show("Termin je uspesno sacuvan!");
+                MessageBox.Show("Termin je uspešno sačuvan!");
 
                 cbGrupa.SelectedIndex = -1;
                 tbTrajanje.Text = "";

@@ -76,7 +76,7 @@ namespace FitnesStudioClientApp.UIControllers
             } else
             {
                 lblError.Visible = true;
-                lblError.Text = "Nije odabrano clanstvo.";
+                lblError.Text = "Nije odabran član.";
             }
         }
     }

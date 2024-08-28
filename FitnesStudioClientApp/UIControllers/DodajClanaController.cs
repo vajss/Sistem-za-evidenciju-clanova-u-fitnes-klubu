@@ -36,7 +36,7 @@ namespace FitnesStudioClientApp.UIControllers
                 };
 
                 c = Communication.Communication.Instance.DodajClana(c);
-                MessageBox.Show("Clan je uspesno sacuvan!");
+                MessageBox.Show("Član je uspešno sačuvan!");
 
                 tbClanId.Text = "";
                 tbIme.Text = "";
