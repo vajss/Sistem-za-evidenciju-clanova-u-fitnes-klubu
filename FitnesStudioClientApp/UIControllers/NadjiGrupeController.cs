@@ -68,7 +68,7 @@ namespace FitnesStudioClientApp.UIControllers
         {
             if (grupa != null)
             {
-                parentForm.mainController.ChangePanel(new UCDodajIzmeniGrupu(new DodajIzmeniGrupuController(), grupa, parentForm), parentForm);
+                parentForm.mainViewCoordinator.ChangePanel(new UCDodajIzmeniGrupu(new DodajIzmeniGrupuController(), grupa, parentForm), parentForm);
             }
             else
             {

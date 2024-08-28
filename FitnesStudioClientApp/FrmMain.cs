@@ -8,16 +8,16 @@ namespace FitnesStudioClientApp
     public partial class FrmMain : Form
     {
 
-        public MainViewCoordinator mainController = new MainViewCoordinator();
+        public MainViewCoordinator mainViewCoordinator = new MainViewCoordinator();
         public FrmMain()
         {
             InitializeComponent();
         }
 
-        public FrmMain(MainViewCoordinator mainController)
+        public FrmMain(MainViewCoordinator MainViewCoordinator)
         {
             InitializeComponent();
-            this.mainController = mainController;
+            this.mainViewCoordinator = MainViewCoordinator;
         }
 
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
@@ -28,23 +28,23 @@ namespace FitnesStudioClientApp
 
         private void DodajClanaToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-            mainController.OpenUCDodajClana(this);
+            mainViewCoordinator.OpenUCDodajClana(this);
 
         }
 
         private void dodajGrupuToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-            mainController.OpenUCDodajGrupu(this);
+            mainViewCoordinator.OpenUCDodajGrupu(this);
         }
 
         private void naToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-            mainController.OpenUCNadjiClanove(this);
+            mainViewCoordinator.OpenUCNadjiClanove(this);
         }
 
         private void pretražiGrupeToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-            mainController.OpenUCNadjiGrupe(this);
+            mainViewCoordinator.OpenUCNadjiGrupe(this);
         }
 
         private void OdjavaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -56,13 +56,13 @@ namespace FitnesStudioClientApp
 
         private void DodajTerminToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            mainController.OpenUCDodajTermin(this);
+            mainViewCoordinator.OpenUCDodajTermin(this);
 
         }
 
         private void PretragaTerminaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            mainController.OpenUCNadjiTermin(this);
+            mainViewCoordinator.OpenUCNadjiTermin(this);
         }
     }
 }

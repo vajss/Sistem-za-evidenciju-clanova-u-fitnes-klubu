@@ -63,7 +63,7 @@ namespace FitnesStudioClientApp.User_Controls
 
         private void BtnNazad_Click(object sender, EventArgs e)
         {
-            parentForm.mainController.OpenUCNadjiClanove(parentForm);
+            parentForm.mainViewCoordinator.OpenUCNadjiClanove(parentForm);
         }
     }
 }

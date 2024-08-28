@@ -44,7 +44,7 @@ namespace FitnesStudioClientApp.UIControllers
                 tbPrezime.Text = "";
                 tbZanimanje.Text = "";
                 tbTelefon.Text = "";
-                parentForm.mainController.OpenUCNadjiClanove(parentForm);
+                parentForm.mainViewCoordinator.OpenUCNadjiClanove(parentForm);
             }
             catch (ServerException se)
             {

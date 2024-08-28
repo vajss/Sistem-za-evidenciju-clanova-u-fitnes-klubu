@@ -127,7 +127,7 @@ namespace FitnesStudioClientApp.User_Controls
 
         private void BtnIzmeniGrupu_button_Click(object sender, EventArgs e)
         {
-            parentForm.mainController.OpenUCNadjiGrupe(parentForm);
+            parentForm.mainViewCoordinator.OpenUCNadjiGrupe(parentForm);
         }
     }
 }

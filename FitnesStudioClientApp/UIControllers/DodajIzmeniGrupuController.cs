@@ -202,7 +202,7 @@ namespace FitnesStudioClientApp.UIControllers
 
                 if (izmeni)
                 {
-                    parentForm.mainController.OpenUCNadjiGrupe(parentForm);
+                    parentForm.mainViewCoordinator.OpenUCNadjiGrupe(parentForm);
                 }                
             }
             catch (ServerException se)
