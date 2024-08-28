@@ -155,9 +155,9 @@
             this.gbDodajClanove.Controls.Add(this.cbClanovi);
             this.gbDodajClanove.Controls.Add(this.lblClan);
             this.gbDodajClanove.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.gbDodajClanove.Location = new System.Drawing.Point(739, 199);
+            this.gbDodajClanove.Location = new System.Drawing.Point(734, 190);
             this.gbDodajClanove.Name = "gbDodajClanove";
-            this.gbDodajClanove.Size = new System.Drawing.Size(440, 350);
+            this.gbDodajClanove.Size = new System.Drawing.Size(440, 360);
             this.gbDodajClanove.TabIndex = 16;
             this.gbDodajClanove.TabStop = false;
             this.gbDodajClanove.Text = "Dodaj članstvo u grupu";
@@ -170,7 +170,7 @@
             this.btnIzmeniClanstvo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIzmeniClanstvo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIzmeniClanstvo.ForeColor = System.Drawing.Color.Transparent;
-            this.btnIzmeniClanstvo.Location = new System.Drawing.Point(171, 272);
+            this.btnIzmeniClanstvo.Location = new System.Drawing.Point(171, 277);
             this.btnIzmeniClanstvo.Name = "btnIzmeniClanstvo";
             this.btnIzmeniClanstvo.Size = new System.Drawing.Size(82, 48);
             this.btnIzmeniClanstvo.TabIndex = 29;
@@ -184,7 +184,7 @@
             this.lblError.AutoSize = true;
             this.lblError.Font = new System.Drawing.Font("Arial", 10F);
             this.lblError.ForeColor = System.Drawing.Color.Salmon;
-            this.lblError.Location = new System.Drawing.Point(172, 249);
+            this.lblError.Location = new System.Drawing.Point(172, 254);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(0, 16);
             this.lblError.TabIndex = 28;
@@ -198,7 +198,7 @@
             this.btnDodajClana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDodajClana.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDodajClana.ForeColor = System.Drawing.Color.Transparent;
-            this.btnDodajClana.Location = new System.Drawing.Point(259, 272);
+            this.btnDodajClana.Location = new System.Drawing.Point(259, 277);
             this.btnDodajClana.Name = "btnDodajClana";
             this.btnDodajClana.Size = new System.Drawing.Size(82, 48);
             this.btnDodajClana.TabIndex = 25;
@@ -211,7 +211,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 10F);
-            this.label5.Location = new System.Drawing.Point(20, 216);
+            this.label5.Location = new System.Drawing.Point(20, 221);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(150, 16);
             this.label5.TabIndex = 27;
@@ -222,7 +222,7 @@
             this.tbNeizmireno.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbNeizmireno.Enabled = false;
             this.tbNeizmireno.Font = new System.Drawing.Font("Arial", 11F);
-            this.tbNeizmireno.Location = new System.Drawing.Point(188, 212);
+            this.tbNeizmireno.Location = new System.Drawing.Point(188, 217);
             this.tbNeizmireno.Multiline = true;
             this.tbNeizmireno.Name = "tbNeizmireno";
             this.tbNeizmireno.Size = new System.Drawing.Size(153, 25);
@@ -234,7 +234,7 @@
             this.dtpPoslednjePlacanje.CustomFormat = "dd.MM.yyyy.";
             this.dtpPoslednjePlacanje.Font = new System.Drawing.Font("Arial", 11F);
             this.dtpPoslednjePlacanje.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpPoslednjePlacanje.Location = new System.Drawing.Point(188, 155);
+            this.dtpPoslednjePlacanje.Location = new System.Drawing.Point(188, 160);
             this.dtpPoslednjePlacanje.Name = "dtpPoslednjePlacanje";
             this.dtpPoslednjePlacanje.Size = new System.Drawing.Size(153, 24);
             this.dtpPoslednjePlacanje.TabIndex = 23;
@@ -245,7 +245,7 @@
             this.lblPoslednjePlacanje.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPoslednjePlacanje.AutoSize = true;
             this.lblPoslednjePlacanje.Font = new System.Drawing.Font("Arial", 10F);
-            this.lblPoslednjePlacanje.Location = new System.Drawing.Point(20, 160);
+            this.lblPoslednjePlacanje.Location = new System.Drawing.Point(20, 165);
             this.lblPoslednjePlacanje.Name = "lblPoslednjePlacanje";
             this.lblPoslednjePlacanje.Size = new System.Drawing.Size(130, 16);
             this.lblPoslednjePlacanje.TabIndex = 22;
@@ -257,7 +257,7 @@
             this.dtpUclanjenje.CustomFormat = "dd.MM.yyyy.";
             this.dtpUclanjenje.Font = new System.Drawing.Font("Arial", 11F);
             this.dtpUclanjenje.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpUclanjenje.Location = new System.Drawing.Point(188, 98);
+            this.dtpUclanjenje.Location = new System.Drawing.Point(188, 103);
             this.dtpUclanjenje.Name = "dtpUclanjenje";
             this.dtpUclanjenje.Size = new System.Drawing.Size(153, 24);
             this.dtpUclanjenje.TabIndex = 21;
@@ -268,7 +268,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 10F);
-            this.label1.Location = new System.Drawing.Point(20, 104);
+            this.label1.Location = new System.Drawing.Point(20, 109);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 16);
             this.label1.TabIndex = 19;
@@ -280,7 +280,7 @@
             this.cbClanovi.BackColor = System.Drawing.Color.Gainsboro;
             this.cbClanovi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbClanovi.FormattingEnabled = true;
-            this.cbClanovi.Location = new System.Drawing.Point(188, 43);
+            this.cbClanovi.Location = new System.Drawing.Point(188, 48);
             this.cbClanovi.Name = "cbClanovi";
             this.cbClanovi.Size = new System.Drawing.Size(153, 24);
             this.cbClanovi.TabIndex = 18;
@@ -290,7 +290,7 @@
             this.lblClan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblClan.AutoSize = true;
             this.lblClan.Font = new System.Drawing.Font("Arial", 11F);
-            this.lblClan.Location = new System.Drawing.Point(20, 47);
+            this.lblClan.Location = new System.Drawing.Point(20, 52);
             this.lblClan.Name = "lblClan";
             this.lblClan.Size = new System.Drawing.Size(42, 17);
             this.lblClan.TabIndex = 17;
@@ -372,7 +372,7 @@
             this.btnNazad.Visible = false;
             this.btnNazad.Click += new System.EventHandler(this.BtnIzmeniGrupu_button_Click);
             // 
-            // UCDodajGrupu
+            // UCDodajIzmeniGrupu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -392,7 +392,7 @@
             this.Controls.Add(this.lblNaziv);
             this.Font = new System.Drawing.Font("Arial", 11F);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "UCDodajGrupu";
+            this.Name = "UCDodajIzmeniGrupu";
             this.Size = new System.Drawing.Size(1182, 664);
             this.Load += new System.EventHandler(this.UCDodajGrupu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClanstva)).EndInit();
