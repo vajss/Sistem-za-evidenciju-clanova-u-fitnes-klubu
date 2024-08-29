@@ -10,8 +10,8 @@ namespace FitnesStudioClientApp.Communication
     public class Communication
     {
         private static Communication instance;
-
         private Socket socket;
+        private CommunicationClient client;
 
         private Communication()
         {
@@ -34,7 +34,7 @@ namespace FitnesStudioClientApp.Communication
             socket = null;
         }
 
-        private CommunicationClient client;
+
         public static Communication Instance
         {
             get

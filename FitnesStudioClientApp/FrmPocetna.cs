@@ -11,8 +11,6 @@ namespace FitnesStudioClientApp
 
         public FrmPocetna()
         {
-            Debug.WriteLine(">>> Is this ever called? ");
-
             InitializeComponent();
         }
 
@@ -26,7 +24,7 @@ namespace FitnesStudioClientApp
 
         private void FrmInitialWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //Environment.Exit(0);
+            Environment.Exit(0);
         }
     }
 }

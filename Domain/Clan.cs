@@ -21,7 +21,7 @@ namespace Domain
 
         public string Zanimanje { get; set; }
 
-        public string Telefon { get; set; } // TODO maybe limit to be only numbers or some regex
+        public string Telefon { get; set; }
 
         [Browsable(false)]
         public string TableName => "Clan";
