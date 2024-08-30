@@ -197,5 +197,38 @@ namespace FitnesStudioClientApp.Communication
             client.SendRequest(request);
             return (Grupa)client.GetResponseResult();
         }
+
+        internal Grupa UcitahjGrupu(Grupa grupa)
+        {
+            Request request = new Request
+            {
+                Operation = Operation.UcitajGrupu,
+                RequestObject = grupa
+            };
+            client.SendRequest(request);
+            return (Grupa)client.GetResponseResult();
+        }
+
+        internal Clan UcitahjClana(Clan clan)
+        {
+            Request request = new Request
+            {
+                Operation = Operation.UcitajClana,
+                RequestObject = clan
+            };
+            client.SendRequest(request);
+            return (Clan)client.GetResponseResult();
+        }
+
+        internal Termin UcitahjTermin(Termin termin)
+        {
+            Request request = new Request
+            {
+                Operation = Operation.UcitajTermin,
+                RequestObject = termin
+            };
+            client.SendRequest(request);
+            return (Termin)client.GetResponseResult();
+        }
     }
 }

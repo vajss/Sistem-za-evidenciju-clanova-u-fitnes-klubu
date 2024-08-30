@@ -144,6 +144,15 @@ namespace ServerApp
                 case Operation.IzmeniGrupu:
                     Controller.Controller.Instance.IzmeniGrupu((Grupa)request.RequestObject);
                     break;
+                case Operation.UcitajClana:
+                    response.Result = Controller.Controller.Instance.UcitajClana((Clan)request.RequestObject);
+                    break;
+                case Operation.UcitajGrupu:
+                    response.Result = Controller.Controller.Instance.UcitajGrupu((Grupa)request.RequestObject);
+                    break;
+                case Operation.UcitajTermin:
+                    response.Result = Controller.Controller.Instance.UcitajTermin((Termin)request.RequestObject);
+                    break;
                 default:
                     break;
             }

@@ -18,6 +18,9 @@ namespace Common
         NadjiGrupe,
         SacuvajTermin,
         NadjiTermine,
-        IzmeniGrupu
+        IzmeniGrupu,
+        UcitajClana,
+        UcitajGrupu,
+        UcitajTermin
     }
 }

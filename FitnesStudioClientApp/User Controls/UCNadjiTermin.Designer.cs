@@ -34,6 +34,8 @@
             this.lblNaslov = new System.Windows.Forms.Label();
             this.lblPretraga = new System.Windows.Forms.Label();
             this.tbPretraga = new System.Windows.Forms.TextBox();
+            this.btnPrikazi = new System.Windows.Forms.Button();
+            this.lblPrikaziError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTermini)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,11 +110,40 @@
             this.tbPretraga.TabIndex = 31;
             this.tbPretraga.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbPretraga_KeyDown);
             // 
+            // btnPrikazi
+            // 
+            this.btnPrikazi.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPrikazi.BackColor = System.Drawing.Color.PowderBlue;
+            this.btnPrikazi.FlatAppearance.BorderSize = 0;
+            this.btnPrikazi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrikazi.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrikazi.ForeColor = System.Drawing.Color.Transparent;
+            this.btnPrikazi.Location = new System.Drawing.Point(664, 120);
+            this.btnPrikazi.Name = "btnPrikazi";
+            this.btnPrikazi.Size = new System.Drawing.Size(82, 32);
+            this.btnPrikazi.TabIndex = 38;
+            this.btnPrikazi.Text = "Prikazi";
+            this.btnPrikazi.UseVisualStyleBackColor = false;
+            this.btnPrikazi.Click += new System.EventHandler(this.BtnPrikazi_Click);
+            // 
+            // lblPrikaziError
+            // 
+            this.lblPrikaziError.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPrikaziError.AutoSize = true;
+            this.lblPrikaziError.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrikaziError.ForeColor = System.Drawing.Color.Salmon;
+            this.lblPrikaziError.Location = new System.Drawing.Point(609, 162);
+            this.lblPrikaziError.Name = "lblPrikaziError";
+            this.lblPrikaziError.Size = new System.Drawing.Size(0, 19);
+            this.lblPrikaziError.TabIndex = 39;
+            // 
             // UCNadjiTermin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.lblPrikaziError);
+            this.Controls.Add(this.btnPrikazi);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.dgvTermini);
             this.Controls.Add(this.btnPretrazi);
@@ -137,5 +168,7 @@
         private System.Windows.Forms.Label lblNaslov;
         private System.Windows.Forms.Label lblPretraga;
         private System.Windows.Forms.TextBox tbPretraga;
+        private System.Windows.Forms.Button btnPrikazi;
+        private System.Windows.Forms.Label lblPrikaziError;
     }
 }

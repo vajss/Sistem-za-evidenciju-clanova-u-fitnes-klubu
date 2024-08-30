@@ -1,4 +1,5 @@
-﻿using FitnesStudioClientApp.UIControllers;
+﻿using Domain;
+using FitnesStudioClientApp.UIControllers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,6 +26,20 @@ namespace FitnesStudioClientApp.User_Controls
             this.dodajTerminController = dodajTerminController;
             InitializeComponent();
             dodajTerminController.UcitajGrupe(cbGrupa);
+        }
+
+        public UCDodajTermin(DodajTerminController dodajTerminController, Termin termin)
+        {
+            this.dodajTerminController = dodajTerminController;
+            InitializeComponent();
+            dodajTerminController.UcitajGrupe(cbGrupa);
+            Termin t = Communication.Communication.Instance.UcitahjTermin(termin);
+
+            tbTerminId.Text = t.TerminId.ToString();
+            tbTrajanje.Text = t.Trajanje.ToString();
+            dtpDatum.Text = t.Datum.ToString();
+            cbGrupa.SelectedItem = t.Grupa;
+            btnSacuvaj.Visible = false;
         }
 
         private void BtnSacuvaj_Click(object sender, EventArgs e)

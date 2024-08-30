@@ -63,5 +63,14 @@ namespace Domain
         {
             return Naziv;
         }
+
+        public override bool Equals(object grupa)
+        {
+            if (grupa is Grupa g)
+            {
+                return g.Id == Id;
+            }
+            return false;
+        }
     }
 }

@@ -62,8 +62,6 @@ namespace FitnesStudioClientApp.UIControllers
             try
             {
                 cbGrupa.DataSource = Communication.Communication.Instance.VratiSveGrupe();
-                cbGrupa.SelectedIndex = -1;
-                cbGrupa.Text = "Izaberi grupu";
             }
             catch (ServerException se)
             {

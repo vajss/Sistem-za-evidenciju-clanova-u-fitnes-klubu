@@ -1,7 +1,9 @@
 ﻿using Domain;
 using Storage;
 using Storage.Implementation;
+using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using SystemOperations.ClanSO;
 using SystemOperations.GrupaSO;
 using SystemOperations.TerminSO;
@@ -130,6 +132,27 @@ namespace Controller
         {
             PretragaTerminaSO so = new PretragaTerminaSO();
             so.ExecuteTemplate(termin);
+            return so.Result;
+        }
+
+        public Termin UcitajTermin(Termin termin)
+        {
+            UcitajTerminSO so = new UcitajTerminSO();
+            so.ExecuteTemplate(termin);
+            return so.Result;
+        }
+
+        public Grupa UcitajGrupu(Grupa grupa)
+        {
+            UcitajGrupuSO so = new UcitajGrupuSO();
+            so.ExecuteTemplate(grupa);
+            return so.Result;
+        }
+
+        public Clan UcitajClana(Clan clan)
+        {
+            UcitajClanaSO so = new UcitajClanaSO();
+            so.ExecuteTemplate(clan);
             return so.Result;
         }
     }

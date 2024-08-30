@@ -30,7 +30,8 @@ namespace FitnesStudioClientApp.User_Controls
             parentForm = frmMain;
             dtpDatumRodjenja.MaxDate = DateTime.Now;
             this.izmeniClanaController = izmeniClanaController;
-            SetupEdit(clanZaIzmeniti);
+            Clan c = Communication.Communication.Instance.UcitahjClana(clanZaIzmeniti);
+            SetupEdit(c);
         }
 
         private void SetupEdit(Clan clan)

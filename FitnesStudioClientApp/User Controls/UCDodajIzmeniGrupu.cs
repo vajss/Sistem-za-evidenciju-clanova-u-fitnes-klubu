@@ -11,7 +11,7 @@ namespace FitnesStudioClientApp.User_Controls
     public partial class UCDodajIzmeniGrupu : UserControl
     {
         private DodajIzmeniGrupuController dodajGrupuController;
-        private Grupa grupa;
+        private Grupa inputGrupa;
         private FrmMain parentForm;
 
         public UCDodajIzmeniGrupu()
@@ -25,13 +25,13 @@ namespace FitnesStudioClientApp.User_Controls
             Init();
         }
 
-        public UCDodajIzmeniGrupu(DodajIzmeniGrupuController dodajGrupuController, Grupa grupa, FrmMain parentForm)
+        public UCDodajIzmeniGrupu(DodajIzmeniGrupuController dodajGrupuController, Grupa g, FrmMain parentForm)
         {
             this.dodajGrupuController = dodajGrupuController;
-            this.grupa = grupa;
+            inputGrupa = Communication.Communication.Instance.UcitahjGrupu(g);
             this.parentForm = parentForm;
-            Init(grupa.Clanstva);
-            SetupEdit(grupa);
+            Init(inputGrupa.Clanstva);
+            SetupEdit(inputGrupa);
         }
 
         private void SetupEdit(Grupa grupa)
@@ -69,7 +69,7 @@ namespace FitnesStudioClientApp.User_Controls
         {
             dodajGrupuController.UcitajClanove(cbClanovi);
             dodajGrupuController.UcitajTreningPrograme(cbTreningProgram);
-            if (grupa is Grupa g)
+            if (inputGrupa is Grupa g)
             {
                 cbTreningProgram.SelectedItem = g.TreningProgram;
             }
@@ -122,7 +122,7 @@ namespace FitnesStudioClientApp.User_Controls
 
         private void BtnIzmeniGrupu_Click(object sender, EventArgs e)
         {
-            dodajGrupuController.SacuvajGrupu(cbTreningProgram, tbNazivGrupe, tbBrojClanova, dgvClanstva, lblGroupError, true, grupa, parentForm);
+            dodajGrupuController.SacuvajGrupu(cbTreningProgram, tbNazivGrupe, tbBrojClanova, dgvClanstva, lblGroupError, true, inputGrupa, parentForm);
         }
 
         private void BtnIzmeniGrupu_button_Click(object sender, EventArgs e)

@@ -1,4 +1,5 @@
 ﻿using Domain;
+using FitnesStudioClientApp.User_Controls;
 using System;
 using System.ComponentModel;
 using System.Runtime.Remoting;
@@ -8,6 +9,19 @@ namespace FitnesStudioClientApp.UIControllers
 {
     public class NadjiTerminController
     {
+        internal void PrikaziTermin(FrmMain parentForm, Termin termin, Label lblError)
+        {
+            if (termin != null)
+            {
+                parentForm.mainViewCoordinator.ChangePanel(new UCDodajTermin(new DodajTerminController(), termin), parentForm);
+            }
+            else
+            {
+                lblError.Visible = true;
+                lblError.Text = "Nije odabran termin.";
+            }
+        }
+
         internal void PretraziTermine(TextBox tbPretraga, DataGridView dgvTermini, Label lblError)
         {
             if (string.IsNullOrWhiteSpace(tbPretraga.Text))
