@@ -75,7 +75,7 @@
             this.btnIzmeniGrupu.Name = "btnIzmeniGrupu";
             this.btnIzmeniGrupu.Size = new System.Drawing.Size(98, 39);
             this.btnIzmeniGrupu.TabIndex = 35;
-            this.btnIzmeniGrupu.Text = "Izmeni grupu";
+            this.btnIzmeniGrupu.Text = "Prikaži grupu";
             this.btnIzmeniGrupu.UseVisualStyleBackColor = false;
             this.btnIzmeniGrupu.Click += new System.EventHandler(this.btnIzmeniGrupu_Click);
             // 

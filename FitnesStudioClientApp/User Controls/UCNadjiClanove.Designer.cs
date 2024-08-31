@@ -98,7 +98,7 @@
             this.btnIzmeni.Name = "btnIzmeni";
             this.btnIzmeni.Size = new System.Drawing.Size(98, 39);
             this.btnIzmeni.TabIndex = 28;
-            this.btnIzmeni.Text = "Izmeni člana";
+            this.btnIzmeni.Text = "Prikaži člana";
             this.btnIzmeni.UseVisualStyleBackColor = false;
             this.btnIzmeni.Click += new System.EventHandler(this.BtnIzmeni_Click);
             // 

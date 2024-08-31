@@ -118,11 +118,11 @@
             this.btnPrikazi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrikazi.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrikazi.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPrikazi.Location = new System.Drawing.Point(664, 120);
+            this.btnPrikazi.Location = new System.Drawing.Point(664, 113);
             this.btnPrikazi.Name = "btnPrikazi";
-            this.btnPrikazi.Size = new System.Drawing.Size(82, 32);
+            this.btnPrikazi.Size = new System.Drawing.Size(82, 38);
             this.btnPrikazi.TabIndex = 38;
-            this.btnPrikazi.Text = "Prikazi";
+            this.btnPrikazi.Text = "Prikaži termin";
             this.btnPrikazi.UseVisualStyleBackColor = false;
             this.btnPrikazi.Click += new System.EventHandler(this.BtnPrikazi_Click);
             // 
