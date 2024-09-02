@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace Domain
@@ -33,7 +34,7 @@ namespace Domain
         [Browsable(false)]
         public string WhereCondition => $"ClanId = {Clan.Id} AND GrupaId = {Grupa.Id}";
         [Browsable(false)]
-        public string GetUpdateValues => $"DatumUclanjenja='{DatumUclanjenja}', DatumPoslednjegPlacanja='{DatumPoslednjegPlacanja}', NeizmirenaDugovanja={NeizmirenaDugovanja}";
+        public string GetUpdateValues => $"DatumUclanjenja='{DatumUclanjenja:d.M.yyyy. HH:mm:ss}', DatumPoslednjegPlacanja='{DatumPoslednjegPlacanja:d.M.yyyy. HH:mm:ss}', NeizmirenaDugovanja={NeizmirenaDugovanja}";
         [Browsable(false)]
         public string GCondition { get; set; }
         [Browsable(false)]
@@ -56,14 +57,16 @@ namespace Domain
                         ClanId = (int)reader[7],
                         Ime = (string)reader[8],
                         Prezime = (string)reader[9],
-                        DatumRodjenja = Convert.ToDateTime(reader[10]),
+                        //DatumRodjenja = Convert.ToDateTime(reader[10]),
+                        DatumRodjenja = DateTime.ParseExact(reader[10].ToString(), "d.M.yyyy. HH:mm:s", CultureInfo.InvariantCulture),
                         Zanimanje = (string)reader[11],
                         Telefon = (string)reader[12],
                     },
-                    DatumUclanjenja = Convert.ToDateTime(reader[3]),
+                    //DatumUclanjenja = Convert.ToDateTime(reader[3]),
+                    DatumUclanjenja = DateTime.ParseExact(reader[3].ToString(), "d.M.yyyy. HH:mm:ss", CultureInfo.InvariantCulture),
                     NeizmirenaDugovanja = (int)reader[4],
-                    DatumPoslednjegPlacanja = Convert.ToDateTime(reader[5])
-
+                    //DatumPoslednjegPlacanja = Convert.ToDateTime(reader[5])
+                    DatumPoslednjegPlacanja = DateTime.ParseExact(reader[5].ToString(), "d.M.yyyy. HH:mm:ss", CultureInfo.InvariantCulture),
                 });
             }
             return result;
@@ -73,7 +76,7 @@ namespace Domain
         {
             if (clanstvo is Clanstvo c)
             {
-                return c.Clan?.ClanId == Clan?.ClanId; // && c.Grupa?.Id == Grupa?.Id;
+                return c.Clan?.ClanId == Clan?.ClanId;
             }
             return false;
         }

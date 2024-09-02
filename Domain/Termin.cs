@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace Domain
 {
@@ -18,7 +19,7 @@ namespace Domain
         [Browsable(false)]
         public string TableName => "Termin";
         [Browsable(false)]
-        public string InsertValues => $"'{TerminId}','{Datum}', '{Trajanje}', {Grupa.Id}";
+        public string InsertValues => $"'{TerminId}','{Datum:d.M.yyyy. HH:mm:ss}', '{Trajanje}', {Grupa.Id}";
         [Browsable(false)]
         public string IdName => "Id";
         [Browsable(false)]
@@ -47,7 +48,8 @@ namespace Domain
                 {
                     Id = (int)reader[0],
                     TerminId = (string)reader[1],
-                    Datum = Convert.ToDateTime(reader[2]),
+                    //Datum = Convert.ToDateTime(reader[2]),
+                    Datum = DateTime.ParseExact(reader[2].ToString(), "d.M.yyyy. HH:mm:ss", CultureInfo.InvariantCulture),
                     Trajanje = (int)reader[3],
                     Grupa = new Grupa { 
                         Id = (int)reader[5],

@@ -2,7 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data.SqlClient; 
+using System.Data.SqlClient;
+using System.Globalization;
 
 namespace Domain
 {
@@ -40,7 +41,7 @@ namespace Domain
         [Browsable(false)]
         public string WhereCondition => $"Id={Id}";
         [Browsable(false)]
-        public string GetUpdateValues => $"Ime='{Ime}', Prezime='{Prezime}', DatumRodjenja='{DatumRodjenja}', Zanimanje='{Zanimanje}', Telefon='{Telefon}'";
+        public string GetUpdateValues => $"Ime='{Ime}', Prezime='{Prezime}', DatumRodjenja='{DatumRodjenja:d.M.yyyy. HH:mm:ss}', Zanimanje='{Zanimanje}', Telefon='{Telefon}'";
         [Browsable(false)]
         public string GCondition { get; set; }
         [Browsable(false)]
@@ -57,7 +58,8 @@ namespace Domain
                     ClanId= (int)reader[1],
                     Ime = (string)reader[2],
                     Prezime = (string)reader[3],
-                    DatumRodjenja = Convert.ToDateTime(reader[4]),
+                    //DatumRodjenja = Convert.ToDateTime(reader[4]),
+                    DatumRodjenja = DateTime.ParseExact(reader[4].ToString(), "d.M.yyyy. HH:mm:ss", CultureInfo.InvariantCulture),
                     Zanimanje = (string)reader[5],
                     Telefon = (string)reader[6]
                 });
